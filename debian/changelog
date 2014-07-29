@@ -1,0 +1,94 @@
+libqmi (1.10.2-1) unstable; urgency=low
+
+  [ Marius B. Kotsbak ]
+  * New upstream stable version 1.10.2
+    - Fixed default internal proxy timeout for requests.
+    - Added initial support for the WDA service.
+    - Added support for cell location info retrieval.
+    - Added support for UIM card status retrieval.
+    - Added support to specify net open flags in the command line.
+    - Minor bugfixes
+
+ -- Marius B. Kotsbak <marius@kotsbak.com>  Tue, 29 Jul 2014 20:45:51 +0200
+
+libqmi (1.8.0-2) unstable; urgency=low
+
+  [ Marius B. Kotsbak ]
+  * Change libqmi to only recommend libqmi-proxy package.
+    It is possible to use the library without it (Closes: #754599).
+
+ -- Marius B. Kotsbak <marius@kotsbak.com>  Thu, 17 Jul 2014 20:35:17 +0200
+
+libqmi (1.8.0-1) unstable; urgency=low
+
+  [ Marius Kotsbak ]
+  * New upstream stable release 1.8.0 (Closes: #731002, #731907)
+    - Support for sharing the QMI port through multiple processes with the new
+      'qmi-proxy' infrastructure.
+    - api: added new known service ID enumeration values
+    - wds: added "Get Profile List" request/response
+    - wds: added "Get Profile Settings" request/response
+    - wds: added "Get Default Settings" request/response
+    - cli: add --wds-get-profile-list
+    - cli: add --wds-get-default-settings
+    - dms: 'SID' TLV in "Activate Manual" is a guint8, not a string
+    - Extended API with macros to check for the libqmi-glib version in use
+    - Setup libtool versioning in libqmi-glib
+    - Added initial support for the PBM (phonebook) service
+    - Added initial support for the UIM service
+    - Added initial support for the OMA (Open Mobile Alliance) service
+    - nas: added "Get Tx Rx Info" request/response
+    - wds: added "Get Packet Statistics" request/response
+    - dms: added support for the 'PRL' TLV in "Activate Manual"
+    - cli: add --nas-get-tx-rx-info
+    - cli: add --wds-get-packet-statistics
+    - cli: add --get-service-version-info
+    - cli: add --uim-read-transparent
+    - cli: add --uim-get-file-attributes
+    - cli: fix following network status until disconnected
+    - tests: use gtester to run unit tests
+    - Also fixed several minor bugs and memory leaks
+  * Replaced "help2man" in Debian package with the same from upstream
+
+ -- Marius B. Kotsbak <marius@kotsbak.com>  Sat, 21 Jun 2014 08:02:00 +0200
+
+libqmi (1.4.0-1) unstable; urgency=low
+
+  [ Marius B. Kotsbak ]
+  * New upstream stable release 1.4.0
+    - Fixed DMS activation code string handling
+    - Enhanced "start network" functionality in qmicli
+    - dms: fix minimum version requirement for DMS Get/Set Operating Mode
+    - nas: added 'Network Time' indication
+    - utils: fix reading sized uints in BE systems
+    - cli: add --dms-activate-manual
+    - cli: implemented setting System Selection Preference
+    - cli: fix technology preference persistence reporting
+    - cli: fix reading new PIN in '--dms-uim-change-pin'
+    - docs: always generate documentation at dist time
+    - tests: fixed BE/LE tests in BE systems (Closes: #709655)
+  * Drop patches applied upstream:
+    - "qmi-codegen-clean-up-compiled-python-files_git_1822155"
+    - "cli-all-sources-are-GPLv2_git_a5631ea"
+  * Symbols for libqmi-glib0 updated
+  * Change build-deps to Python 3
+  * Updated control Vcs-* fields to point to the Alioth hosted project
+  * Corrected debian/copyright: cli/* and libqmi-glib/test/* are GPL 2+.
+    Changed packaging to GPL 2+ too, as LGPL does not make sense here.
+  * Added help2man generating of manpages (new debian/rules target
+    "generate_manpages:". Edited result for qmi-network as it lacked
+    complete help. Workaround for upstream bgo #58755.
+  * Change to new configure option "--enable-gtk-doc-html"
+  * Updated upstream homepage reference to new page published
+  * Remove ${misc:Pre-Depends} from libqmi-glib-dev,
+      it is not containing any shared libs.
+  * Remove meaningless "All rights reserved" from debian/copyright
+
+ -- Marius B. Kotsbak <marius@kotsbak.com>  Sat, 08 Jun 2013 18:53:23 +0200
+
+libqmi (1.0-1) unstable; urgency=low
+
+  [ Marius B. Kotsbak ]
+  * Initial release (Closes: #692564)
+
+ -- Marius B. Kotsbak <marius@kotsbak.com>  Thu, 17 Jan 2013 21:12:14 +0100
