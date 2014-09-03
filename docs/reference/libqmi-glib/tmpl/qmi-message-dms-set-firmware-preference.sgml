@@ -1,0 +1,199 @@
+<!-- ##### SECTION Title ##### -->
+DMS Set Firmware Preference
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageDmsSetFirmwarePreferenceInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageDmsSetFirmwarePreferenceInputListImage ##### -->
+<para>
+
+</para>
+
+@type: 
+@unique_id: 
+@build_id: 
+
+<!-- ##### STRUCT QmiMessageDmsSetFirmwarePreferenceOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_firmware_preference_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_firmware_preference_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_firmware_preference_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_firmware_preference_input_get_modem_storage_index ##### -->
+<para>
+
+</para>
+
+@self: 
+@modem_storage_index: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_firmware_preference_input_set_modem_storage_index ##### -->
+<para>
+
+</para>
+
+@self: 
+@modem_storage_index: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_firmware_preference_input_get_download_override ##### -->
+<para>
+
+</para>
+
+@self: 
+@download_override: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_firmware_preference_input_set_download_override ##### -->
+<para>
+
+</para>
+
+@self: 
+@download_override: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_firmware_preference_input_get_list ##### -->
+<para>
+
+</para>
+
+@self: 
+@list: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_firmware_preference_input_set_list ##### -->
+<para>
+
+</para>
+
+@self: 
+@list: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_firmware_preference_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_firmware_preference_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_firmware_preference_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_firmware_preference_output_get_image_download_list ##### -->
+<para>
+
+</para>
+
+@self: 
+@image_download_list: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_set_firmware_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_set_firmware_preference_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

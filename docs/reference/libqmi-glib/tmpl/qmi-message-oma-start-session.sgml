@@ -1,0 +1,135 @@
+<!-- ##### SECTION Title ##### -->
+OMA Start Session
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageOmaStartSessionInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageOmaStartSessionOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_oma_start_session_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_start_session_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_start_session_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_start_session_input_get_session_type ##### -->
+<para>
+
+</para>
+
+@self: 
+@session_type: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_start_session_input_set_session_type ##### -->
+<para>
+
+</para>
+
+@self: 
+@session_type: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_start_session_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_start_session_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_start_session_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_oma_start_session ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_oma_start_session_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

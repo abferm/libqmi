@@ -1,0 +1,130 @@
+<!-- ##### SECTION Title ##### -->
+WMS Event Report
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiIndicationWmsEventReportOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_indication_wms_event_report_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_wms_event_report_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_indication_wms_event_report_output_get_sms_on_ims ##### -->
+<para>
+
+</para>
+
+@self: 
+@sms_on_ims: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_wms_event_report_output_get_smsc_address ##### -->
+<para>
+
+</para>
+
+@self: 
+@smsc_address: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_wms_event_report_output_get_etws_plmn_information ##### -->
+<para>
+
+</para>
+
+@self: 
+@etws_plmn_information_mcc: 
+@etws_plmn_information_mnc: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_wms_event_report_output_get_etws_message ##### -->
+<para>
+
+</para>
+
+@self: 
+@etws_message_notification_type: 
+@etws_message_raw_data: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_wms_event_report_output_get_message_mode ##### -->
+<para>
+
+</para>
+
+@self: 
+@message_mode: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_wms_event_report_output_get_transfer_route_mt_message ##### -->
+<para>
+
+</para>
+
+@self: 
+@transfer_route_mt_message_ack_indicator: 
+@transfer_route_mt_message_transaction_id: 
+@transfer_route_mt_message_format: 
+@transfer_route_mt_message_raw_data: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_wms_event_report_output_get_mt_message ##### -->
+<para>
+
+</para>
+
+@self: 
+@mt_message_storage_type: 
+@mt_message_memory_index: 
+@error: 
+@Returns: 
+
+

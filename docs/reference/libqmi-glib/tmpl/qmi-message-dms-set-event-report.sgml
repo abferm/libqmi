@@ -1,0 +1,291 @@
+<!-- ##### SECTION Title ##### -->
+DMS Set Event Report
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageDmsSetEventReportInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageDmsSetEventReportOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_get_prl_init_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@prl_init_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_set_prl_init_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@prl_init_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_get_wireless_disable_state_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@wireless_disable_state_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_set_wireless_disable_state_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@wireless_disable_state_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_get_uim_state_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@uim_state_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_set_uim_state_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@uim_state_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_get_operating_mode_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@operating_mode_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_set_operating_mode_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@operating_mode_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_get_activation_state_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@activation_state_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_set_activation_state_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@activation_state_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_get_pin_state_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@pin_state_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_set_pin_state_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@pin_state_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_get_battery_level_report_limits ##### -->
+<para>
+
+</para>
+
+@self: 
+@battery_level_report_limits_lower_limit: 
+@battery_level_report_limits_upper_limit: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_set_battery_level_report_limits ##### -->
+<para>
+
+</para>
+
+@self: 
+@battery_level_report_limits_lower_limit: 
+@battery_level_report_limits_upper_limit: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_get_power_state_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@power_state_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_input_set_power_state_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@power_state_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_event_report_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_set_event_report ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_set_event_report_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

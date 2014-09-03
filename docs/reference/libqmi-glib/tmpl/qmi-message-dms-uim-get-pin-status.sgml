@@ -1,0 +1,107 @@
+<!-- ##### SECTION Title ##### -->
+DMS UIM Get PIN Status
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageDmsUimGetPinStatusOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_get_pin_status_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_get_pin_status_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_get_pin_status_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_get_pin_status_output_get_pin2_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@pin2_status_current_status: 
+@pin2_status_verify_retries_left: 
+@pin2_status_unblock_retries_left: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_get_pin_status_output_get_pin1_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@pin1_status_current_status: 
+@pin1_status_verify_retries_left: 
+@pin1_status_unblock_retries_left: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_uim_get_pin_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@unused: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_uim_get_pin_status_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

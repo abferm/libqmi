@@ -1,0 +1,101 @@
+<!-- ##### SECTION Title ##### -->
+NAS Get RF Band Information
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageNasGetRfBandInformationOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageNasGetRfBandInformationOutputListElement ##### -->
+<para>
+
+</para>
+
+@radio_interface: 
+@active_band_class: 
+@active_channel: 
+
+<!-- ##### FUNCTION qmi_message_nas_get_rf_band_information_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_rf_band_information_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_rf_band_information_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_rf_band_information_output_get_list ##### -->
+<para>
+
+</para>
+
+@self: 
+@list: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_get_rf_band_information ##### -->
+<para>
+
+</para>
+
+@self: 
+@unused: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_get_rf_band_information_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

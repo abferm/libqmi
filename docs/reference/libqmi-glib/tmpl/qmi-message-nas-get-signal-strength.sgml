@@ -1,0 +1,279 @@
+<!-- ##### SECTION Title ##### -->
+NAS Get Signal Strength
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageNasGetSignalStrengthInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageNasGetSignalStrengthOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageNasGetSignalStrengthOutputErrorRateListElement ##### -->
+<para>
+
+</para>
+
+@rate: 
+@radio_interface: 
+
+<!-- ##### STRUCT QmiMessageNasGetSignalStrengthOutputEcioListElement ##### -->
+<para>
+
+</para>
+
+@ecio: 
+@radio_interface: 
+
+<!-- ##### STRUCT QmiMessageNasGetSignalStrengthOutputRssiListElement ##### -->
+<para>
+
+</para>
+
+@rssi: 
+@radio_interface: 
+
+<!-- ##### STRUCT QmiMessageNasGetSignalStrengthOutputStrengthListElement ##### -->
+<para>
+
+</para>
+
+@strength: 
+@radio_interface: 
+
+<!-- ##### FUNCTION qmi_message_nas_get_signal_strength_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_signal_strength_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_signal_strength_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_signal_strength_input_get_request_mask ##### -->
+<para>
+
+</para>
+
+@self: 
+@request_mask: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_signal_strength_input_set_request_mask ##### -->
+<para>
+
+</para>
+
+@self: 
+@request_mask: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_signal_strength_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_signal_strength_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_signal_strength_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_signal_strength_output_get_lte_rsrp ##### -->
+<para>
+
+</para>
+
+@self: 
+@lte_rsrp: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_signal_strength_output_get_lte_snr ##### -->
+<para>
+
+</para>
+
+@self: 
+@lte_snr: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_signal_strength_output_get_rsrq ##### -->
+<para>
+
+</para>
+
+@self: 
+@rsrq_rsrq: 
+@rsrq_radio_interface: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_signal_strength_output_get_error_rate_list ##### -->
+<para>
+
+</para>
+
+@self: 
+@error_rate_list: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_signal_strength_output_get_sinr ##### -->
+<para>
+
+</para>
+
+@self: 
+@sinr: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_signal_strength_output_get_io ##### -->
+<para>
+
+</para>
+
+@self: 
+@io: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_signal_strength_output_get_ecio_list ##### -->
+<para>
+
+</para>
+
+@self: 
+@ecio_list: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_signal_strength_output_get_rssi_list ##### -->
+<para>
+
+</para>
+
+@self: 
+@rssi_list: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_signal_strength_output_get_strength_list ##### -->
+<para>
+
+</para>
+
+@self: 
+@strength_list: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_signal_strength_output_get_signal_strength ##### -->
+<para>
+
+</para>
+
+@self: 
+@signal_strength_strength: 
+@signal_strength_radio_interface: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_get_signal_strength ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_get_signal_strength_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

@@ -1,0 +1,180 @@
+<!-- ##### SECTION Title ##### -->
+QmiClient
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### MACRO QMI_CID_NONE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO QMI_CID_BROADCAST ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO QMI_CLIENT_DEVICE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO QMI_CLIENT_SERVICE ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO QMI_CLIENT_CID ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO QMI_CLIENT_VERSION_MAJOR ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO QMI_CLIENT_VERSION_MINOR ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### STRUCT QmiClient ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG QmiClient:client-cid ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG QmiClient:client-device ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG QmiClient:client-service ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG QmiClient:client-version-major ##### -->
+<para>
+
+</para>
+
+<!-- ##### ARG QmiClient:client-version-minor ##### -->
+<para>
+
+</para>
+
+<!-- ##### FUNCTION qmi_client_get_device ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_peek_device ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_get_service ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_get_cid ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_get_version ##### -->
+<para>
+
+</para>
+
+@self: 
+@major: 
+@minor: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_check_version ##### -->
+<para>
+
+</para>
+
+@self: 
+@major: 
+@minor: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_get_next_transaction_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_process_indication ##### -->
+<para>
+
+</para>
+
+@self: 
+@message: 
+
+

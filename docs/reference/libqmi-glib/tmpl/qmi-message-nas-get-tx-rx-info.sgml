@@ -1,0 +1,179 @@
+<!-- ##### SECTION Title ##### -->
+NAS Get Tx Rx Info
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageNasGetTxRxInfoInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageNasGetTxRxInfoOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_tx_rx_info_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_tx_rx_info_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_tx_rx_info_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_tx_rx_info_input_get_radio_interface ##### -->
+<para>
+
+</para>
+
+@self: 
+@radio_interface: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_tx_rx_info_input_set_radio_interface ##### -->
+<para>
+
+</para>
+
+@self: 
+@radio_interface: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_tx_rx_info_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_tx_rx_info_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_tx_rx_info_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_tx_rx_info_output_get_rx_chain_0_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@rx_chain_0_info_is_radio_tuned: 
+@rx_chain_0_info_rx_power: 
+@rx_chain_0_info_ecio: 
+@rx_chain_0_info_rscp: 
+@rx_chain_0_info_rsrp: 
+@rx_chain_0_info_phase: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_tx_rx_info_output_get_rx_chain_1_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@rx_chain_1_info_is_radio_tuned: 
+@rx_chain_1_info_rx_power: 
+@rx_chain_1_info_ecio: 
+@rx_chain_1_info_rscp: 
+@rx_chain_1_info_rsrp: 
+@rx_chain_1_info_phase: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_tx_rx_info_output_get_tx_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@tx_info_is_in_traffic: 
+@tx_info_tx_power: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_get_tx_rx_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_get_tx_rx_info_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

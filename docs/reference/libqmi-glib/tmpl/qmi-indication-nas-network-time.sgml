@@ -1,0 +1,97 @@
+<!-- ##### SECTION Title ##### -->
+NAS Network Time
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiIndicationNasNetworkTimeOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_indication_nas_network_time_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_network_time_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_network_time_output_get_radio_interface ##### -->
+<para>
+
+</para>
+
+@self: 
+@radio_interface: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_network_time_output_get_daylight_savings_adjustment ##### -->
+<para>
+
+</para>
+
+@self: 
+@daylight_savings_adjustment: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_network_time_output_get_timezone_offset ##### -->
+<para>
+
+</para>
+
+@self: 
+@timezone_offset: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_network_time_output_get_universal_time ##### -->
+<para>
+
+</para>
+
+@self: 
+@universal_time_year: 
+@universal_time_month: 
+@universal_time_day: 
+@universal_time_hour: 
+@universal_time_minute: 
+@universal_time_second: 
+@universal_time_day_of_week: 
+@error: 
+@Returns: 
+
+

@@ -1,0 +1,395 @@
+<!-- ##### SECTION Title ##### -->
+NAS Set Event Report
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageNasSetEventReportInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageNasSetEventReportOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_get_lte_rsrp_delta ##### -->
+<para>
+
+</para>
+
+@self: 
+@lte_rsrp_delta_report: 
+@lte_rsrp_delta_rsrp_delta: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_set_lte_rsrp_delta ##### -->
+<para>
+
+</para>
+
+@self: 
+@lte_rsrp_delta_report: 
+@lte_rsrp_delta_rsrp_delta: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_get_lte_snr_delta ##### -->
+<para>
+
+</para>
+
+@self: 
+@lte_snr_delta_report: 
+@lte_snr_delta_snr_delta: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_set_lte_snr_delta ##### -->
+<para>
+
+</para>
+
+@self: 
+@lte_snr_delta_report: 
+@lte_snr_delta_snr_delta: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_get_sinr_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@sinr_threshold_report: 
+@sinr_threshold_thresholds: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_set_sinr_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@sinr_threshold_report: 
+@sinr_threshold_thresholds: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_get_ecio_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@ecio_threshold_report: 
+@ecio_threshold_thresholds: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_set_ecio_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@ecio_threshold_report: 
+@ecio_threshold_thresholds: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_get_error_rate_indicator ##### -->
+<para>
+
+</para>
+
+@self: 
+@error_rate_indicator: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_set_error_rate_indicator ##### -->
+<para>
+
+</para>
+
+@self: 
+@error_rate_indicator: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_get_sinr_indicator ##### -->
+<para>
+
+</para>
+
+@self: 
+@sinr_indicator_report: 
+@sinr_indicator_sinr_delta: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_set_sinr_indicator ##### -->
+<para>
+
+</para>
+
+@self: 
+@sinr_indicator_report: 
+@sinr_indicator_sinr_delta: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_get_io_indicator ##### -->
+<para>
+
+</para>
+
+@self: 
+@io_indicator_report: 
+@io_indicator_io_delta: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_set_io_indicator ##### -->
+<para>
+
+</para>
+
+@self: 
+@io_indicator_report: 
+@io_indicator_io_delta: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_get_ecio_indicator ##### -->
+<para>
+
+</para>
+
+@self: 
+@ecio_indicator_report: 
+@ecio_indicator_ecio_delta: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_set_ecio_indicator ##### -->
+<para>
+
+</para>
+
+@self: 
+@ecio_indicator_report: 
+@ecio_indicator_ecio_delta: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_get_rssi_indicator ##### -->
+<para>
+
+</para>
+
+@self: 
+@rssi_indicator_report: 
+@rssi_indicator_rssi_delta: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_set_rssi_indicator ##### -->
+<para>
+
+</para>
+
+@self: 
+@rssi_indicator_report: 
+@rssi_indicator_rssi_delta: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_get_registration_reject_reason ##### -->
+<para>
+
+</para>
+
+@self: 
+@registration_reject_reason: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_set_registration_reject_reason ##### -->
+<para>
+
+</para>
+
+@self: 
+@registration_reject_reason: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_get_rf_band_information ##### -->
+<para>
+
+</para>
+
+@self: 
+@rf_band_information: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_set_rf_band_information ##### -->
+<para>
+
+</para>
+
+@self: 
+@rf_band_information: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_get_signal_strength_indicator ##### -->
+<para>
+
+</para>
+
+@self: 
+@signal_strength_indicator_report: 
+@signal_strength_indicator_thresholds: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_input_set_signal_strength_indicator ##### -->
+<para>
+
+</para>
+
+@self: 
+@signal_strength_indicator_report: 
+@signal_strength_indicator_thresholds: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_set_event_report_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_set_event_report ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_set_event_report_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

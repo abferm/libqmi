@@ -1,0 +1,121 @@
+<!-- ##### SECTION Title ##### -->
+NAS Get Home Network
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageNasGetHomeNetworkOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_home_network_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_home_network_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_home_network_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_home_network_output_get_home_network_3gpp2 ##### -->
+<para>
+
+</para>
+
+@self: 
+@home_network_3gpp2_mcc: 
+@home_network_3gpp2_mnc: 
+@home_network_3gpp2_display_description: 
+@home_network_3gpp2_description_encoding: 
+@home_network_3gpp2_description: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_home_network_output_get_home_system_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@home_system_id_sid: 
+@home_system_id_nid: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_home_network_output_get_home_network ##### -->
+<para>
+
+</para>
+
+@self: 
+@home_network_mcc: 
+@home_network_mnc: 
+@home_network_description: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_get_home_network ##### -->
+<para>
+
+</para>
+
+@self: 
+@unused: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_get_home_network_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

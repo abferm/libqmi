@@ -1,0 +1,194 @@
+<!-- ##### SECTION Title ##### -->
+WMS Raw Read
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageWmsRawReadInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageWmsRawReadOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_read_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_read_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_read_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_read_input_get_sms_on_ims ##### -->
+<para>
+
+</para>
+
+@self: 
+@sms_on_ims: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_read_input_set_sms_on_ims ##### -->
+<para>
+
+</para>
+
+@self: 
+@sms_on_ims: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_read_input_get_message_mode ##### -->
+<para>
+
+</para>
+
+@self: 
+@message_mode: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_read_input_set_message_mode ##### -->
+<para>
+
+</para>
+
+@self: 
+@message_mode: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_read_input_get_message_memory_storage_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@message_memory_storage_id_storage_type: 
+@message_memory_storage_id_memory_index: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_read_input_set_message_memory_storage_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@message_memory_storage_id_storage_type: 
+@message_memory_storage_id_memory_index: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_read_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_read_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_read_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_read_output_get_raw_message_data ##### -->
+<para>
+
+</para>
+
+@self: 
+@raw_message_data_message_tag: 
+@raw_message_data_format: 
+@raw_message_data_raw_data: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_wms_raw_read ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_wms_raw_read_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

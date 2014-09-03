@@ -1,0 +1,262 @@
+<!-- ##### SECTION Title ##### -->
+qmi-enums-uim
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### ENUM QmiUimSessionType ##### -->
+<para>
+
+</para>
+
+@QMI_UIM_SESSION_TYPE_PRIMARY_GW_PROVISIONING: 
+@QMI_UIM_SESSION_TYPE_PRIMARY_1X_PROVISIONING: 
+@QMI_UIM_SESSION_TYPE_SECONDARY_GW_PROVISIONING: 
+@QMI_UIM_SESSION_TYPE_SECONDARY_1X_PROVISIONING: 
+@QMI_UIM_SESSION_TYPE_NONPROVISIONING_SLOT_1: 
+@QMI_UIM_SESSION_TYPE_NONPROVISIONING_SLOT_2: 
+@QMI_UIM_SESSION_TYPE_CARD_SLOT_1: 
+@QMI_UIM_SESSION_TYPE_CARD_SLOT_2: 
+@QMI_UIM_SESSION_TYPE_LOGICAL_CHANNEL_SLOT_1: 
+@QMI_UIM_SESSION_TYPE_LOGICAL_CHANNEL_SLOT_2: 
+
+<!-- ##### ENUM QmiUimFileType ##### -->
+<para>
+
+</para>
+
+@QMI_UIM_FILE_TYPE_TRANSPARENT: 
+@QMI_UIM_FILE_TYPE_CYCLIC: 
+@QMI_UIM_FILE_TYPE_LINEAR_FIXED: 
+@QMI_UIM_FILE_TYPE_DEDICATED_FILE: 
+@QMI_UIM_FILE_TYPE_MASTER_FILE: 
+
+<!-- ##### ENUM QmiUimSecurityAttributeLogic ##### -->
+<para>
+
+</para>
+
+@QMI_UIM_SECURITY_ATTRIBUTE_LOGIC_ALWAYS: 
+@QMI_UIM_SECURITY_ATTRIBUTE_LOGIC_NEVER: 
+@QMI_UIM_SECURITY_ATTRIBUTE_LOGIC_AND: 
+@QMI_UIM_SECURITY_ATTRIBUTE_LOGIC_OR: 
+@QMI_UIM_SECURITY_ATTRIBUTE_LOGIC_SINGLE: 
+
+<!-- ##### ENUM QmiUimSecurityAttribute ##### -->
+<para>
+
+</para>
+
+@QMI_UIM_SECURITY_ATTRIBUTE_PIN1: 
+@QMI_UIM_SECURITY_ATTRIBUTE_PIN2: 
+@QMI_UIM_SECURITY_ATTRIBUTE_UPIN: 
+@QMI_UIM_SECURITY_ATTRIBUTE_ADM: 
+
+<!-- ##### ENUM QmiUimCardState ##### -->
+<para>
+
+</para>
+
+@QMI_UIM_CARD_STATE_ABSENT: 
+@QMI_UIM_CARD_STATE_PRESENT: 
+@QMI_UIM_CARD_STATE_ERROR: 
+
+<!-- ##### ENUM QmiUimCardError ##### -->
+<para>
+
+</para>
+
+@QMI_UIM_CARD_ERROR_UNKNOWN: 
+@QMI_UIM_CARD_ERROR_POWER_DOWN: 
+@QMI_UIM_CARD_ERROR_POLL: 
+@QMI_UIM_CARD_ERROR_NO_ATR_RECEIVED: 
+@QMI_UIM_CARD_ERROR_VOLTAGE_MISMATCH: 
+@QMI_UIM_CARD_ERROR_PARITY: 
+@QMI_UIM_CARD_ERROR_POSSIBLY_REMOVED: 
+@QMI_UIM_CARD_ERROR_TECHNICAL: 
+
+<!-- ##### ENUM QmiUimPinState ##### -->
+<para>
+
+</para>
+
+@QMI_UIM_PIN_STATE_NOT_INITIALIZED: 
+@QMI_UIM_PIN_STATE_ENABLED_NOT_VERIFIED: 
+@QMI_UIM_PIN_STATE_ENABLED_VERIFIED: 
+@QMI_UIM_PIN_STATE_DISABLED: 
+@QMI_UIM_PIN_STATE_BLOCKED: 
+@QMI_UIM_PIN_STATE_PERMANENTLY_BLOCKED: 
+
+<!-- ##### ENUM QmiUimCardApplicationType ##### -->
+<para>
+
+</para>
+
+@QMI_UIM_CARD_APPLICATION_TYPE_UNKNOWN: 
+@QMI_UIM_CARD_APPLICATION_TYPE_SIM: 
+@QMI_UIM_CARD_APPLICATION_TYPE_USIM: 
+@QMI_UIM_CARD_APPLICATION_TYPE_RUIM: 
+@QMI_UIM_CARD_APPLICATION_TYPE_CSIM: 
+@QMI_UIM_CARD_APPLICATION_TYPE_ISIM: 
+
+<!-- ##### ENUM QmiUimCardApplicationState ##### -->
+<para>
+
+</para>
+
+@QMI_UIM_CARD_APPLICATION_STATE_UNKNOWN: 
+@QMI_UIM_CARD_APPLICATION_STATE_DETECTED: 
+@QMI_UIM_CARD_APPLICATION_STATE_PIN1_OR_UPIN_PIN_REQUIRED: 
+@QMI_UIM_CARD_APPLICATION_STATE_PUK1_OR_UPIN_PUK_REQUIRED: 
+@QMI_UIM_CARD_APPLICATION_STATE_CHECK_PERSONALIZATION_STATE: 
+@QMI_UIM_CARD_APPLICATION_STATE_PIN1_BLOCKED: 
+@QMI_UIM_CARD_APPLICATION_STATE_ILLEGAL: 
+@QMI_UIM_CARD_APPLICATION_STATE_READY: 
+
+<!-- ##### ENUM QmiUimCardApplicationPersonalizationState ##### -->
+<para>
+
+</para>
+
+@QMI_UIM_CARD_APPLICATION_PERSONALIZATION_STATE_UNKNOWN: 
+@QMI_UIM_CARD_APPLICATION_PERSONALIZATION_STATE_IN_PROGRESS: 
+@QMI_UIM_CARD_APPLICATION_PERSONALIZATION_STATE_READY: 
+@QMI_UIM_CARD_APPLICATION_PERSONALIZATION_STATE_CODE_REQUIRED: 
+@QMI_UIM_CARD_APPLICATION_PERSONALIZATION_STATE_PUK_CODE_REQUIRED: 
+@QMI_UIM_CARD_APPLICATION_PERSONALIZATION_STATE_PERMANENTLY_BLOCKED: 
+
+<!-- ##### ENUM QmiUimCardApplicationPersonalizationFeature ##### -->
+<para>
+
+</para>
+
+@QMI_UIM_CARD_APPLICATION_PERSONALIZATION_FEATURE_GW_NETWORK: 
+@QMI_UIM_CARD_APPLICATION_PERSONALIZATION_FEATURE_GW_NETWORK_SUBSET: 
+@QMI_UIM_CARD_APPLICATION_PERSONALIZATION_FEATURE_GW_SERVICE_PROVIDER: 
+@QMI_UIM_CARD_APPLICATION_PERSONALIZATION_FEATURE_GW_CORPORATE: 
+@QMI_UIM_CARD_APPLICATION_PERSONALIZATION_FEATURE_GW_UIM: 
+@QMI_UIM_CARD_APPLICATION_PERSONALIZATION_FEATURE_1X_NETWORK_TYPE_1: 
+@QMI_UIM_CARD_APPLICATION_PERSONALIZATION_FEATURE_1X_NETWORK_TYPE_2: 
+@QMI_UIM_CARD_APPLICATION_PERSONALIZATION_FEATURE_1X_HRPD: 
+@QMI_UIM_CARD_APPLICATION_PERSONALIZATION_FEATURE_1X_SERVICE_PROVIDER: 
+@QMI_UIM_CARD_APPLICATION_PERSONALIZATION_FEATURE_1X_CORPORATE: 
+@QMI_UIM_CARD_APPLICATION_PERSONALIZATION_FEATURE_1X_RUIM: 
+@QMI_UIM_CARD_APPLICATION_PERSONALIZATION_FEATURE_UNKNOWN: 
+
+<!-- ##### FUNCTION qmi_uim_session_type_get_string ##### -->
+<para>
+
+</para>
+
+@val: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_uim_file_type_get_string ##### -->
+<para>
+
+</para>
+
+@val: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_uim_security_attribute_logic_get_string ##### -->
+<para>
+
+</para>
+
+@val: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_uim_security_attribute_build_string_from_mask ##### -->
+<para>
+
+</para>
+
+@mask: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_uim_card_state_get_string ##### -->
+<para>
+
+</para>
+
+@val: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_uim_card_error_get_string ##### -->
+<para>
+
+</para>
+
+@val: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_uim_pin_state_get_string ##### -->
+<para>
+
+</para>
+
+@val: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_uim_card_application_type_get_string ##### -->
+<para>
+
+</para>
+
+@val: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_uim_card_application_state_get_string ##### -->
+<para>
+
+</para>
+
+@val: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_uim_card_application_personalization_state_get_string ##### -->
+<para>
+
+</para>
+
+@val: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_uim_card_application_personalization_feature_get_string ##### -->
+<para>
+
+</para>
+
+@val: 
+@Returns: 
+
+

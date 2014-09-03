@@ -1,0 +1,150 @@
+<!-- ##### SECTION Title ##### -->
+DMS UIM Set CK Protection
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageDmsUimSetCkProtectionInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageDmsUimSetCkProtectionOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_set_ck_protection_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_set_ck_protection_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_set_ck_protection_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_set_ck_protection_input_get_facility ##### -->
+<para>
+
+</para>
+
+@self: 
+@facility_facility: 
+@facility_facility_state: 
+@facility_facility_depersonalization_control_key: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_set_ck_protection_input_set_facility ##### -->
+<para>
+
+</para>
+
+@self: 
+@facility_facility: 
+@facility_facility_state: 
+@facility_facility_depersonalization_control_key: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_set_ck_protection_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_set_ck_protection_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_set_ck_protection_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_set_ck_protection_output_get_verify_retries_left ##### -->
+<para>
+
+</para>
+
+@self: 
+@verify_retries_left: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_uim_set_ck_protection ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_uim_set_ck_protection_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

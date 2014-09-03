@@ -1,0 +1,67 @@
+<!-- ##### SECTION Title ##### -->
+QmiProxy
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### MACRO QMI_PROXY_SOCKET_PATH ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### MACRO QMI_PROXY_N_CLIENTS ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### STRUCT QmiProxy ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### ARG QmiProxy:qmi-proxy-n-clients ##### -->
+<para>
+
+</para>
+
+<!-- ##### FUNCTION qmi_proxy_new ##### -->
+<para>
+
+</para>
+
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_proxy_get_n_clients ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+

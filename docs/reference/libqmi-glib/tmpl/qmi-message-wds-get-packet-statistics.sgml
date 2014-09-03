@@ -1,0 +1,267 @@
+<!-- ##### SECTION Title ##### -->
+WDS Get Packet Statistics
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageWdsGetPacketStatisticsInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageWdsGetPacketStatisticsOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_input_get_mask ##### -->
+<para>
+
+</para>
+
+@self: 
+@mask: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_input_set_mask ##### -->
+<para>
+
+</para>
+
+@self: 
+@mask: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_output_get_tx_packets_ok ##### -->
+<para>
+
+</para>
+
+@self: 
+@tx_packets_ok: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_output_get_rx_packets_ok ##### -->
+<para>
+
+</para>
+
+@self: 
+@rx_packets_ok: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_output_get_tx_packets_error ##### -->
+<para>
+
+</para>
+
+@self: 
+@tx_packets_error: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_output_get_rx_packets_error ##### -->
+<para>
+
+</para>
+
+@self: 
+@rx_packets_error: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_output_get_tx_overflows ##### -->
+<para>
+
+</para>
+
+@self: 
+@tx_overflows: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_output_get_rx_overflows ##### -->
+<para>
+
+</para>
+
+@self: 
+@rx_overflows: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_output_get_tx_bytes_ok ##### -->
+<para>
+
+</para>
+
+@self: 
+@tx_bytes_ok: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_output_get_rx_bytes_ok ##### -->
+<para>
+
+</para>
+
+@self: 
+@rx_bytes_ok: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_output_get_last_call_tx_bytes_ok ##### -->
+<para>
+
+</para>
+
+@self: 
+@last_call_tx_bytes_ok: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_output_get_last_call_rx_bytes_ok ##### -->
+<para>
+
+</para>
+
+@self: 
+@last_call_rx_bytes_ok: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_output_get_tx_packets_dropped ##### -->
+<para>
+
+</para>
+
+@self: 
+@tx_packets_dropped: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_packet_statistics_output_get_rx_packets_dropped ##### -->
+<para>
+
+</para>
+
+@self: 
+@rx_packets_dropped: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_wds_get_packet_statistics ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_wds_get_packet_statistics_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

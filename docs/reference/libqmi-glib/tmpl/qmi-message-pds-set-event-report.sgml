@@ -1,0 +1,553 @@
+<!-- ##### SECTION Title ##### -->
+PDS Set Event Report
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessagePdsSetEventReportInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessagePdsSetEventReportOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_extended_external_xtra_data_request_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@extended_external_xtra_data_request_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_extended_external_xtra_data_request_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@extended_external_xtra_data_request_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_nmea_debug_strings_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@nmea_debug_strings_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_nmea_debug_strings_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@nmea_debug_strings_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_heading_uncertainty_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@heading_uncertainty_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_heading_uncertainty_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@heading_uncertainty_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_time_source_information_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@time_source_information_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_time_source_information_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@time_source_information_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_sensor_data_usage_indicator_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@sensor_data_usage_indicator_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_sensor_data_usage_indicator_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@sensor_data_usage_indicator_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_position_reliability_indicator_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@position_reliability_indicator_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_position_reliability_indicator_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@position_reliability_indicator_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_time_sync_request_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@time_sync_request_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_time_sync_request_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@time_sync_request_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_gyro_data_streaming_ready_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@gyro_data_streaming_ready_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_gyro_data_streaming_ready_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@gyro_data_streaming_ready_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_accelerometer_data_streaming_ready_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@accelerometer_data_streaming_ready_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_accelerometer_data_streaming_ready_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@accelerometer_data_streaming_ready_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_pds_comm_event_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@pds_comm_event_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_pds_comm_event_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@pds_comm_event_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_umts_cp_network_initiated_prompt_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@umts_cp_network_initiated_prompt_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_umts_cp_network_initiated_prompt_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@umts_cp_network_initiated_prompt_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_supl_network_initiated_prompt_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@supl_network_initiated_prompt_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_supl_network_initiated_prompt_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@supl_network_initiated_prompt_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_vx_network_initiated_request_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@vx_network_initiated_request_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_vx_network_initiated_request_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@vx_network_initiated_request_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_satellite_information_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@satellite_information_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_satellite_information_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@satellite_information_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_external_wifi_position_request_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@external_wifi_position_request_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_external_wifi_position_request_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@external_wifi_position_request_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_external_time_injection_request_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@external_time_injection_request_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_external_time_injection_request_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@external_time_injection_request_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_external_xtra_data_request_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@external_xtra_data_request_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_external_xtra_data_request_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@external_xtra_data_request_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_parsed_position_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@parsed_position_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_parsed_position_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@parsed_position_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_extended_nmea_position_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@extended_nmea_position_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_extended_nmea_position_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@extended_nmea_position_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_get_nmea_position_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@nmea_position_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_input_set_nmea_position_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@nmea_position_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_pds_set_event_report_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_pds_set_event_report ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_pds_set_event_report_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

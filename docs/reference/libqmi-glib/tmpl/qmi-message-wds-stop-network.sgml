@@ -1,0 +1,157 @@
+<!-- ##### SECTION Title ##### -->
+WDS Stop Network
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageWdsStopNetworkInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageWdsStopNetworkOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_wds_stop_network_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_stop_network_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_stop_network_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_stop_network_input_get_disable_autoconnect ##### -->
+<para>
+
+</para>
+
+@self: 
+@disable_autoconnect: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_stop_network_input_set_disable_autoconnect ##### -->
+<para>
+
+</para>
+
+@self: 
+@disable_autoconnect: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_stop_network_input_get_packet_data_handle ##### -->
+<para>
+
+</para>
+
+@self: 
+@packet_data_handle: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_stop_network_input_set_packet_data_handle ##### -->
+<para>
+
+</para>
+
+@self: 
+@packet_data_handle: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_stop_network_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_stop_network_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_stop_network_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_wds_stop_network ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_wds_stop_network_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

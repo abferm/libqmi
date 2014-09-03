@@ -1,0 +1,372 @@
+<!-- ##### SECTION Title ##### -->
+NAS Get Serving System
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageNasGetServingSystemOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageNasGetServingSystemOutputRoamingIndicatorListElement ##### -->
+<para>
+
+</para>
+
+@radio_interface: 
+@roaming_indicator: 
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_mnc_pcs_digit_include_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@mnc_pcs_digit_include_status_mcc: 
+@mnc_pcs_digit_include_status_mnc: 
+@mnc_pcs_digit_include_status_includes_pcs_digit: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_umts_primary_scrambling_code ##### -->
+<para>
+
+</para>
+
+@self: 
+@umts_primary_scrambling_code: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_call_barring_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@call_barring_status_cs_status: 
+@call_barring_status_ps_status: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_lte_tac ##### -->
+<para>
+
+</para>
+
+@self: 
+@lte_tac: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_hdr_personality ##### -->
+<para>
+
+</para>
+
+@self: 
+@hdr_personality: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_cdma_system_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@cdma_system_info_mcc: 
+@cdma_system_info_imsi_11_12: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_detailed_service_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@detailed_service_status_status: 
+@detailed_service_status_capability: 
+@detailed_service_status_hdr_status: 
+@detailed_service_status_hdr_hybrid: 
+@detailed_service_status_forbidden: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_dtm_support ##### -->
+<para>
+
+</para>
+
+@self: 
+@dtm_support: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_prl_indicator_3gpp2 ##### -->
+<para>
+
+</para>
+
+@self: 
+@prl_indicator_3gpp2: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_concurrent_service_info_3gpp2 ##### -->
+<para>
+
+</para>
+
+@self: 
+@concurrent_service_info_3gpp2: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_cid_3gpp ##### -->
+<para>
+
+</para>
+
+@self: 
+@cid_3gpp: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_lac_3gpp ##### -->
+<para>
+
+</para>
+
+@self: 
+@lac_3gpp: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_daylight_saving_time_adjustment_3gpp ##### -->
+<para>
+
+</para>
+
+@self: 
+@daylight_saving_time_adjustment_3gpp: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_time_zone_3gpp ##### -->
+<para>
+
+</para>
+
+@self: 
+@time_zone_3gpp: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_cdma_p_rev ##### -->
+<para>
+
+</para>
+
+@self: 
+@cdma_p_rev: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_time_zone_3gpp2 ##### -->
+<para>
+
+</para>
+
+@self: 
+@time_zone_3gpp2_leap_seconds: 
+@time_zone_3gpp2_local_time_offset: 
+@time_zone_3gpp2_daylight_saving_time: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_default_roaming_indicator ##### -->
+<para>
+
+</para>
+
+@self: 
+@default_roaming_indicator: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_roaming_indicator_list ##### -->
+<para>
+
+</para>
+
+@self: 
+@roaming_indicator_list: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_cdma_base_station_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@cdma_base_station_info_base_station_id: 
+@cdma_base_station_info_base_station_latitude: 
+@cdma_base_station_info_base_station_longitude: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_cdma_system_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@cdma_system_id_sid: 
+@cdma_system_id_nid: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_current_plmn ##### -->
+<para>
+
+</para>
+
+@self: 
+@current_plmn_mcc: 
+@current_plmn_mnc: 
+@current_plmn_description: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_data_service_capability ##### -->
+<para>
+
+</para>
+
+@self: 
+@data_service_capability: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_roaming_indicator ##### -->
+<para>
+
+</para>
+
+@self: 
+@roaming_indicator: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_serving_system_output_get_serving_system ##### -->
+<para>
+
+</para>
+
+@self: 
+@serving_system_registration_state: 
+@serving_system_cs_attach_state: 
+@serving_system_ps_attach_state: 
+@serving_system_selected_network: 
+@serving_system_radio_interfaces: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_get_serving_system ##### -->
+<para>
+
+</para>
+
+@self: 
+@unused: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_get_serving_system_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

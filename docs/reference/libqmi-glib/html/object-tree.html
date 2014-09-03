@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>libqmi-glib Reference Manual: Object Hierarchy</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libqmi-glib Reference Manual">
+<link rel="up" href="index.html" title="libqmi-glib Reference Manual">
+<link rel="prev" href="libqmi-glib-WDA-Get-Data-Format.html" title="WDA Get Data Format">
+<link rel="next" href="api-index-full.html" title="API Index">
+<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><img src="up-insensitive.png" width="16" height="16" border="0"></td>
+<td><a accesskey="p" href="libqmi-glib-WDA-Get-Data-Format.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="api-index-full.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h1 class="title">
+<a name="object-tree"></a>Object Hierarchy</h1></div></div></div>
+<pre class="screen">
+    <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+    <span class="lineart">├──</span> <a class="link" href="QmiClient.html" title="QmiClient">QmiClient</a>
+    <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="QmiClientDms.html" title="QmiClientDms">QmiClientDms</a>
+    <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="QmiClientNas.html" title="QmiClientNas">QmiClientNas</a>
+    <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="QmiClientOma.html" title="QmiClientOma">QmiClientOma</a>
+    <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="QmiClientPbm.html" title="QmiClientPbm">QmiClientPbm</a>
+    <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="QmiClientPds.html" title="QmiClientPds">QmiClientPds</a>
+    <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="QmiClientUim.html" title="QmiClientUim">QmiClientUim</a>
+    <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="QmiClientWda.html" title="QmiClientWda">QmiClientWda</a>
+    <span class="lineart">│</span>   <span class="lineart">├──</span> <a class="link" href="QmiClientWds.html" title="QmiClientWds">QmiClientWds</a>
+    <span class="lineart">│</span>   <span class="lineart">╰──</span> <a class="link" href="QmiClientWms.html" title="QmiClientWms">QmiClientWms</a>
+    <span class="lineart">├──</span> <a class="link" href="QmiDevice.html" title="QmiDevice">QmiDevice</a>
+    <span class="lineart">╰──</span> <a class="link" href="QmiProxy.html" title="QmiProxy">QmiProxy</a>
+    GEnum
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-Errors.html#QmiCoreError" title="enum QmiCoreError">QmiCoreError</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-enumerations-and-flags.html#QmiDmsActivationState" title="enum QmiDmsActivationState">QmiDmsActivationState</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-enumerations-and-flags.html#QmiDmsDataServiceCapability" title="enum QmiDmsDataServiceCapability">QmiDmsDataServiceCapability</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-enumerations-and-flags.html#QmiDmsFirmwareImageType" title="enum QmiDmsFirmwareImageType">QmiDmsFirmwareImageType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-enumerations-and-flags.html#QmiDmsOperatingMode" title="enum QmiDmsOperatingMode">QmiDmsOperatingMode</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-enumerations-and-flags.html#QmiDmsRadioInterface" title="enum QmiDmsRadioInterface">QmiDmsRadioInterface</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-enumerations-and-flags.html#QmiDmsSimCapability" title="enum QmiDmsSimCapability">QmiDmsSimCapability</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-enumerations-and-flags.html#QmiDmsTimeReferenceType" title="enum QmiDmsTimeReferenceType">QmiDmsTimeReferenceType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-enumerations-and-flags.html#QmiDmsTimeSource" title="enum QmiDmsTimeSource">QmiDmsTimeSource</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-enumerations-and-flags.html#QmiDmsUimFacility" title="enum QmiDmsUimFacility">QmiDmsUimFacility</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-enumerations-and-flags.html#QmiDmsUimFacilityState" title="enum QmiDmsUimFacilityState">QmiDmsUimFacilityState</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-enumerations-and-flags.html#QmiDmsUimPinId" title="enum QmiDmsUimPinId">QmiDmsUimPinId</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-enumerations-and-flags.html#QmiDmsUimPinStatus" title="enum QmiDmsUimPinStatus">QmiDmsUimPinStatus</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-enumerations-and-flags.html#QmiDmsUimState" title="enum QmiDmsUimState">QmiDmsUimState</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasActiveBand" title="enum QmiNasActiveBand">QmiNasActiveBand</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasAttachState" title="enum QmiNasAttachState">QmiNasAttachState</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasCallBarringStatus" title="enum QmiNasCallBarringStatus">QmiNasCallBarringStatus</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasCdmaPilotType" title="enum QmiNasCdmaPilotType">QmiNasCdmaPilotType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasCdmaPrlPreference" title="enum QmiNasCdmaPrlPreference">QmiNasCdmaPrlPreference</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasCellBroadcastCapability" title="enum QmiNasCellBroadcastCapability">QmiNasCellBroadcastCapability</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasChangeDuration" title="enum QmiNasChangeDuration">QmiNasChangeDuration</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasDataCapability" title="enum QmiNasDataCapability">QmiNasDataCapability</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasDayOfWeek" title="enum QmiNasDayOfWeek">QmiNasDayOfWeek</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasDaylightSavingsAdjustment" title="enum QmiNasDaylightSavingsAdjustment">QmiNasDaylightSavingsAdjustment</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasEvdoSinrLevel" title="enum QmiNasEvdoSinrLevel">QmiNasEvdoSinrLevel</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasGsmWcdmaAcquisitionOrderPreference" title="enum QmiNasGsmWcdmaAcquisitionOrderPreference">QmiNasGsmWcdmaAcquisitionOrderPreference</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasHdrPersonality" title="enum QmiNasHdrPersonality">QmiNasHdrPersonality</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasHdrProtocolRevision" title="enum QmiNasHdrProtocolRevision">QmiNasHdrProtocolRevision</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasNetworkDescriptionDisplay" title="enum QmiNasNetworkDescriptionDisplay">QmiNasNetworkDescriptionDisplay</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasNetworkDescriptionEncoding" title="enum QmiNasNetworkDescriptionEncoding">QmiNasNetworkDescriptionEncoding</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasNetworkRegisterType" title="enum QmiNasNetworkRegisterType">QmiNasNetworkRegisterType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasNetworkSelectionPreference" title="enum QmiNasNetworkSelectionPreference">QmiNasNetworkSelectionPreference</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasNetworkServiceDomain" title="enum QmiNasNetworkServiceDomain">QmiNasNetworkServiceDomain</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasNetworkType" title="enum QmiNasNetworkType">QmiNasNetworkType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasPreferenceDuration" title="enum QmiNasPreferenceDuration">QmiNasPreferenceDuration</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasRadioInterface" title="enum QmiNasRadioInterface">QmiNasRadioInterface</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasRegistrationState" title="enum QmiNasRegistrationState">QmiNasRegistrationState</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasRoamingIndicatorStatus" title="enum QmiNasRoamingIndicatorStatus">QmiNasRoamingIndicatorStatus</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasRoamingPreference" title="enum QmiNasRoamingPreference">QmiNasRoamingPreference</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasRoamingStatus" title="enum QmiNasRoamingStatus">QmiNasRoamingStatus</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasServiceDomainPreference" title="enum QmiNasServiceDomainPreference">QmiNasServiceDomainPreference</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasServiceStatus" title="enum QmiNasServiceStatus">QmiNasServiceStatus</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasSimRejectState" title="enum QmiNasSimRejectState">QmiNasSimRejectState</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasWcdmaHsService" title="enum QmiNasWcdmaHsService">QmiNasWcdmaHsService</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasWcdmaRrcState" title="enum QmiNasWcdmaRrcState">QmiNasWcdmaRrcState</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-OMA-enumerations-and-flags.html#QmiOmaHfaFeatureDoneState" title="enum QmiOmaHfaFeatureDoneState">QmiOmaHfaFeatureDoneState</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-OMA-enumerations-and-flags.html#QmiOmaSessionFailedReason" title="enum QmiOmaSessionFailedReason">QmiOmaSessionFailedReason</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-OMA-enumerations-and-flags.html#QmiOmaSessionState" title="enum QmiOmaSessionState">QmiOmaSessionState</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-OMA-enumerations-and-flags.html#QmiOmaSessionType" title="enum QmiOmaSessionType">QmiOmaSessionType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PBM-enumerations-and-flags.html#QmiPbmSessionType" title="enum QmiPbmSessionType">QmiPbmSessionType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PDS-enumerations-and-flags.html#QmiPdsOperationMode" title="enum QmiPdsOperationMode">QmiPdsOperationMode</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PDS-enumerations-and-flags.html#QmiPdsPositionSessionStatus" title="enum QmiPdsPositionSessionStatus">QmiPdsPositionSessionStatus</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PDS-enumerations-and-flags.html#QmiPdsTrackingSessionState" title="enum QmiPdsTrackingSessionState">QmiPdsTrackingSessionState</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-Errors.html#QmiProtocolError" title="enum QmiProtocolError">QmiProtocolError</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-Common-enumerations-and-flags.html#QmiService" title="enum QmiService">QmiService</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-enumerations-and-flags.html#QmiUimCardApplicationPersonalizationFeature" title="enum QmiUimCardApplicationPersonalizationFeature">QmiUimCardApplicationPersonalizationFeature</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-enumerations-and-flags.html#QmiUimCardApplicationPersonalizationState" title="enum QmiUimCardApplicationPersonalizationState">QmiUimCardApplicationPersonalizationState</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-enumerations-and-flags.html#QmiUimCardApplicationState" title="enum QmiUimCardApplicationState">QmiUimCardApplicationState</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-enumerations-and-flags.html#QmiUimCardApplicationType" title="enum QmiUimCardApplicationType">QmiUimCardApplicationType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-enumerations-and-flags.html#QmiUimCardError" title="enum QmiUimCardError">QmiUimCardError</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-enumerations-and-flags.html#QmiUimCardState" title="enum QmiUimCardState">QmiUimCardState</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-enumerations-and-flags.html#QmiUimFileType" title="enum QmiUimFileType">QmiUimFileType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-enumerations-and-flags.html#QmiUimPinState" title="enum QmiUimPinState">QmiUimPinState</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-enumerations-and-flags.html#QmiUimSecurityAttributeLogic" title="enum QmiUimSecurityAttributeLogic">QmiUimSecurityAttributeLogic</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-enumerations-and-flags.html#QmiUimSessionType" title="enum QmiUimSessionType">QmiUimSessionType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDA-enumerations-and-flags.html#QmiWdaDataAggregationProtocol" title="enum QmiWdaDataAggregationProtocol">QmiWdaDataAggregationProtocol</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDA-enumerations-and-flags.html#QmiWdaLinkLayerProtocol" title="enum QmiWdaLinkLayerProtocol">QmiWdaLinkLayerProtocol</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsCallEndReason" title="enum QmiWdsCallEndReason">QmiWdsCallEndReason</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsCallType" title="enum QmiWdsCallType">QmiWdsCallType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsConnectionStatus" title="enum QmiWdsConnectionStatus">QmiWdsConnectionStatus</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsDataBearerTechnology" title="enum QmiWdsDataBearerTechnology">QmiWdsDataBearerTechnology</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsDsProfileError" title="enum QmiWdsDsProfileError">QmiWdsDsProfileError</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsExtendedTechnologyPreference" title="enum QmiWdsExtendedTechnologyPreference">QmiWdsExtendedTechnologyPreference</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsIpFamily" title="enum QmiWdsIpFamily">QmiWdsIpFamily</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsNetworkType" title="enum QmiWdsNetworkType">QmiWdsNetworkType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsPdpType" title="enum QmiWdsPdpType">QmiWdsPdpType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsProfileType" title="enum QmiWdsProfileType">QmiWdsProfileType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsTrafficClass" title="enum QmiWdsTrafficClass">QmiWdsTrafficClass</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsVerboseCallEndReason3gpp" title="enum QmiWdsVerboseCallEndReason3gpp">QmiWdsVerboseCallEndReason3gpp</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsVerboseCallEndReasonCm" title="enum QmiWdsVerboseCallEndReasonCm">QmiWdsVerboseCallEndReasonCm</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsVerboseCallEndReasonEhrpd" title="enum QmiWdsVerboseCallEndReasonEhrpd">QmiWdsVerboseCallEndReasonEhrpd</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsVerboseCallEndReasonInternal" title="enum QmiWdsVerboseCallEndReasonInternal">QmiWdsVerboseCallEndReasonInternal</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsVerboseCallEndReasonIpv6" title="enum QmiWdsVerboseCallEndReasonIpv6">QmiWdsVerboseCallEndReasonIpv6</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsVerboseCallEndReasonMip" title="enum QmiWdsVerboseCallEndReasonMip">QmiWdsVerboseCallEndReasonMip</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsVerboseCallEndReasonPpp" title="enum QmiWdsVerboseCallEndReasonPpp">QmiWdsVerboseCallEndReasonPpp</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsVerboseCallEndReasonType" title="enum QmiWdsVerboseCallEndReasonType">QmiWdsVerboseCallEndReasonType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-enumerations-and-flags.html#QmiWmsAckIndicator" title="enum QmiWmsAckIndicator">QmiWmsAckIndicator</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-enumerations-and-flags.html#QmiWmsCdmaCauseCode" title="enum QmiWmsCdmaCauseCode">QmiWmsCdmaCauseCode</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-enumerations-and-flags.html#QmiWmsCdmaErrorClass" title="enum QmiWmsCdmaErrorClass">QmiWmsCdmaErrorClass</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-enumerations-and-flags.html#QmiWmsCdmaServiceOption" title="enum QmiWmsCdmaServiceOption">QmiWmsCdmaServiceOption</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-enumerations-and-flags.html#QmiWmsGsmUmtsRpCause" title="enum QmiWmsGsmUmtsRpCause">QmiWmsGsmUmtsRpCause</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-enumerations-and-flags.html#QmiWmsGsmUmtsTpCause" title="enum QmiWmsGsmUmtsTpCause">QmiWmsGsmUmtsTpCause</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-enumerations-and-flags.html#QmiWmsMessageClass" title="enum QmiWmsMessageClass">QmiWmsMessageClass</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-enumerations-and-flags.html#QmiWmsMessageDeliveryFailureType" title="enum QmiWmsMessageDeliveryFailureType">QmiWmsMessageDeliveryFailureType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-enumerations-and-flags.html#QmiWmsMessageFormat" title="enum QmiWmsMessageFormat">QmiWmsMessageFormat</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-enumerations-and-flags.html#QmiWmsMessageMode" title="enum QmiWmsMessageMode">QmiWmsMessageMode</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-enumerations-and-flags.html#QmiWmsMessageProtocol" title="enum QmiWmsMessageProtocol">QmiWmsMessageProtocol</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-enumerations-and-flags.html#QmiWmsMessageTagType" title="enum QmiWmsMessageTagType">QmiWmsMessageTagType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-enumerations-and-flags.html#QmiWmsMessageType" title="enum QmiWmsMessageType">QmiWmsMessageType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-enumerations-and-flags.html#QmiWmsNotificationType" title="enum QmiWmsNotificationType">QmiWmsNotificationType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-enumerations-and-flags.html#QmiWmsReceiptAction" title="enum QmiWmsReceiptAction">QmiWmsReceiptAction</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-enumerations-and-flags.html#QmiWmsStorageType" title="enum QmiWmsStorageType">QmiWmsStorageType</a>
+    <span class="lineart">╰──</span> <a class="link" href="libqmi-glib-WMS-enumerations-and-flags.html#QmiWmsTransferIndication" title="enum QmiWmsTransferIndication">QmiWmsTransferIndication</a>
+    GFlags
+    <span class="lineart">├──</span> <a class="link" href="QmiDevice.html#QmiDeviceOpenFlags" title="enum QmiDeviceOpenFlags">QmiDeviceOpenFlags</a>
+    <span class="lineart">├──</span> <a class="link" href="QmiDevice.html#QmiDeviceReleaseClientFlags" title="enum QmiDeviceReleaseClientFlags">QmiDeviceReleaseClientFlags</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-enumerations-and-flags.html#QmiDmsOfflineReason" title="enum QmiDmsOfflineReason">QmiDmsOfflineReason</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-enumerations-and-flags.html#QmiDmsPowerState" title="enum QmiDmsPowerState">QmiDmsPowerState</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasNetworkScanType" title="enum QmiNasNetworkScanType">QmiNasNetworkScanType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasNetworkStatus" title="enum QmiNasNetworkStatus">QmiNasNetworkStatus</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasRadioTechnologyPreference" title="enum QmiNasRadioTechnologyPreference">QmiNasRadioTechnologyPreference</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasRatModePreference" title="enum QmiNasRatModePreference">QmiNasRatModePreference</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasSignalStrengthRequest" title="enum QmiNasSignalStrengthRequest">QmiNasSignalStrengthRequest</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-enumerations-and-flags.html#QmiNasTdScdmaBandPreference" title="enum QmiNasTdScdmaBandPreference">QmiNasTdScdmaBandPreference</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PBM-enumerations-and-flags.html#QmiPbmEventRegistrationFlag" title="enum QmiPbmEventRegistrationFlag">QmiPbmEventRegistrationFlag</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PBM-enumerations-and-flags.html#QmiPbmPhonebookType" title="enum QmiPbmPhonebookType">QmiPbmPhonebookType</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PDS-enumerations-and-flags.html#QmiPdsDataValid" title="enum QmiPdsDataValid">QmiPdsDataValid</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-enumerations-and-flags.html#QmiUimSecurityAttribute" title="enum QmiUimSecurityAttribute">QmiUimSecurityAttribute</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsAuthentication" title="enum QmiWdsAuthentication">QmiWdsAuthentication</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsGetCurrentSettingsRequestedSettings" title="enum QmiWdsGetCurrentSettingsRequestedSettings">QmiWdsGetCurrentSettingsRequestedSettings</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsPacketStatisticsMaskFlag" title="enum QmiWdsPacketStatisticsMaskFlag">QmiWdsPacketStatisticsMaskFlag</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsRat3gpp2" title="enum QmiWdsRat3gpp2">QmiWdsRat3gpp2</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsRat3gpp" title="enum QmiWdsRat3gpp">QmiWdsRat3gpp</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsSoCdma1x" title="enum QmiWdsSoCdma1x">QmiWdsSoCdma1x</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsSoEvdoRevA" title="enum QmiWdsSoEvdoRevA">QmiWdsSoEvdoRevA</a>
+    <span class="lineart">╰──</span> <a class="link" href="libqmi-glib-WDS-enumerations-and-flags.html#QmiWdsTechnologyPreference" title="enum QmiWdsTechnologyPreference">QmiWdsTechnologyPreference</a>
+    GBoxed
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Event-Report.html#QmiIndicationDmsEventReportOutput">QmiIndicationDmsEventReportOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Event-Report.html#QmiIndicationNasEventReportOutput">QmiIndicationNasEventReportOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Network-Time.html#QmiIndicationNasNetworkTimeOutput">QmiIndicationNasNetworkTimeOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Serving-System.html#QmiIndicationNasServingSystemOutput">QmiIndicationNasServingSystemOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Signal-Info.html#QmiIndicationNasSignalInfoOutput">QmiIndicationNasSignalInfoOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-System-Info.html#QmiIndicationNasSystemInfoOutput">QmiIndicationNasSystemInfoOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-OMA-Event-Report.html#QmiIndicationOmaEventReportOutput">QmiIndicationOmaEventReportOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PDS-Event-Report.html#QmiIndicationPdsEventReportOutput">QmiIndicationPdsEventReportOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Event-Report.html#QmiIndicationWmsEventReportOutput">QmiIndicationWmsEventReportOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Activate-Automatic.html#QmiMessageDmsActivateAutomaticInput">QmiMessageDmsActivateAutomaticInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Activate-Automatic.html#QmiMessageDmsActivateAutomaticOutput">QmiMessageDmsActivateAutomaticOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Activate-Manual.html#QmiMessageDmsActivateManualInput">QmiMessageDmsActivateManualInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Activate-Manual.html#QmiMessageDmsActivateManualOutput">QmiMessageDmsActivateManualOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Delete-Stored-Image.html#QmiMessageDmsDeleteStoredImageInput">QmiMessageDmsDeleteStoredImageInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Delete-Stored-Image.html#QmiMessageDmsDeleteStoredImageOutput">QmiMessageDmsDeleteStoredImageOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-Activation-State.html#QmiMessageDmsGetActivationStateOutput">QmiMessageDmsGetActivationStateOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-Alt-Net-Config.html#QmiMessageDmsGetAltNetConfigOutput">QmiMessageDmsGetAltNetConfigOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-Band-Capabilities.html#QmiMessageDmsGetBandCapabilitiesOutput">QmiMessageDmsGetBandCapabilitiesOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-Capabilities.html#QmiMessageDmsGetCapabilitiesOutput">QmiMessageDmsGetCapabilitiesOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-Factory-SKU.html#QmiMessageDmsGetFactorySkuOutput">QmiMessageDmsGetFactorySkuOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-Firmware-Preference.html#QmiMessageDmsGetFirmwarePreferenceOutput">QmiMessageDmsGetFirmwarePreferenceOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-Hardware-Revision.html#QmiMessageDmsGetHardwareRevisionOutput">QmiMessageDmsGetHardwareRevisionOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-IDs.html#QmiMessageDmsGetIdsOutput">QmiMessageDmsGetIdsOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-Manufacturer.html#QmiMessageDmsGetManufacturerOutput">QmiMessageDmsGetManufacturerOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-Model.html#QmiMessageDmsGetModelOutput">QmiMessageDmsGetModelOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-MSISDN.html#QmiMessageDmsGetMsisdnOutput">QmiMessageDmsGetMsisdnOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-Operating-Mode.html#QmiMessageDmsGetOperatingModeOutput">QmiMessageDmsGetOperatingModeOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-Power-State.html#QmiMessageDmsGetPowerStateOutput">QmiMessageDmsGetPowerStateOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-PRL-Version.html#QmiMessageDmsGetPrlVersionOutput">QmiMessageDmsGetPrlVersionOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-Revision.html#QmiMessageDmsGetRevisionOutput">QmiMessageDmsGetRevisionOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-Software-Version.html#QmiMessageDmsGetSoftwareVersionOutput">QmiMessageDmsGetSoftwareVersionOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-Stored-Image-Info.html#QmiMessageDmsGetStoredImageInfoInput">QmiMessageDmsGetStoredImageInfoInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-Stored-Image-Info.html#QmiMessageDmsGetStoredImageInfoOutput">QmiMessageDmsGetStoredImageInfoOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-Time.html#QmiMessageDmsGetTimeOutput">QmiMessageDmsGetTimeOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Get-User-Lock-State.html#QmiMessageDmsGetUserLockStateOutput">QmiMessageDmsGetUserLockStateOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-List-Stored-Images.html#QmiMessageDmsListStoredImagesOutput">QmiMessageDmsListStoredImagesOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Read-ERI-File.html#QmiMessageDmsReadEriFileOutput">QmiMessageDmsReadEriFileOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Read-User-Data.html#QmiMessageDmsReadUserDataOutput">QmiMessageDmsReadUserDataOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Reset.html#QmiMessageDmsResetOutput">QmiMessageDmsResetOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Restore-Factory-Defaults.html#QmiMessageDmsRestoreFactoryDefaultsInput">QmiMessageDmsRestoreFactoryDefaultsInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Restore-Factory-Defaults.html#QmiMessageDmsRestoreFactoryDefaultsOutput">QmiMessageDmsRestoreFactoryDefaultsOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Set-Alt-Net-Config.html#QmiMessageDmsSetAltNetConfigInput">QmiMessageDmsSetAltNetConfigInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Set-Alt-Net-Config.html#QmiMessageDmsSetAltNetConfigOutput">QmiMessageDmsSetAltNetConfigOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Set-Event-Report.html#QmiMessageDmsSetEventReportInput">QmiMessageDmsSetEventReportInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Set-Event-Report.html#QmiMessageDmsSetEventReportOutput">QmiMessageDmsSetEventReportOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Set-Firmware-Preference.html#QmiMessageDmsSetFirmwarePreferenceInput">QmiMessageDmsSetFirmwarePreferenceInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Set-Firmware-Preference.html#QmiMessageDmsSetFirmwarePreferenceOutput">QmiMessageDmsSetFirmwarePreferenceOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Set-Operating-Mode.html#QmiMessageDmsSetOperatingModeInput">QmiMessageDmsSetOperatingModeInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Set-Operating-Mode.html#QmiMessageDmsSetOperatingModeOutput">QmiMessageDmsSetOperatingModeOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Set-Service-Programming-Code.html#QmiMessageDmsSetServiceProgrammingCodeInput">QmiMessageDmsSetServiceProgrammingCodeInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Set-Service-Programming-Code.html#QmiMessageDmsSetServiceProgrammingCodeOutput">QmiMessageDmsSetServiceProgrammingCodeOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Set-Time.html#QmiMessageDmsSetTimeInput">QmiMessageDmsSetTimeInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Set-Time.html#QmiMessageDmsSetTimeOutput">QmiMessageDmsSetTimeOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Set-User-Lock-Code.html#QmiMessageDmsSetUserLockCodeInput">QmiMessageDmsSetUserLockCodeInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Set-User-Lock-Code.html#QmiMessageDmsSetUserLockCodeOutput">QmiMessageDmsSetUserLockCodeOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Set-User-Lock-State.html#QmiMessageDmsSetUserLockStateInput">QmiMessageDmsSetUserLockStateInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Set-User-Lock-State.html#QmiMessageDmsSetUserLockStateOutput">QmiMessageDmsSetUserLockStateOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-UIM-Change-PIN.html#QmiMessageDmsUimChangePinInput">QmiMessageDmsUimChangePinInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-UIM-Change-PIN.html#QmiMessageDmsUimChangePinOutput">QmiMessageDmsUimChangePinOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-UIM-Get-CK-Status.html#QmiMessageDmsUimGetCkStatusInput">QmiMessageDmsUimGetCkStatusInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-UIM-Get-CK-Status.html#QmiMessageDmsUimGetCkStatusOutput">QmiMessageDmsUimGetCkStatusOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-UIM-Get-ICCID.html#QmiMessageDmsUimGetIccidOutput">QmiMessageDmsUimGetIccidOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-UIM-Get-IMSI.html#QmiMessageDmsUimGetImsiOutput">QmiMessageDmsUimGetImsiOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-UIM-Get-PIN-Status.html#QmiMessageDmsUimGetPinStatusOutput">QmiMessageDmsUimGetPinStatusOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-UIM-Get-State.html#QmiMessageDmsUimGetStateOutput">QmiMessageDmsUimGetStateOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-UIM-Set-CK-Protection.html#QmiMessageDmsUimSetCkProtectionInput">QmiMessageDmsUimSetCkProtectionInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-UIM-Set-CK-Protection.html#QmiMessageDmsUimSetCkProtectionOutput">QmiMessageDmsUimSetCkProtectionOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-UIM-Set-PIN-Protection.html#QmiMessageDmsUimSetPinProtectionInput">QmiMessageDmsUimSetPinProtectionInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-UIM-Set-PIN-Protection.html#QmiMessageDmsUimSetPinProtectionOutput">QmiMessageDmsUimSetPinProtectionOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-UIM-Unblock-CK.html#QmiMessageDmsUimUnblockCkInput">QmiMessageDmsUimUnblockCkInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-UIM-Unblock-CK.html#QmiMessageDmsUimUnblockCkOutput">QmiMessageDmsUimUnblockCkOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-UIM-Unblock-PIN.html#QmiMessageDmsUimUnblockPinInput">QmiMessageDmsUimUnblockPinInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-UIM-Unblock-PIN.html#QmiMessageDmsUimUnblockPinOutput">QmiMessageDmsUimUnblockPinOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-UIM-Verify-PIN.html#QmiMessageDmsUimVerifyPinInput">QmiMessageDmsUimVerifyPinInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-UIM-Verify-PIN.html#QmiMessageDmsUimVerifyPinOutput">QmiMessageDmsUimVerifyPinOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Validate-Service-Programming-Code.html#QmiMessageDmsValidateServiceProgrammingCodeInput">QmiMessageDmsValidateServiceProgrammingCodeInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Validate-Service-Programming-Code.html#QmiMessageDmsValidateServiceProgrammingCodeOutput">QmiMessageDmsValidateServiceProgrammingCodeOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Write-User-Data.html#QmiMessageDmsWriteUserDataInput">QmiMessageDmsWriteUserDataInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-DMS-Write-User-Data.html#QmiMessageDmsWriteUserDataOutput">QmiMessageDmsWriteUserDataOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Config-Signal-Info.html#QmiMessageNasConfigSignalInfoInput">QmiMessageNasConfigSignalInfoInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Config-Signal-Info.html#QmiMessageNasConfigSignalInfoOutput">QmiMessageNasConfigSignalInfoOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Get-CDMA-Position-Info.html#QmiMessageNasGetCdmaPositionInfoOutput">QmiMessageNasGetCdmaPositionInfoOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Get-Cell-Location-Info.html#QmiMessageNasGetCellLocationInfoOutput">QmiMessageNasGetCellLocationInfoOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Get-Home-Network.html#QmiMessageNasGetHomeNetworkOutput">QmiMessageNasGetHomeNetworkOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Get-RF-Band-Information.html#QmiMessageNasGetRfBandInformationOutput">QmiMessageNasGetRfBandInformationOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Get-Serving-System.html#QmiMessageNasGetServingSystemOutput">QmiMessageNasGetServingSystemOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Get-Signal-Info.html#QmiMessageNasGetSignalInfoOutput">QmiMessageNasGetSignalInfoOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Get-Signal-Strength.html#QmiMessageNasGetSignalStrengthInput">QmiMessageNasGetSignalStrengthInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Get-Signal-Strength.html#QmiMessageNasGetSignalStrengthOutput">QmiMessageNasGetSignalStrengthOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Get-System-Info.html#QmiMessageNasGetSystemInfoOutput">QmiMessageNasGetSystemInfoOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Get-System-Selection-Preference.html#QmiMessageNasGetSystemSelectionPreferenceOutput">QmiMessageNasGetSystemSelectionPreferenceOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Get-Technology-Preference.html#QmiMessageNasGetTechnologyPreferenceOutput">QmiMessageNasGetTechnologyPreferenceOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Get-Tx-Rx-Info.html#QmiMessageNasGetTxRxInfoInput">QmiMessageNasGetTxRxInfoInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Get-Tx-Rx-Info.html#QmiMessageNasGetTxRxInfoOutput">QmiMessageNasGetTxRxInfoOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Initiate-Network-Register.html#QmiMessageNasInitiateNetworkRegisterInput">QmiMessageNasInitiateNetworkRegisterInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Initiate-Network-Register.html#QmiMessageNasInitiateNetworkRegisterOutput">QmiMessageNasInitiateNetworkRegisterOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Network-Scan.html#QmiMessageNasNetworkScanInput">QmiMessageNasNetworkScanInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Network-Scan.html#QmiMessageNasNetworkScanOutput">QmiMessageNasNetworkScanOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Register-Indications.html#QmiMessageNasRegisterIndicationsInput">QmiMessageNasRegisterIndicationsInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Register-Indications.html#QmiMessageNasRegisterIndicationsOutput">QmiMessageNasRegisterIndicationsOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Reset.html#QmiMessageNasResetOutput">QmiMessageNasResetOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Set-Event-Report.html#QmiMessageNasSetEventReportInput">QmiMessageNasSetEventReportInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Set-Event-Report.html#QmiMessageNasSetEventReportOutput">QmiMessageNasSetEventReportOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Set-System-Selection-Preference.html#QmiMessageNasSetSystemSelectionPreferenceInput">QmiMessageNasSetSystemSelectionPreferenceInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Set-System-Selection-Preference.html#QmiMessageNasSetSystemSelectionPreferenceOutput">QmiMessageNasSetSystemSelectionPreferenceOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Set-Technology-Preference.html#QmiMessageNasSetTechnologyPreferenceInput">QmiMessageNasSetTechnologyPreferenceInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-NAS-Set-Technology-Preference.html#QmiMessageNasSetTechnologyPreferenceOutput">QmiMessageNasSetTechnologyPreferenceOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-OMA-Cancel-Session.html#QmiMessageOmaCancelSessionOutput">QmiMessageOmaCancelSessionOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-OMA-Get-Feature-Setting.html#QmiMessageOmaGetFeatureSettingOutput">QmiMessageOmaGetFeatureSettingOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-OMA-Get-Session-Info.html#QmiMessageOmaGetSessionInfoOutput">QmiMessageOmaGetSessionInfoOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-OMA-Reset.html#QmiMessageOmaResetOutput">QmiMessageOmaResetOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-OMA-Send-Selection.html#QmiMessageOmaSendSelectionInput">QmiMessageOmaSendSelectionInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-OMA-Send-Selection.html#QmiMessageOmaSendSelectionOutput">QmiMessageOmaSendSelectionOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-OMA-Set-Event-Report.html#QmiMessageOmaSetEventReportInput">QmiMessageOmaSetEventReportInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-OMA-Set-Event-Report.html#QmiMessageOmaSetEventReportOutput">QmiMessageOmaSetEventReportOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-OMA-Set-Feature-Setting.html#QmiMessageOmaSetFeatureSettingInput">QmiMessageOmaSetFeatureSettingInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-OMA-Set-Feature-Setting.html#QmiMessageOmaSetFeatureSettingOutput">QmiMessageOmaSetFeatureSettingOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-OMA-Start-Session.html#QmiMessageOmaStartSessionInput">QmiMessageOmaStartSessionInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-OMA-Start-Session.html#QmiMessageOmaStartSessionOutput">QmiMessageOmaStartSessionOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PBM-Get-All-Capabilities.html#QmiMessagePbmGetAllCapabilitiesOutput">QmiMessagePbmGetAllCapabilitiesOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PBM-Get-Capabilities.html#QmiMessagePbmGetCapabilitiesInput">QmiMessagePbmGetCapabilitiesInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PBM-Get-Capabilities.html#QmiMessagePbmGetCapabilitiesOutput">QmiMessagePbmGetCapabilitiesOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PBM-Indication-Register.html#QmiMessagePbmIndicationRegisterInput">QmiMessagePbmIndicationRegisterInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PBM-Indication-Register.html#QmiMessagePbmIndicationRegisterOutput">QmiMessagePbmIndicationRegisterOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PDS-Get-Auto-Tracking-State.html#QmiMessagePdsGetAutoTrackingStateOutput">QmiMessagePdsGetAutoTrackingStateOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PDS-Get-GPS-Service-State.html#QmiMessagePdsGetGpsServiceStateOutput">QmiMessagePdsGetGpsServiceStateOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PDS-Reset.html#QmiMessagePdsResetOutput">QmiMessagePdsResetOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PDS-Set-Auto-Tracking-State.html#QmiMessagePdsSetAutoTrackingStateInput">QmiMessagePdsSetAutoTrackingStateInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PDS-Set-Auto-Tracking-State.html#QmiMessagePdsSetAutoTrackingStateOutput">QmiMessagePdsSetAutoTrackingStateOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PDS-Set-Event-Report.html#QmiMessagePdsSetEventReportInput">QmiMessagePdsSetEventReportInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PDS-Set-Event-Report.html#QmiMessagePdsSetEventReportOutput">QmiMessagePdsSetEventReportOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PDS-Set-GPS-Service-State.html#QmiMessagePdsSetGpsServiceStateInput">QmiMessagePdsSetGpsServiceStateInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-PDS-Set-GPS-Service-State.html#QmiMessagePdsSetGpsServiceStateOutput">QmiMessagePdsSetGpsServiceStateOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-Get-Card-Status.html#QmiMessageUimGetCardStatusOutput">QmiMessageUimGetCardStatusOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-Get-File-Attributes.html#QmiMessageUimGetFileAttributesInput">QmiMessageUimGetFileAttributesInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-Get-File-Attributes.html#QmiMessageUimGetFileAttributesOutput">QmiMessageUimGetFileAttributesOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-Read-Record.html#QmiMessageUimReadRecordInput">QmiMessageUimReadRecordInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-Read-Record.html#QmiMessageUimReadRecordOutput">QmiMessageUimReadRecordOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-Read-Transparent.html#QmiMessageUimReadTransparentInput">QmiMessageUimReadTransparentInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-Read-Transparent.html#QmiMessageUimReadTransparentOutput">QmiMessageUimReadTransparentOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-UIM-Reset.html#QmiMessageUimResetOutput">QmiMessageUimResetOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDA-Get-Data-Format.html#QmiMessageWdaGetDataFormatOutput">QmiMessageWdaGetDataFormatOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDA-Set-Data-Format.html#QmiMessageWdaSetDataFormatInput">QmiMessageWdaSetDataFormatInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDA-Set-Data-Format.html#QmiMessageWdaSetDataFormatOutput">QmiMessageWdaSetDataFormatOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Get-Current-Data-Bearer-Technology.html#QmiMessageWdsGetCurrentDataBearerTechnologyOutput">QmiMessageWdsGetCurrentDataBearerTechnologyOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Get-Current-Settings.html#QmiMessageWdsGetCurrentSettingsInput">QmiMessageWdsGetCurrentSettingsInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Get-Current-Settings.html#QmiMessageWdsGetCurrentSettingsOutput">QmiMessageWdsGetCurrentSettingsOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Get-Data-Bearer-Technology.html#QmiMessageWdsGetDataBearerTechnologyOutput">QmiMessageWdsGetDataBearerTechnologyOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Get-Default-Settings.html#QmiMessageWdsGetDefaultSettingsInput">QmiMessageWdsGetDefaultSettingsInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Get-Default-Settings.html#QmiMessageWdsGetDefaultSettingsOutput">QmiMessageWdsGetDefaultSettingsOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Get-Packet-Service-Status.html#QmiMessageWdsGetPacketServiceStatusOutput">QmiMessageWdsGetPacketServiceStatusOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Get-Packet-Statistics.html#QmiMessageWdsGetPacketStatisticsInput">QmiMessageWdsGetPacketStatisticsInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Get-Packet-Statistics.html#QmiMessageWdsGetPacketStatisticsOutput">QmiMessageWdsGetPacketStatisticsOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Get-Profile-List.html#QmiMessageWdsGetProfileListInput">QmiMessageWdsGetProfileListInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Get-Profile-List.html#QmiMessageWdsGetProfileListOutput">QmiMessageWdsGetProfileListOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Get-Profile-Settings.html#QmiMessageWdsGetProfileSettingsInput">QmiMessageWdsGetProfileSettingsInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Get-Profile-Settings.html#QmiMessageWdsGetProfileSettingsOutput">QmiMessageWdsGetProfileSettingsOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Reset.html#QmiMessageWdsResetOutput">QmiMessageWdsResetOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Set-IP-Family.html#QmiMessageWdsSetIpFamilyInput">QmiMessageWdsSetIpFamilyInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Set-IP-Family.html#QmiMessageWdsSetIpFamilyOutput">QmiMessageWdsSetIpFamilyOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Start-Network.html#QmiMessageWdsStartNetworkInput">QmiMessageWdsStartNetworkInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Start-Network.html#QmiMessageWdsStartNetworkOutput">QmiMessageWdsStartNetworkOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Stop-Network.html#QmiMessageWdsStopNetworkInput">QmiMessageWdsStopNetworkInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WDS-Stop-Network.html#QmiMessageWdsStopNetworkOutput">QmiMessageWdsStopNetworkOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Delete.html#QmiMessageWmsDeleteInput">QmiMessageWmsDeleteInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Delete.html#QmiMessageWmsDeleteOutput">QmiMessageWmsDeleteOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Get-Message-Protocol.html#QmiMessageWmsGetMessageProtocolOutput">QmiMessageWmsGetMessageProtocolOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Get-Routes.html#QmiMessageWmsGetRoutesOutput">QmiMessageWmsGetRoutesOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-List-Messages.html#QmiMessageWmsListMessagesInput">QmiMessageWmsListMessagesInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-List-Messages.html#QmiMessageWmsListMessagesOutput">QmiMessageWmsListMessagesOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Modify-Tag.html#QmiMessageWmsModifyTagInput">QmiMessageWmsModifyTagInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Modify-Tag.html#QmiMessageWmsModifyTagOutput">QmiMessageWmsModifyTagOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Raw-Read.html#QmiMessageWmsRawReadInput">QmiMessageWmsRawReadInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Raw-Read.html#QmiMessageWmsRawReadOutput">QmiMessageWmsRawReadOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Raw-Send.html#QmiMessageWmsRawSendInput">QmiMessageWmsRawSendInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Raw-Send.html#QmiMessageWmsRawSendOutput">QmiMessageWmsRawSendOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Raw-Write.html#QmiMessageWmsRawWriteInput">QmiMessageWmsRawWriteInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Raw-Write.html#QmiMessageWmsRawWriteOutput">QmiMessageWmsRawWriteOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Reset.html#QmiMessageWmsResetOutput">QmiMessageWmsResetOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Send-From-Memory-Storage.html#QmiMessageWmsSendFromMemoryStorageInput">QmiMessageWmsSendFromMemoryStorageInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Send-From-Memory-Storage.html#QmiMessageWmsSendFromMemoryStorageOutput">QmiMessageWmsSendFromMemoryStorageOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Set-Event-Report.html#QmiMessageWmsSetEventReportInput">QmiMessageWmsSetEventReportInput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Set-Event-Report.html#QmiMessageWmsSetEventReportOutput">QmiMessageWmsSetEventReportOutput</a>
+    <span class="lineart">├──</span> <a class="link" href="libqmi-glib-WMS-Set-Routes.html#QmiMessageWmsSetRoutesInput">QmiMessageWmsSetRoutesInput</a>
+    <span class="lineart">╰──</span> <a class="link" href="libqmi-glib-WMS-Set-Routes.html#QmiMessageWmsSetRoutesOutput">QmiMessageWmsSetRoutesOutput</a>
+</pre>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.20</div>
+</body>
+</html>

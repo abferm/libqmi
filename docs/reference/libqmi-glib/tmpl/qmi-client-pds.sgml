@@ -1,0 +1,38 @@
+<!-- ##### SECTION Title ##### -->
+QmiClientPds
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiClientPds ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL QmiClientPds::event-report ##### -->
+<para>
+
+</para>
+
+@qmiclientpds: the object which received the signal.
+@arg1: 
+

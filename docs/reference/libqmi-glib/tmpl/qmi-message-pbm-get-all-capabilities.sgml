@@ -1,0 +1,252 @@
+<!-- ##### SECTION Title ##### -->
+PBM Get All Capabilities
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessagePbmGetAllCapabilitiesOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessagePbmGetAllCapabilitiesOutputCapabilityBasicInformationElementPhonebooksElement ##### -->
+<para>
+
+</para>
+
+@phonebook_type: 
+@used_records: 
+@maximum_records: 
+@maximum_number_length: 
+@maximum_name_length: 
+
+<!-- ##### STRUCT QmiMessagePbmGetAllCapabilitiesOutputCapabilityBasicInformationElement ##### -->
+<para>
+
+</para>
+
+@session_type: 
+@phonebooks: 
+
+<!-- ##### STRUCT QmiMessagePbmGetAllCapabilitiesOutputGroupCapabilityElement ##### -->
+<para>
+
+</para>
+
+@session_type: 
+@maximum_groups: 
+@maximum_group_tag_length: 
+
+<!-- ##### STRUCT QmiMessagePbmGetAllCapabilitiesOutputAdditionalNumberCapabilityElement ##### -->
+<para>
+
+</para>
+
+@session_type: 
+@maximum_additional_numbers: 
+@maximum_additional_number_length: 
+@maximum_additional_number_tag_length: 
+
+<!-- ##### STRUCT QmiMessagePbmGetAllCapabilitiesOutputEmailCapabilityElement ##### -->
+<para>
+
+</para>
+
+@session_type: 
+@maximum_emails: 
+@maximum_email_address_length: 
+
+<!-- ##### STRUCT QmiMessagePbmGetAllCapabilitiesOutputSecondNameCapabilityElement ##### -->
+<para>
+
+</para>
+
+@session_type: 
+@maximum_second_name_length: 
+
+<!-- ##### STRUCT QmiMessagePbmGetAllCapabilitiesOutputHiddenRecordsCapabilityElement ##### -->
+<para>
+
+</para>
+
+@session_type: 
+@supported: 
+
+<!-- ##### STRUCT QmiMessagePbmGetAllCapabilitiesOutputGroupingInformationAlphaStringCapabilityElement ##### -->
+<para>
+
+</para>
+
+@session_type: 
+@maximum_records: 
+@used_records: 
+@maximum_string_length: 
+
+<!-- ##### STRUCT QmiMessagePbmGetAllCapabilitiesOutputAdditionalNumberAlphaStringCapabilityElement ##### -->
+<para>
+
+</para>
+
+@session_type: 
+@maximum_records: 
+@used_records: 
+@maximum_string_length: 
+
+<!-- ##### FUNCTION qmi_message_pbm_get_all_capabilities_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pbm_get_all_capabilities_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_pbm_get_all_capabilities_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pbm_get_all_capabilities_output_get_capability_basic_information ##### -->
+<para>
+
+</para>
+
+@self: 
+@capability_basic_information: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pbm_get_all_capabilities_output_get_group_capability ##### -->
+<para>
+
+</para>
+
+@self: 
+@group_capability: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pbm_get_all_capabilities_output_get_additional_number_capability ##### -->
+<para>
+
+</para>
+
+@self: 
+@additional_number_capability: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pbm_get_all_capabilities_output_get_email_capability ##### -->
+<para>
+
+</para>
+
+@self: 
+@email_capability: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pbm_get_all_capabilities_output_get_second_name_capability ##### -->
+<para>
+
+</para>
+
+@self: 
+@second_name_capability: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pbm_get_all_capabilities_output_get_hidden_records_capability ##### -->
+<para>
+
+</para>
+
+@self: 
+@hidden_records_capability: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pbm_get_all_capabilities_output_get_grouping_information_alpha_string_capability ##### -->
+<para>
+
+</para>
+
+@self: 
+@grouping_information_alpha_string_capability: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pbm_get_all_capabilities_output_get_additional_number_alpha_string_capability ##### -->
+<para>
+
+</para>
+
+@self: 
+@additional_number_alpha_string_capability: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_pbm_get_all_capabilities ##### -->
+<para>
+
+</para>
+
+@self: 
+@unused: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_pbm_get_all_capabilities_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

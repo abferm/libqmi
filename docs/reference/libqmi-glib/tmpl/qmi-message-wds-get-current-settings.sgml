@@ -1,0 +1,406 @@
+<!-- ##### SECTION Title ##### -->
+WDS Get Current Settings
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageWdsGetCurrentSettingsInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageWdsGetCurrentSettingsOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_input_get_requested_settings ##### -->
+<para>
+
+</para>
+
+@self: 
+@requested_settings: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_input_set_requested_settings ##### -->
+<para>
+
+</para>
+
+@self: 
+@requested_settings: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_profile_name ##### -->
+<para>
+
+</para>
+
+@self: 
+@profile_name: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_pdp_type ##### -->
+<para>
+
+</para>
+
+@self: 
+@pdp_type: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_apn_name ##### -->
+<para>
+
+</para>
+
+@self: 
+@apn_name: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_primary_ipv4_dns_address ##### -->
+<para>
+
+</para>
+
+@self: 
+@primary_ipv4_dns_address: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_secondary_ipv4_dns_address ##### -->
+<para>
+
+</para>
+
+@self: 
+@secondary_ipv4_dns_address: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_gprs_granted_qos ##### -->
+<para>
+
+</para>
+
+@self: 
+@gprs_granted_qos_precedence_class: 
+@gprs_granted_qos_delay_class: 
+@gprs_granted_qos_reliability_class: 
+@gprs_granted_qos_peak_throughput_class: 
+@gprs_granted_qos_mean_throughput_class: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_username ##### -->
+<para>
+
+</para>
+
+@self: 
+@username: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_authentication ##### -->
+<para>
+
+</para>
+
+@self: 
+@authentication: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_ipv4_address ##### -->
+<para>
+
+</para>
+
+@self: 
+@ipv4_address: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_profile_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@profile_id_profile_type: 
+@profile_id_profile_index: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_ipv4_gateway_address ##### -->
+<para>
+
+</para>
+
+@self: 
+@ipv4_gateway_address: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_ipv4_gateway_subnet_mask ##### -->
+<para>
+
+</para>
+
+@self: 
+@ipv4_gateway_subnet_mask: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_pcscf_address_using_pco ##### -->
+<para>
+
+</para>
+
+@self: 
+@pcscf_address_using_pco: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_pcscf_server_address_list ##### -->
+<para>
+
+</para>
+
+@self: 
+@pcscf_server_address_list: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_pcscf_domain_name_list ##### -->
+<para>
+
+</para>
+
+@self: 
+@pcscf_domain_name_list: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_ipv6_address ##### -->
+<para>
+
+</para>
+
+@self: 
+@ipv6_address_address: 
+@ipv6_address_prefix_length: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_ipv6_gateway_address ##### -->
+<para>
+
+</para>
+
+@self: 
+@ipv6_gateway_address_address: 
+@ipv6_gateway_address_prefix_length: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_ipv6_primary_dns_address ##### -->
+<para>
+
+</para>
+
+@self: 
+@ipv6_primary_dns_address: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_ipv6_secondary_dns_address ##### -->
+<para>
+
+</para>
+
+@self: 
+@ipv6_secondary_dns_address: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_mtu ##### -->
+<para>
+
+</para>
+
+@self: 
+@mtu: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_domain_name_list ##### -->
+<para>
+
+</para>
+
+@self: 
+@domain_name_list: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_ip_family ##### -->
+<para>
+
+</para>
+
+@self: 
+@ip_family: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_imcn_flag ##### -->
+<para>
+
+</para>
+
+@self: 
+@imcn_flag: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_settings_output_get_extended_technology_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@extended_technology_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_wds_get_current_settings ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_wds_get_current_settings_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

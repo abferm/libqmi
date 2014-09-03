@@ -1,0 +1,137 @@
+<!-- ##### SECTION Title ##### -->
+OMA Send Selection
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageOmaSendSelectionInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageOmaSendSelectionOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_oma_send_selection_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_send_selection_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_send_selection_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_send_selection_input_get_network_initiated_alert_selection ##### -->
+<para>
+
+</para>
+
+@self: 
+@network_initiated_alert_selection_control_point_selection_accept: 
+@network_initiated_alert_selection_session_id: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_send_selection_input_set_network_initiated_alert_selection ##### -->
+<para>
+
+</para>
+
+@self: 
+@network_initiated_alert_selection_control_point_selection_accept: 
+@network_initiated_alert_selection_session_id: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_send_selection_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_send_selection_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_send_selection_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_oma_send_selection ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_oma_send_selection_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

@@ -1,0 +1,196 @@
+<!-- ##### SECTION Title ##### -->
+NAS Network Scan
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageNasNetworkScanInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageNasNetworkScanOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageNasNetworkScanOutputMncPcsDigitIncludeStatusElement ##### -->
+<para>
+
+</para>
+
+@mcc: 
+@mnc: 
+@includes_pcs_digit: 
+
+<!-- ##### STRUCT QmiMessageNasNetworkScanOutputRadioAccessTechnologyElement ##### -->
+<para>
+
+</para>
+
+@mcc: 
+@mnc: 
+@radio_interface: 
+
+<!-- ##### STRUCT QmiMessageNasNetworkScanOutputNetworkInformationElement ##### -->
+<para>
+
+</para>
+
+@mcc: 
+@mnc: 
+@network_status: 
+@description: 
+
+<!-- ##### FUNCTION qmi_message_nas_network_scan_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_network_scan_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_network_scan_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_network_scan_input_get_network_type ##### -->
+<para>
+
+</para>
+
+@self: 
+@network_type: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_network_scan_input_set_network_type ##### -->
+<para>
+
+</para>
+
+@self: 
+@network_type: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_network_scan_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_network_scan_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_network_scan_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_network_scan_output_get_mnc_pcs_digit_include_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@mnc_pcs_digit_include_status: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_network_scan_output_get_radio_access_technology ##### -->
+<para>
+
+</para>
+
+@self: 
+@radio_access_technology: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_network_scan_output_get_network_information ##### -->
+<para>
+
+</para>
+
+@self: 
+@network_information: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_network_scan ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_network_scan_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

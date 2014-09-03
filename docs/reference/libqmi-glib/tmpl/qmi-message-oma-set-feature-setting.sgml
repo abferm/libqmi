@@ -1,0 +1,179 @@
+<!-- ##### SECTION Title ##### -->
+OMA Set Feature Setting
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageOmaSetFeatureSettingInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageOmaSetFeatureSettingOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_feature_setting_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_feature_setting_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_feature_setting_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_feature_setting_input_get_hfa_feature_config ##### -->
+<para>
+
+</para>
+
+@self: 
+@hfa_feature_config: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_feature_setting_input_set_hfa_feature_config ##### -->
+<para>
+
+</para>
+
+@self: 
+@hfa_feature_config: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_feature_setting_input_get_prl_update_service_config ##### -->
+<para>
+
+</para>
+
+@self: 
+@prl_update_service_config: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_feature_setting_input_set_prl_update_service_config ##### -->
+<para>
+
+</para>
+
+@self: 
+@prl_update_service_config: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_feature_setting_input_get_device_provisioning_service_update_config ##### -->
+<para>
+
+</para>
+
+@self: 
+@device_provisioning_service_update_config: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_feature_setting_input_set_device_provisioning_service_update_config ##### -->
+<para>
+
+</para>
+
+@self: 
+@device_provisioning_service_update_config: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_feature_setting_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_feature_setting_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_feature_setting_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_oma_set_feature_setting ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_oma_set_feature_setting_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

@@ -1,0 +1,81 @@
+<!-- ##### SECTION Title ##### -->
+OMA Event Report
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiIndicationOmaEventReportOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_indication_oma_event_report_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_oma_event_report_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_indication_oma_event_report_output_get_session_fail_reason ##### -->
+<para>
+
+</para>
+
+@self: 
+@session_fail_reason: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_oma_event_report_output_get_session_state ##### -->
+<para>
+
+</para>
+
+@self: 
+@session_state: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_oma_event_report_output_get_network_initiated_alert ##### -->
+<para>
+
+</para>
+
+@self: 
+@network_initiated_alert_session_type: 
+@network_initiated_alert_session_id: 
+@error: 
+@Returns: 
+
+

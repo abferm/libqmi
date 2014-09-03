@@ -1,0 +1,101 @@
+<!-- ##### SECTION Title ##### -->
+DMS Get Firmware Preference
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageDmsGetFirmwarePreferenceOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageDmsGetFirmwarePreferenceOutputListImage ##### -->
+<para>
+
+</para>
+
+@type: 
+@unique_id: 
+@build_id: 
+
+<!-- ##### FUNCTION qmi_message_dms_get_firmware_preference_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_get_firmware_preference_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_get_firmware_preference_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_get_firmware_preference_output_get_list ##### -->
+<para>
+
+</para>
+
+@self: 
+@list: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_get_firmware_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@unused: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_get_firmware_preference_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

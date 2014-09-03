@@ -1,0 +1,140 @@
+<!-- ##### SECTION Title ##### -->
+DMS Event Report
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiIndicationDmsEventReportOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_indication_dms_event_report_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_dms_event_report_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_indication_dms_event_report_output_get_prl_init_notification ##### -->
+<para>
+
+</para>
+
+@self: 
+@prl_init_notification: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_dms_event_report_output_get_wireless_disable_state ##### -->
+<para>
+
+</para>
+
+@self: 
+@wireless_disable_state: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_dms_event_report_output_get_uim_state ##### -->
+<para>
+
+</para>
+
+@self: 
+@uim_state: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_dms_event_report_output_get_operating_mode ##### -->
+<para>
+
+</para>
+
+@self: 
+@operating_mode: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_dms_event_report_output_get_activation_state ##### -->
+<para>
+
+</para>
+
+@self: 
+@activation_state: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_dms_event_report_output_get_pin2_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@pin2_status_current_status: 
+@pin2_status_verify_retries_left: 
+@pin2_status_unblock_retries_left: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_dms_event_report_output_get_pin1_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@pin1_status_current_status: 
+@pin1_status_verify_retries_left: 
+@pin1_status_unblock_retries_left: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_dms_event_report_output_get_power_state ##### -->
+<para>
+
+</para>
+
+@self: 
+@power_state_power_state_flags: 
+@power_state_battery_level: 
+@error: 
+@Returns: 
+
+

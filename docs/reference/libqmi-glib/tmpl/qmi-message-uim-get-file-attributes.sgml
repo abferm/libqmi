@@ -1,0 +1,232 @@
+<!-- ##### SECTION Title ##### -->
+UIM Get File Attributes
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageUimGetFileAttributesInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageUimGetFileAttributesOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_uim_get_file_attributes_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_get_file_attributes_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_get_file_attributes_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_get_file_attributes_input_get_response_in_indication_token ##### -->
+<para>
+
+</para>
+
+@self: 
+@response_in_indication_token: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_get_file_attributes_input_set_response_in_indication_token ##### -->
+<para>
+
+</para>
+
+@self: 
+@response_in_indication_token: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_get_file_attributes_input_get_file ##### -->
+<para>
+
+</para>
+
+@self: 
+@file_file_id: 
+@file_file_path: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_get_file_attributes_input_set_file ##### -->
+<para>
+
+</para>
+
+@self: 
+@file_file_id: 
+@file_file_path: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_get_file_attributes_input_get_session_information ##### -->
+<para>
+
+</para>
+
+@self: 
+@session_information_session_type: 
+@session_information_application_identifier: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_get_file_attributes_input_set_session_information ##### -->
+<para>
+
+</para>
+
+@self: 
+@session_information_session_type: 
+@session_information_application_identifier: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_get_file_attributes_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_get_file_attributes_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_get_file_attributes_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_get_file_attributes_output_get_card_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@card_result_sw1: 
+@card_result_sw2: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_get_file_attributes_output_get_file_attributes ##### -->
+<para>
+
+</para>
+
+@self: 
+@file_attributes_file_size: 
+@file_attributes_file_id: 
+@file_attributes_file_type: 
+@file_attributes_record_size: 
+@file_attributes_record_count: 
+@file_attributes_read_security_attributes_logic: 
+@file_attributes_read_security_attributes: 
+@file_attributes_write_security_attributes_logic: 
+@file_attributes_write_security_attributes: 
+@file_attributes_increase_security_attributes_logic: 
+@file_attributes_increase_security_attributes: 
+@file_attributes_deactivate_security_attributes_logic: 
+@file_attributes_deactivate_security_attributes: 
+@file_attributes_activate_security_attributes_logic: 
+@file_attributes_activate_security_attributes: 
+@file_attributes_raw_data: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_get_file_attributes_output_get_response_in_indication_token ##### -->
+<para>
+
+</para>
+
+@self: 
+@response_in_indication_token: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_uim_get_file_attributes ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_uim_get_file_attributes_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

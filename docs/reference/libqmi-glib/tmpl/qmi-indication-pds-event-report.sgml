@@ -1,0 +1,81 @@
+<!-- ##### SECTION Title ##### -->
+PDS Event Report
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiIndicationPdsEventReportOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_indication_pds_event_report_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_pds_event_report_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_indication_pds_event_report_output_get_position_session_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@position_session_status: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_pds_event_report_output_get_extended_nmea_position ##### -->
+<para>
+
+</para>
+
+@self: 
+@extended_nmea_position_operation_mode: 
+@extended_nmea_position_nmea: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_pds_event_report_output_get_nmea_position ##### -->
+<para>
+
+</para>
+
+@self: 
+@nmea_position: 
+@error: 
+@Returns: 
+
+

@@ -1,0 +1,108 @@
+<!-- ##### SECTION Title ##### -->
+NAS Get CDMA Position Info
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageNasGetCdmaPositionInfoOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageNasGetCdmaPositionInfoOutputCdmaPositionInfoBasestationsBasestation ##### -->
+<para>
+
+</para>
+
+@pilot_type: 
+@system_id: 
+@network_id: 
+@base_station_id: 
+@pilot_pn: 
+@pilot_strength: 
+@latitude: 
+@longitude: 
+@gps_time_in_milliseconds: 
+
+<!-- ##### FUNCTION qmi_message_nas_get_cdma_position_info_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_cdma_position_info_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_cdma_position_info_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_cdma_position_info_output_get_cdma_position_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@cdma_position_info_ui_in_idle_mode: 
+@cdma_position_info_basestations: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_get_cdma_position_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@unused: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_get_cdma_position_info_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

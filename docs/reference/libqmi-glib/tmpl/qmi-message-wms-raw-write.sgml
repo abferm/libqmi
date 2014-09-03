@@ -1,0 +1,150 @@
+<!-- ##### SECTION Title ##### -->
+WMS Raw Write
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageWmsRawWriteInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageWmsRawWriteOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_write_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_write_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_write_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_write_input_get_raw_message_data ##### -->
+<para>
+
+</para>
+
+@self: 
+@raw_message_data_storage_type: 
+@raw_message_data_format: 
+@raw_message_data_raw_data: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_write_input_set_raw_message_data ##### -->
+<para>
+
+</para>
+
+@self: 
+@raw_message_data_storage_type: 
+@raw_message_data_format: 
+@raw_message_data_raw_data: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_write_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_write_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_write_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_raw_write_output_get_memory_index ##### -->
+<para>
+
+</para>
+
+@self: 
+@memory_index: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_wms_raw_write ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_wms_raw_write_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

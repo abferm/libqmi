@@ -1,0 +1,211 @@
+<!-- ##### SECTION Title ##### -->
+DMS Activate Manual
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageDmsActivateManualInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageDmsActivateManualOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_dms_activate_manual_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_activate_manual_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_activate_manual_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_activate_manual_input_get_prl ##### -->
+<para>
+
+</para>
+
+@self: 
+@prl_prl_total_length: 
+@prl_prl_segment_sequence: 
+@prl_prl_segment: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_activate_manual_input_set_prl ##### -->
+<para>
+
+</para>
+
+@self: 
+@prl_prl_total_length: 
+@prl_prl_segment_sequence: 
+@prl_prl_segment: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_activate_manual_input_get_mn_aaa_key ##### -->
+<para>
+
+</para>
+
+@self: 
+@mn_aaa_key: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_activate_manual_input_set_mn_aaa_key ##### -->
+<para>
+
+</para>
+
+@self: 
+@mn_aaa_key: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_activate_manual_input_get_mn_ha_key ##### -->
+<para>
+
+</para>
+
+@self: 
+@mn_ha_key: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_activate_manual_input_set_mn_ha_key ##### -->
+<para>
+
+</para>
+
+@self: 
+@mn_ha_key: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_activate_manual_input_get_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@info_service_programming_code: 
+@info_system_identification_number: 
+@info_mobile_directory_number: 
+@info_mobile_identification_number: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_activate_manual_input_set_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@info_service_programming_code: 
+@info_system_identification_number: 
+@info_mobile_directory_number: 
+@info_mobile_identification_number: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_activate_manual_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_activate_manual_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_activate_manual_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_activate_manual ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_activate_manual_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

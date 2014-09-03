@@ -1,0 +1,38 @@
+<!-- ##### SECTION Title ##### -->
+QmiClientWms
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiClientWms ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL QmiClientWms::event-report ##### -->
+<para>
+
+</para>
+
+@qmiclientwms: the object which received the signal.
+@arg1: 
+

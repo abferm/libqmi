@@ -1,0 +1,159 @@
+<!-- ##### SECTION Title ##### -->
+DMS UIM Get CK Status
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageDmsUimGetCkStatusInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageDmsUimGetCkStatusOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_get_ck_status_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_get_ck_status_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_get_ck_status_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_get_ck_status_input_get_facility ##### -->
+<para>
+
+</para>
+
+@self: 
+@facility: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_get_ck_status_input_set_facility ##### -->
+<para>
+
+</para>
+
+@self: 
+@facility: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_get_ck_status_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_get_ck_status_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_get_ck_status_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_get_ck_status_output_get_ck_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@ck_status_facility_state: 
+@ck_status_verify_retries_left: 
+@ck_status_unblock_retries_left: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_uim_get_ck_status_output_get_operation_blocking_facility ##### -->
+<para>
+
+</para>
+
+@self: 
+@operation_blocking_facility: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_uim_get_ck_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_uim_get_ck_status_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

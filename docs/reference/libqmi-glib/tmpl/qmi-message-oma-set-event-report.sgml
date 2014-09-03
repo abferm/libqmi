@@ -1,0 +1,157 @@
+<!-- ##### SECTION Title ##### -->
+OMA Set Event Report
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageOmaSetEventReportInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageOmaSetEventReportOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_event_report_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_event_report_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_event_report_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_event_report_input_get_session_state_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@session_state_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_event_report_input_set_session_state_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@session_state_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_event_report_input_get_network_initiated_alert_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@network_initiated_alert_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_event_report_input_set_network_initiated_alert_reporting ##### -->
+<para>
+
+</para>
+
+@self: 
+@network_initiated_alert_reporting: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_event_report_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_event_report_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_set_event_report_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_oma_set_event_report ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_oma_set_event_report_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

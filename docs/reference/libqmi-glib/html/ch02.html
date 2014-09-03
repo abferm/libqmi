@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>libqmi-glib Reference Manual: Device Management Service (DMS)</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<link rel="home" href="index.html" title="libqmi-glib Reference Manual">
+<link rel="up" href="index.html" title="libqmi-glib Reference Manual">
+<link rel="prev" href="libqmi-glib-Common-utilities.html" title="Common utilities">
+<link rel="next" href="QmiClientDms.html" title="QmiClientDms">
+<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts"></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><img src="up-insensitive.png" width="16" height="16" border="0"></td>
+<td><a accesskey="p" href="libqmi-glib-Common-utilities.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="QmiClientDms.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="chapter">
+<div class="titlepage"><div><div><h1 class="title">
+<a name="id-1.3"></a>Device Management Service (DMS)</h1></div></div></div>
+<div class="toc"><dl class="toc">
+<dt>
+<span class="refentrytitle"><a href="QmiClientDms.html">QmiClientDms</a></span><span class="refpurpose"><span class="type">QmiClient</span> for the DMS service.</span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-enumerations-and-flags.html">DMS enumerations and flags</a></span><span class="refpurpose"></span>
+</dt>
+<dt><span class="section"><a href="ch02.html#id-1.3.4">DMS Indications</a></span></dt>
+<dd><dl><dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Event-Report.html">DMS Event Report</a></span><span class="refpurpose"></span>
+</dt></dl></dd>
+<dt><span class="section"><a href="ch02s02.html">DMS Requests</a></span></dt>
+<dd><dl>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Reset.html">DMS Reset</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Set-Event-Report.html">DMS Set Event Report</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-Capabilities.html">DMS Get Capabilities</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-Manufacturer.html">DMS Get Manufacturer</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-Model.html">DMS Get Model</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-Revision.html">DMS Get Revision</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-MSISDN.html">DMS Get MSISDN</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-IDs.html">DMS Get IDs</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-Power-State.html">DMS Get Power State</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-UIM-Set-PIN-Protection.html">DMS UIM Set PIN Protection</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-UIM-Verify-PIN.html">DMS UIM Verify PIN</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-UIM-Unblock-PIN.html">DMS UIM Unblock PIN</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-UIM-Change-PIN.html">DMS UIM Change PIN</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-UIM-Get-PIN-Status.html">DMS UIM Get PIN Status</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-Hardware-Revision.html">DMS Get Hardware Revision</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-Operating-Mode.html">DMS Get Operating Mode</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Set-Operating-Mode.html">DMS Set Operating Mode</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-Time.html">DMS Get Time</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-PRL-Version.html">DMS Get PRL Version</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-Activation-State.html">DMS Get Activation State</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Activate-Automatic.html">DMS Activate Automatic</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Activate-Manual.html">DMS Activate Manual</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-User-Lock-State.html">DMS Get User Lock State</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Set-User-Lock-State.html">DMS Set User Lock State</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Set-User-Lock-Code.html">DMS Set User Lock Code</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Read-User-Data.html">DMS Read User Data</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Write-User-Data.html">DMS Write User Data</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Read-ERI-File.html">DMS Read ERI File</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Restore-Factory-Defaults.html">DMS Restore Factory Defaults</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Validate-Service-Programming-Code.html">DMS Validate Service Programming Code</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-UIM-Get-ICCID.html">DMS UIM Get ICCID</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-UIM-Get-CK-Status.html">DMS UIM Get CK Status</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-UIM-Set-CK-Protection.html">DMS UIM Set CK Protection</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-UIM-Unblock-CK.html">DMS UIM Unblock CK</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-UIM-Get-IMSI.html">DMS UIM Get IMSI</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-UIM-Get-State.html">DMS UIM Get State</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-Band-Capabilities.html">DMS Get Band Capabilities</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-Factory-SKU.html">DMS Get Factory SKU</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-Firmware-Preference.html">DMS Get Firmware Preference</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Set-Firmware-Preference.html">DMS Set Firmware Preference</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-List-Stored-Images.html">DMS List Stored Images</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Delete-Stored-Image.html">DMS Delete Stored Image</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Set-Time.html">DMS Set Time</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-Stored-Image-Info.html">DMS Get Stored Image Info</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-Alt-Net-Config.html">DMS Get Alt Net Config</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Set-Alt-Net-Config.html">DMS Set Alt Net Config</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Get-Software-Version.html">DMS Get Software Version</a></span><span class="refpurpose"></span>
+</dt>
+<dt>
+<span class="refentrytitle"><a href="libqmi-glib-DMS-Set-Service-Programming-Code.html">DMS Set Service Programming Code</a></span><span class="refpurpose"></span>
+</dt>
+</dl></dd>
+</dl></div>
+<div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="id-1.3.4"></a>DMS Indications</h2></div></div></div></div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.20</div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!-- ##### SECTION Title ##### -->
+OMA Get Feature Setting
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageOmaGetFeatureSettingOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_oma_get_feature_setting_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_get_feature_setting_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_get_feature_setting_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_get_feature_setting_output_get_device_provisioning_service_update_config ##### -->
+<para>
+
+</para>
+
+@self: 
+@device_provisioning_service_update_config: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_get_feature_setting_output_get_prl_update_service_config ##### -->
+<para>
+
+</para>
+
+@self: 
+@prl_update_service_config: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_get_feature_setting_output_get_hfa_feature_config ##### -->
+<para>
+
+</para>
+
+@self: 
+@hfa_feature_config: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_get_feature_setting_output_get_hfa_feature_done_state ##### -->
+<para>
+
+</para>
+
+@self: 
+@hfa_feature_done_state: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_oma_get_feature_setting ##### -->
+<para>
+
+</para>
+
+@self: 
+@unused: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_oma_get_feature_setting_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

@@ -1,0 +1,38 @@
+<!-- ##### SECTION Title ##### -->
+QmiClientOma
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiClientOma ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SIGNAL QmiClientOma::event-report ##### -->
+<para>
+
+</para>
+
+@qmiclientoma: the object which received the signal.
+@arg1: 
+

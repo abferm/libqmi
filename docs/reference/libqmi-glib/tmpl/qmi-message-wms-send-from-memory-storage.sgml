@@ -1,0 +1,217 @@
+<!-- ##### SECTION Title ##### -->
+WMS Send From Memory Storage
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageWmsSendFromMemoryStorageInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageWmsSendFromMemoryStorageOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_wms_send_from_memory_storage_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_send_from_memory_storage_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_send_from_memory_storage_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_send_from_memory_storage_input_get_sms_on_ims ##### -->
+<para>
+
+</para>
+
+@self: 
+@sms_on_ims: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_send_from_memory_storage_input_set_sms_on_ims ##### -->
+<para>
+
+</para>
+
+@self: 
+@sms_on_ims: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_send_from_memory_storage_input_get_information ##### -->
+<para>
+
+</para>
+
+@self: 
+@information_storage_type: 
+@information_memory_index: 
+@information_message_mode: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_send_from_memory_storage_input_set_information ##### -->
+<para>
+
+</para>
+
+@self: 
+@information_storage_type: 
+@information_memory_index: 
+@information_message_mode: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_send_from_memory_storage_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_send_from_memory_storage_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_send_from_memory_storage_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_send_from_memory_storage_output_get_message_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@message_id: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_send_from_memory_storage_output_get_cdma_cause_code ##### -->
+<para>
+
+</para>
+
+@self: 
+@cdma_cause_code: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_send_from_memory_storage_output_get_cdma_error_class ##### -->
+<para>
+
+</para>
+
+@self: 
+@cdma_error_class: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_send_from_memory_storage_output_get_gsm_wcdma_cause_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@gsm_wcdma_cause_info_rp_cause: 
+@gsm_wcdma_cause_info_tp_cause: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_send_from_memory_storage_output_get_message_delivery_failure_type ##### -->
+<para>
+
+</para>
+
+@self: 
+@message_delivery_failure_type: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_wms_send_from_memory_storage ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_wms_send_from_memory_storage_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

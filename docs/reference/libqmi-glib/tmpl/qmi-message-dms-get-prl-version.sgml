@@ -1,0 +1,103 @@
+<!-- ##### SECTION Title ##### -->
+DMS Get PRL Version
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageDmsGetPrlVersionOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_dms_get_prl_version_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_get_prl_version_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_get_prl_version_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_get_prl_version_output_get_version ##### -->
+<para>
+
+</para>
+
+@self: 
+@version: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_get_prl_version_output_get_prl_only_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@prl_only_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_get_prl_version ##### -->
+<para>
+
+</para>
+
+@self: 
+@unused: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_get_prl_version_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

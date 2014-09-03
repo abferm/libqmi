@@ -1,0 +1,63 @@
+<!-- ##### SECTION Title ##### -->
+qmi-enums-wda
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### ENUM QmiWdaLinkLayerProtocol ##### -->
+<para>
+
+</para>
+
+@QMI_WDA_LINK_LAYER_PROTOCOL_UNKNOWN: 
+@QMI_WDA_LINK_LAYER_PROTOCOL_802_3: 
+@QMI_WDA_LINK_LAYER_PROTOCOL_RAW_IP: 
+
+<!-- ##### ENUM QmiWdaDataAggregationProtocol ##### -->
+<para>
+
+</para>
+
+@QMI_WDA_DATA_AGGREGATION_PROTOCOL_DISABLED: 
+@QMI_WDA_DATA_AGGREGATION_PROTOCOL_TLP: 
+@QMI_WDA_DATA_AGGREGATION_PROTOCOL_QC_NCM: 
+@QMI_WDA_DATA_AGGREGATION_PROTOCOL_MBIM: 
+@QMI_WDA_DATA_AGGREGATION_PROTOCOL_RNDIS: 
+@QMI_WDA_DATA_AGGREGATION_PROTOCOL_QMAP: 
+
+<!-- ##### FUNCTION qmi_wda_link_layer_protocol_get_string ##### -->
+<para>
+
+</para>
+
+@val: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_wda_data_aggregation_protocol_get_string ##### -->
+<para>
+
+</para>
+
+@val: 
+@Returns: 
+
+

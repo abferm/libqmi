@@ -1,0 +1,274 @@
+<!-- ##### SECTION Title ##### -->
+UIM Read Transparent
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageUimReadTransparentInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageUimReadTransparentOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_input_get_encrypt_data ##### -->
+<para>
+
+</para>
+
+@self: 
+@encrypt_data: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_input_set_encrypt_data ##### -->
+<para>
+
+</para>
+
+@self: 
+@encrypt_data: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_input_get_response_in_indication_token ##### -->
+<para>
+
+</para>
+
+@self: 
+@response_in_indication_token: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_input_set_response_in_indication_token ##### -->
+<para>
+
+</para>
+
+@self: 
+@response_in_indication_token: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_input_get_read_information ##### -->
+<para>
+
+</para>
+
+@self: 
+@read_information_offset: 
+@read_information_length: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_input_set_read_information ##### -->
+<para>
+
+</para>
+
+@self: 
+@read_information_offset: 
+@read_information_length: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_input_get_file ##### -->
+<para>
+
+</para>
+
+@self: 
+@file_file_id: 
+@file_file_path: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_input_set_file ##### -->
+<para>
+
+</para>
+
+@self: 
+@file_file_id: 
+@file_file_path: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_input_get_session_information ##### -->
+<para>
+
+</para>
+
+@self: 
+@session_information_session_type: 
+@session_information_application_identifier: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_input_set_session_information ##### -->
+<para>
+
+</para>
+
+@self: 
+@session_information_session_type: 
+@session_information_application_identifier: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_output_get_card_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@card_result_sw1: 
+@card_result_sw2: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_output_get_read_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@read_result: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_output_get_response_in_indication_token ##### -->
+<para>
+
+</para>
+
+@self: 
+@response_in_indication_token: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_read_transparent_output_get_encrypted_data ##### -->
+<para>
+
+</para>
+
+@self: 
+@encrypted_data: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_uim_read_transparent ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_uim_read_transparent_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

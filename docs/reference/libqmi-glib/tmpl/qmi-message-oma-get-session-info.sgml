@@ -1,0 +1,129 @@
+<!-- ##### SECTION Title ##### -->
+OMA Get Session Info
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageOmaGetSessionInfoOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_oma_get_session_info_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_get_session_info_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_get_session_info_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_get_session_info_output_get_session_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@session_info_session_state: 
+@session_info_session_type: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_get_session_info_output_get_session_failed_reason ##### -->
+<para>
+
+</para>
+
+@self: 
+@session_failed_reason: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_get_session_info_output_get_retry_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@retry_info_retry_count: 
+@retry_info_retry_pause_timer: 
+@retry_info_retry_pause_timer_remaining: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_oma_get_session_info_output_get_network_initiated_alert ##### -->
+<para>
+
+</para>
+
+@self: 
+@network_initiated_alert_session_type: 
+@network_initiated_alert_session_id: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_oma_get_session_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@unused: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_oma_get_session_info_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

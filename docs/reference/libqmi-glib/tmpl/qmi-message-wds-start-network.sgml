@@ -1,0 +1,499 @@
+<!-- ##### SECTION Title ##### -->
+WDS Start Network
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageWdsStartNetworkInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageWdsStartNetworkOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_get_call_type ##### -->
+<para>
+
+</para>
+
+@self: 
+@call_type: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_set_call_type ##### -->
+<para>
+
+</para>
+
+@self: 
+@call_type: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_get_extended_technology_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@extended_technology_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_set_extended_technology_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@extended_technology_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_get_enable_autoconnect ##### -->
+<para>
+
+</para>
+
+@self: 
+@enable_autoconnect: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_set_enable_autoconnect ##### -->
+<para>
+
+</para>
+
+@self: 
+@enable_autoconnect: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_get_profile_index_3gpp2 ##### -->
+<para>
+
+</para>
+
+@self: 
+@profile_index_3gpp2: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_set_profile_index_3gpp2 ##### -->
+<para>
+
+</para>
+
+@self: 
+@profile_index_3gpp2: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_get_profile_index_3gpp ##### -->
+<para>
+
+</para>
+
+@self: 
+@profile_index_3gpp: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_set_profile_index_3gpp ##### -->
+<para>
+
+</para>
+
+@self: 
+@profile_index_3gpp: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_get_technology_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@technology_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_set_technology_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@technology_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_get_ip_family_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@ip_family_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_set_ip_family_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@ip_family_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_get_password ##### -->
+<para>
+
+</para>
+
+@self: 
+@password: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_set_password ##### -->
+<para>
+
+</para>
+
+@self: 
+@password: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_get_username ##### -->
+<para>
+
+</para>
+
+@self: 
+@username: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_set_username ##### -->
+<para>
+
+</para>
+
+@self: 
+@username: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_get_authentication_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@authentication_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_set_authentication_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@authentication_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_get_ipv4_address_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@ipv4_address_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_set_ipv4_address_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@ipv4_address_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_get_apn ##### -->
+<para>
+
+</para>
+
+@self: 
+@apn: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_set_apn ##### -->
+<para>
+
+</para>
+
+@self: 
+@apn: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_get_secondary_nbns_address_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@secondary_nbns_address_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_set_secondary_nbns_address_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@secondary_nbns_address_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_get_primary_nbns_address_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@primary_nbns_address_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_set_primary_nbns_address_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@primary_nbns_address_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_get_secondary_dns_address_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@secondary_dns_address_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_set_secondary_dns_address_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@secondary_dns_address_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_get_primary_dns_address_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@primary_dns_address_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_input_set_primary_dns_address_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@primary_dns_address_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_output_get_packet_data_handle ##### -->
+<para>
+
+</para>
+
+@self: 
+@packet_data_handle: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_output_get_call_end_reason ##### -->
+<para>
+
+</para>
+
+@self: 
+@call_end_reason: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_start_network_output_get_verbose_call_end_reason ##### -->
+<para>
+
+</para>
+
+@self: 
+@verbose_call_end_reason_type: 
+@verbose_call_end_reason_reason: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_wds_start_network ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_wds_start_network_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

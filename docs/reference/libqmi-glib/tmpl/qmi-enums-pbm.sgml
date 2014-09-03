@@ -1,0 +1,91 @@
+<!-- ##### SECTION Title ##### -->
+qmi-enums-pbm
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### ENUM QmiPbmEventRegistrationFlag ##### -->
+<para>
+
+</para>
+
+@QMI_PBM_EVENT_REGISTRATION_FLAG_RECORD_UPDATE: 
+@QMI_PBM_EVENT_REGISTRATION_FLAG_PHONEBOOK_READY: 
+@QMI_PBM_EVENT_REGISTRATION_FLAG_EMERGENCY_NUMBER_LIST: 
+@QMI_PBM_EVENT_REGISTRATION_FLAG_HIDDEN_RECORD_STATUS: 
+@QMI_PBM_EVENT_REGISTRATION_FLAG_AAS_UPDATE: 
+@QMI_PBM_EVENT_REGISTRATION_FLAG_GAS_UPDATE: 
+
+<!-- ##### ENUM QmiPbmPhonebookType ##### -->
+<para>
+
+</para>
+
+@QMI_PBM_PHONEBOOK_TYPE_ADN: 
+@QMI_PBM_PHONEBOOK_TYPE_FDN: 
+@QMI_PBM_PHONEBOOK_TYPE_MSISDN: 
+@QMI_PBM_PHONEBOOK_TYPE_MBDN: 
+@QMI_PBM_PHONEBOOK_TYPE_SDN: 
+@QMI_PBM_PHONEBOOK_TYPE_BDN: 
+@QMI_PBM_PHONEBOOK_TYPE_LND: 
+@QMI_PBM_PHONEBOOK_TYPE_MBN: 
+
+<!-- ##### ENUM QmiPbmSessionType ##### -->
+<para>
+
+</para>
+
+@QMI_PBM_SESSION_TYPE_GW_PRIMARY: 
+@QMI_PBM_SESSION_TYPE_1X_PRIMARY: 
+@QMI_PBM_SESSION_TYPE_GW_SECONDARY: 
+@QMI_PBM_SESSION_TYPE_1X_SECONDARY: 
+@QMI_PBM_SESSION_TYPE_NONPROVISIONING_SLOT_1: 
+@QMI_PBM_SESSION_TYPE_NONPROVISIONING_SLOT_2: 
+@QMI_PBM_SESSION_TYPE_GLOBAL_PHONEBOOK_SLOT_1: 
+@QMI_PBM_SESSION_TYPE_GLOBAL_PHONEBOOK_SLOT_2: 
+
+<!-- ##### FUNCTION qmi_pbm_event_registration_flag_build_string_from_mask ##### -->
+<para>
+
+</para>
+
+@mask: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_pbm_phonebook_type_build_string_from_mask ##### -->
+<para>
+
+</para>
+
+@mask: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_pbm_session_type_get_string ##### -->
+<para>
+
+</para>
+
+@val: 
+@Returns: 
+
+

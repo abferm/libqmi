@@ -1,0 +1,183 @@
+<!-- ##### SECTION Title ##### -->
+NAS Event Report
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiIndicationNasEventReportOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiIndicationNasEventReportOutputRfBandInformationElement ##### -->
+<para>
+
+</para>
+
+@radio_interface: 
+@active_band_class: 
+@active_channel: 
+
+<!-- ##### FUNCTION qmi_indication_nas_event_report_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_event_report_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_event_report_output_get_lte_rsrp ##### -->
+<para>
+
+</para>
+
+@self: 
+@lte_rsrp: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_event_report_output_get_lte_snr ##### -->
+<para>
+
+</para>
+
+@self: 
+@lte_snr: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_event_report_output_get_rsrq ##### -->
+<para>
+
+</para>
+
+@self: 
+@rsrq_rsrq: 
+@rsrq_radio_interface: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_event_report_output_get_error_rate ##### -->
+<para>
+
+</para>
+
+@self: 
+@error_rate_rate: 
+@error_rate_radio_interface: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_event_report_output_get_sinr ##### -->
+<para>
+
+</para>
+
+@self: 
+@sinr: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_event_report_output_get_io ##### -->
+<para>
+
+</para>
+
+@self: 
+@io: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_event_report_output_get_ecio ##### -->
+<para>
+
+</para>
+
+@self: 
+@ecio_ecio: 
+@ecio_radio_interface: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_event_report_output_get_rssi ##### -->
+<para>
+
+</para>
+
+@self: 
+@rssi_rssi: 
+@rssi_radio_interface: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_event_report_output_get_registration_reject_reason ##### -->
+<para>
+
+</para>
+
+@self: 
+@registration_reject_reason_service_domain: 
+@registration_reject_reason_reject_cause: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_event_report_output_get_rf_band_information ##### -->
+<para>
+
+</para>
+
+@self: 
+@rf_band_information: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_event_report_output_get_signal_strength ##### -->
+<para>
+
+</para>
+
+@self: 
+@signal_strength_strength: 
+@signal_strength_radio_interface: 
+@error: 
+@Returns: 
+
+

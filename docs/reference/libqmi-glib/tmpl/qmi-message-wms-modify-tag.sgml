@@ -1,0 +1,161 @@
+<!-- ##### SECTION Title ##### -->
+WMS Modify Tag
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageWmsModifyTagInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageWmsModifyTagOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_wms_modify_tag_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_modify_tag_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_modify_tag_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_modify_tag_input_get_message_mode ##### -->
+<para>
+
+</para>
+
+@self: 
+@message_mode: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_modify_tag_input_set_message_mode ##### -->
+<para>
+
+</para>
+
+@self: 
+@message_mode: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_modify_tag_input_get_message_tag ##### -->
+<para>
+
+</para>
+
+@self: 
+@message_tag_storage_type: 
+@message_tag_memory_index: 
+@message_tag_message_tag: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_modify_tag_input_set_message_tag ##### -->
+<para>
+
+</para>
+
+@self: 
+@message_tag_storage_type: 
+@message_tag_memory_index: 
+@message_tag_message_tag: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_modify_tag_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_modify_tag_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_modify_tag_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_wms_modify_tag ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_wms_modify_tag_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

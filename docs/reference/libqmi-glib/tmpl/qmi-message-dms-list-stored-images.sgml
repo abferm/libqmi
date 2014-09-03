@@ -1,0 +1,112 @@
+<!-- ##### SECTION Title ##### -->
+DMS List Stored Images
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageDmsListStoredImagesOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageDmsListStoredImagesOutputListImageSublistSublistElement ##### -->
+<para>
+
+</para>
+
+@storage_index: 
+@failure_count: 
+@unique_id: 
+@build_id: 
+
+<!-- ##### STRUCT QmiMessageDmsListStoredImagesOutputListImage ##### -->
+<para>
+
+</para>
+
+@type: 
+@maximum_images: 
+@index_of_running_image: 
+@sublist: 
+
+<!-- ##### FUNCTION qmi_message_dms_list_stored_images_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_list_stored_images_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_list_stored_images_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_list_stored_images_output_get_list ##### -->
+<para>
+
+</para>
+
+@self: 
+@list: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_list_stored_images ##### -->
+<para>
+
+</para>
+
+@self: 
+@unused: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_list_stored_images_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

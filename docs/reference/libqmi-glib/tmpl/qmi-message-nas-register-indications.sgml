@@ -1,0 +1,443 @@
+<!-- ##### SECTION Title ##### -->
+NAS Register Indications
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageNasRegisterIndicationsInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageNasRegisterIndicationsOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_get_rf_band_information ##### -->
+<para>
+
+</para>
+
+@self: 
+@rf_band_information: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_set_rf_band_information ##### -->
+<para>
+
+</para>
+
+@self: 
+@rf_band_information: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_get_embms_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@embms_status: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_set_embms_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@embms_status: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_get_current_plmn_name ##### -->
+<para>
+
+</para>
+
+@self: 
+@current_plmn_name: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_set_current_plmn_name ##### -->
+<para>
+
+</para>
+
+@self: 
+@current_plmn_name: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_get_managed_roaming ##### -->
+<para>
+
+</para>
+
+@self: 
+@managed_roaming: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_set_managed_roaming ##### -->
+<para>
+
+</para>
+
+@self: 
+@managed_roaming: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_get_hdr_session_closed ##### -->
+<para>
+
+</para>
+
+@self: 
+@hdr_session_closed: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_set_hdr_session_closed ##### -->
+<para>
+
+</para>
+
+@self: 
+@hdr_session_closed: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_get_hdr_new_uati_assigned ##### -->
+<para>
+
+</para>
+
+@self: 
+@hdr_new_uati_assigned: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_set_hdr_new_uati_assigned ##### -->
+<para>
+
+</para>
+
+@self: 
+@hdr_new_uati_assigned: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_get_error_rate ##### -->
+<para>
+
+</para>
+
+@self: 
+@error_rate: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_set_error_rate ##### -->
+<para>
+
+</para>
+
+@self: 
+@error_rate: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_get_signal_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@signal_info: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_set_signal_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@signal_info: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_get_system_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@system_info: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_set_system_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@system_info: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_get_network_time ##### -->
+<para>
+
+</para>
+
+@self: 
+@network_time: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_set_network_time ##### -->
+<para>
+
+</para>
+
+@self: 
+@network_time: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_get_subscription_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@subscription_info: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_set_subscription_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@subscription_info: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_get_dual_standby_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@dual_standby_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_set_dual_standby_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@dual_standby_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_get_serving_system_events ##### -->
+<para>
+
+</para>
+
+@self: 
+@serving_system_events: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_set_serving_system_events ##### -->
+<para>
+
+</para>
+
+@self: 
+@serving_system_events: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_get_ddtm_events ##### -->
+<para>
+
+</para>
+
+@self: 
+@ddtm_events: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_set_ddtm_events ##### -->
+<para>
+
+</para>
+
+@self: 
+@ddtm_events: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_get_system_selection_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@system_selection_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_input_set_system_selection_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@system_selection_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_register_indications_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_register_indications ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_register_indications_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

@@ -1,0 +1,114 @@
+<!-- ##### SECTION Title ##### -->
+DMS Get Operating Mode
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageDmsGetOperatingModeOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_dms_get_operating_mode_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_get_operating_mode_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_get_operating_mode_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_get_operating_mode_output_get_mode ##### -->
+<para>
+
+</para>
+
+@self: 
+@mode: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_get_operating_mode_output_get_offline_reason ##### -->
+<para>
+
+</para>
+
+@self: 
+@offline_reason: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_get_operating_mode_output_get_hardware_restricted_mode ##### -->
+<para>
+
+</para>
+
+@self: 
+@hardware_restricted_mode: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_get_operating_mode ##### -->
+<para>
+
+</para>
+
+@self: 
+@unused: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_get_operating_mode_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

@@ -1,0 +1,204 @@
+<!-- ##### SECTION Title ##### -->
+NAS Get System Selection Preference
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageNasGetSystemSelectionPreferenceOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_system_selection_preference_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_system_selection_preference_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_system_selection_preference_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_system_selection_preference_output_get_manual_network_selection ##### -->
+<para>
+
+</para>
+
+@self: 
+@manual_network_selection_mcc: 
+@manual_network_selection_mnc: 
+@manual_network_selection_includes_pcs_digit: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_system_selection_preference_output_get_td_scdma_band_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@td_scdma_band_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_system_selection_preference_output_get_gsm_wcdma_acquisition_order_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@gsm_wcdma_acquisition_order_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_system_selection_preference_output_get_service_domain_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@service_domain_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_system_selection_preference_output_get_network_selection_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@network_selection_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_system_selection_preference_output_get_lte_band_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@lte_band_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_system_selection_preference_output_get_roaming_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@roaming_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_system_selection_preference_output_get_cdma_prl_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@cdma_prl_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_system_selection_preference_output_get_band_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@band_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_system_selection_preference_output_get_mode_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@mode_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_get_system_selection_preference_output_get_emergency_mode ##### -->
+<para>
+
+</para>
+
+@self: 
+@emergency_mode: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_get_system_selection_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@unused: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_get_system_selection_preference_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

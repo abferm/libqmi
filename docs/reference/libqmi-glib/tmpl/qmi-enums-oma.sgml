@@ -1,0 +1,111 @@
+<!-- ##### SECTION Title ##### -->
+qmi-enums-oma
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### ENUM QmiOmaSessionType ##### -->
+<para>
+
+</para>
+
+@QMI_OMA_SESSION_TYPE_CLIENT_INITIATED_DEVICE_CONFIGURE: 
+@QMI_OMA_SESSION_TYPE_CLIENT_INITIATED_PRL_UPDATE: 
+@QMI_OMA_SESSION_TYPE_CLIENT_INITIATED_HANDS_FREE_ACTIVATION: 
+@QMI_OMA_SESSION_TYPE_DEVICE_INITIATED_HANDS_FREE_ACTIVATION: 
+@QMI_OMA_SESSION_TYPE_NETWORK_INITIATED_PRL_UPDATE: 
+@QMI_OMA_SESSION_TYPE_NETWORK_INITIATED_DEVICE_CONFIGURE: 
+@QMI_OMA_SESSION_TYPE_DEVICE_INITIATED_PRL_UPDATE: 
+
+<!-- ##### ENUM QmiOmaSessionState ##### -->
+<para>
+
+</para>
+
+@QMI_OMA_SESSION_STATE_COMPLETE_INFORMATION_UPDATED: 
+@QMI_OMA_SESSION_STATE_COMPLETE_UPDATED_INFORMATION_UNAVAILABLE: 
+@QMI_OMA_SESSION_STATE_FAILED: 
+@QMI_OMA_SESSION_STATE_RETRYING: 
+@QMI_OMA_SESSION_STATE_CONNECTING: 
+@QMI_OMA_SESSION_STATE_CONNECTED: 
+@QMI_OMA_SESSION_STATE_AUTHENTICATED: 
+@QMI_OMA_SESSION_STATE_MDN_DOWNLOADED: 
+@QMI_OMA_SESSION_STATE_MSID_DOWNLOADED: 
+@QMI_OMA_SESSION_STATE_PRL_DOWNLOADED: 
+@QMI_OMA_SESSION_STATE_MIP_PROFILE_DOWNLOADED: 
+
+<!-- ##### ENUM QmiOmaSessionFailedReason ##### -->
+<para>
+
+</para>
+
+@QMI_OMA_SESSION_FAILED_REASON_UNKNOWN: 
+@QMI_OMA_SESSION_FAILED_REASON_NETWORK_UNAVAILABLE: 
+@QMI_OMA_SESSION_FAILED_REASON_SERVER_UNAVAILABLE: 
+@QMI_OMA_SESSION_FAILED_REASON_AUTHENTICATION_FAILED: 
+@QMI_OMA_SESSION_FAILED_REASON_MAX_RETRY_EXCEEDED: 
+@QMI_OMA_SESSION_FAILED_REASON_SESSION_CANCELLED: 
+
+<!-- ##### ENUM QmiOmaHfaFeatureDoneState ##### -->
+<para>
+
+</para>
+
+@QMI_OMA_HFA_FEATURE_DONE_STATE_NONE: 
+@QMI_OMA_HFA_FEATURE_DONE_STATE_SUCCEEDED: 
+@QMI_OMA_HFA_FEATURE_DONE_STATE_FAILED: 
+
+<!-- ##### FUNCTION qmi_oma_session_type_get_string ##### -->
+<para>
+
+</para>
+
+@val: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_oma_session_state_get_string ##### -->
+<para>
+
+</para>
+
+@val: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_oma_session_failed_reason_get_string ##### -->
+<para>
+
+</para>
+
+@val: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_oma_hfa_feature_done_state_get_string ##### -->
+<para>
+
+</para>
+
+@val: 
+@Returns: 
+
+

@@ -1,0 +1,343 @@
+<!-- ##### SECTION Title ##### -->
+WDS Get Profile Settings
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageWdsGetProfileSettingsInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageWdsGetProfileSettingsOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_input_get_profile_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@profile_id_profile_type: 
+@profile_id_profile_index: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_input_set_profile_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@profile_id_profile_type: 
+@profile_id_profile_index: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_ipv6_address_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@ipv6_address_preference_address: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_profile_name ##### -->
+<para>
+
+</para>
+
+@self: 
+@profile_name: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_pdp_type ##### -->
+<para>
+
+</para>
+
+@self: 
+@pdp_type: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_apn_name ##### -->
+<para>
+
+</para>
+
+@self: 
+@apn_name: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_primary_ipv4_dns_address ##### -->
+<para>
+
+</para>
+
+@self: 
+@primary_ipv4_dns_address: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_secondary_ipv4_dns_address ##### -->
+<para>
+
+</para>
+
+@self: 
+@secondary_ipv4_dns_address: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_gprs_requested_qos ##### -->
+<para>
+
+</para>
+
+@self: 
+@gprs_requested_qos_precedence_class: 
+@gprs_requested_qos_delay_class: 
+@gprs_requested_qos_reliability_class: 
+@gprs_requested_qos_peak_throughput_class: 
+@gprs_requested_qos_mean_throughput_class: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_gprs_minimum_qos ##### -->
+<para>
+
+</para>
+
+@self: 
+@gprs_minimum_qos_precedence_class: 
+@gprs_minimum_qos_delay_class: 
+@gprs_minimum_qos_reliability_class: 
+@gprs_minimum_qos_peak_throughput_class: 
+@gprs_minimum_qos_mean_throughput_class: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_username ##### -->
+<para>
+
+</para>
+
+@self: 
+@username: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_password ##### -->
+<para>
+
+</para>
+
+@self: 
+@password: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_authentication ##### -->
+<para>
+
+</para>
+
+@self: 
+@authentication: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_ipv4_address_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@ipv4_address_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_pcscf_address_using_pco ##### -->
+<para>
+
+</para>
+
+@self: 
+@pcscf_address_using_pco: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_pcscf_address_using_dhcp ##### -->
+<para>
+
+</para>
+
+@self: 
+@pcscf_address_using_dhcp: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_imcn_flag ##### -->
+<para>
+
+</para>
+
+@self: 
+@imcn_flag: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_ipv6_primary_dns_address_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@ipv6_primary_dns_address_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_ipv6_secondary_dns_address_preference ##### -->
+<para>
+
+</para>
+
+@self: 
+@ipv6_secondary_dns_address_preference: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_profile_settings_output_get_extended_error_code ##### -->
+<para>
+
+</para>
+
+@self: 
+@extended_error_code: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_wds_get_profile_settings ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_wds_get_profile_settings_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

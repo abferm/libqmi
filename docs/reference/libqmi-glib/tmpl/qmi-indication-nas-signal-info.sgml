@@ -1,0 +1,121 @@
+<!-- ##### SECTION Title ##### -->
+NAS Signal Info
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiIndicationNasSignalInfoOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_indication_nas_signal_info_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_signal_info_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_signal_info_output_get_tdma_signal_strength ##### -->
+<para>
+
+</para>
+
+@self: 
+@tdma_signal_strength: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_signal_info_output_get_lte_signal_strength ##### -->
+<para>
+
+</para>
+
+@self: 
+@lte_signal_strength_rssi: 
+@lte_signal_strength_rsrq: 
+@lte_signal_strength_rsrp: 
+@lte_signal_strength_snr: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_signal_info_output_get_wcdma_signal_strength ##### -->
+<para>
+
+</para>
+
+@self: 
+@wcdma_signal_strength_rssi: 
+@wcdma_signal_strength_ecio: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_signal_info_output_get_gsm_signal_strength ##### -->
+<para>
+
+</para>
+
+@self: 
+@gsm_signal_strength: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_signal_info_output_get_hdr_signal_strength ##### -->
+<para>
+
+</para>
+
+@self: 
+@hdr_signal_strength_rssi: 
+@hdr_signal_strength_ecio: 
+@hdr_signal_strength_sinr: 
+@hdr_signal_strength_io: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_indication_nas_signal_info_output_get_cdma_signal_strength ##### -->
+<para>
+
+</para>
+
+@self: 
+@cdma_signal_strength_rssi: 
+@cdma_signal_strength_ecio: 
+@error: 
+@Returns: 
+
+

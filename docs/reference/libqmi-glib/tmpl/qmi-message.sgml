@@ -1,0 +1,257 @@
+<!-- ##### SECTION Title ##### -->
+qmi-message
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### MACRO QMI_MESSAGE_QMUX_MARKER ##### -->
+<para>
+
+</para>
+
+
+
+<!-- ##### TYPEDEF QmiMessage ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_new ##### -->
+<para>
+
+</para>
+
+@service: 
+@client_id: 
+@transaction_id: 
+@message_id: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_new_from_raw ##### -->
+<para>
+
+</para>
+
+@raw: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_response_new ##### -->
+<para>
+
+</para>
+
+@request: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_is_request ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_is_response ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_is_indication ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_get_service ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_get_client_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_get_transaction_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_get_message_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_get_length ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_get_raw ##### -->
+<para>
+
+</para>
+
+@self: 
+@length: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_get_version_introduced ##### -->
+<para>
+
+</para>
+
+@self: 
+@major: 
+@minor: 
+@Returns: 
+
+
+<!-- ##### USER_FUNCTION QmiMessageForeachRawTlvFn ##### -->
+<para>
+
+</para>
+
+@type: 
+@value: 
+@length: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_message_foreach_raw_tlv ##### -->
+<para>
+
+</para>
+
+@self: 
+@func: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_message_get_raw_tlv ##### -->
+<para>
+
+</para>
+
+@self: 
+@type: 
+@length: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_add_raw_tlv ##### -->
+<para>
+
+</para>
+
+@self: 
+@type: 
+@raw: 
+@length: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_set_transaction_id ##### -->
+<para>
+
+</para>
+
+@self: 
+@transaction_id: 
+
+
+<!-- ##### FUNCTION qmi_message_get_printable ##### -->
+<para>
+
+</para>
+
+@self: 
+@line_prefix: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_get_tlv_printable ##### -->
+<para>
+
+</para>
+
+@self: 
+@line_prefix: 
+@type: 
+@raw: 
+@raw_length: 
+@Returns: 
+
+

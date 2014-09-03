@@ -1,0 +1,128 @@
+<!-- ##### SECTION Title ##### -->
+UIM Get Card Status
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageUimGetCardStatusOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageUimGetCardStatusOutputCardStatusCardsElementApplicationsElement ##### -->
+<para>
+
+</para>
+
+@type: 
+@state: 
+@personalization_state: 
+@personalization_feature: 
+@personalization_retries: 
+@personalization_unblock_retries: 
+@application_identifier_value: 
+@upin_replaces_pin1: 
+@pin1_state: 
+@pin1_retries: 
+@puk1_retries: 
+@pin2_state: 
+@pin2_retries: 
+@puk2_retries: 
+
+<!-- ##### STRUCT QmiMessageUimGetCardStatusOutputCardStatusCardsElement ##### -->
+<para>
+
+</para>
+
+@card_state: 
+@upin_state: 
+@upin_retries: 
+@upuk_retries: 
+@error_code: 
+@applications: 
+
+<!-- ##### FUNCTION qmi_message_uim_get_card_status_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_get_card_status_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_get_card_status_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_uim_get_card_status_output_get_card_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@card_status_index_gw_primary: 
+@card_status_index_1x_primary: 
+@card_status_index_gw_secondary_: 
+@card_status_index_1x_secondary: 
+@card_status_cards: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_uim_get_card_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@unused: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_uim_get_card_status_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

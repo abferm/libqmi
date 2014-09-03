@@ -1,0 +1,313 @@
+<!-- ##### SECTION Title ##### -->
+NAS Config Signal Info
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageNasConfigSignalInfoInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageNasConfigSignalInfoOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_get_rscp_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@rscp_threshold: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_set_rscp_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@rscp_threshold: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_get_lte_report ##### -->
+<para>
+
+</para>
+
+@self: 
+@lte_report_rate: 
+@lte_report_average_period: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_set_lte_report ##### -->
+<para>
+
+</para>
+
+@self: 
+@lte_report_rate: 
+@lte_report_average_period: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_get_rsrp_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@rsrp_threshold: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_set_rsrp_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@rsrp_threshold: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_get_rsrq_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@rsrq_threshold: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_set_rsrq_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@rsrq_threshold: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_get_io_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@io_threshold: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_set_io_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@io_threshold: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_get_lte_snr_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@lte_snr_threshold: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_set_lte_snr_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@lte_snr_threshold: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_get_sinr_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@sinr_threshold: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_set_sinr_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@sinr_threshold: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_get_ecio_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@ecio_threshold: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_set_ecio_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@ecio_threshold: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_get_rssi_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@rssi_threshold: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_input_set_rssi_threshold ##### -->
+<para>
+
+</para>
+
+@self: 
+@rssi_threshold: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_config_signal_info_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_config_signal_info ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_config_signal_info_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

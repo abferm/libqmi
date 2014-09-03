@@ -1,0 +1,157 @@
+<!-- ##### SECTION Title ##### -->
+DMS Set Time
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageDmsSetTimeInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageDmsSetTimeOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_time_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_time_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_time_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_time_input_get_time_reference_type ##### -->
+<para>
+
+</para>
+
+@self: 
+@time_reference_type: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_time_input_set_time_reference_type ##### -->
+<para>
+
+</para>
+
+@self: 
+@time_reference_type: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_time_input_get_time_value ##### -->
+<para>
+
+</para>
+
+@self: 
+@time_value: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_time_input_set_time_value ##### -->
+<para>
+
+</para>
+
+@self: 
+@time_value: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_time_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_time_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_dms_set_time_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_set_time ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_dms_set_time_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

@@ -1,0 +1,107 @@
+<!-- ##### SECTION Title ##### -->
+WDS Get Current Data Bearer Technology
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageWdsGetCurrentDataBearerTechnologyOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_data_bearer_technology_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_data_bearer_technology_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_data_bearer_technology_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_data_bearer_technology_output_get_last ##### -->
+<para>
+
+</para>
+
+@self: 
+@last_network_type: 
+@last_rat_mask: 
+@last_so_mask: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wds_get_current_data_bearer_technology_output_get_current ##### -->
+<para>
+
+</para>
+
+@self: 
+@current_network_type: 
+@current_rat_mask: 
+@current_so_mask: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_wds_get_current_data_bearer_technology ##### -->
+<para>
+
+</para>
+
+@self: 
+@unused: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_wds_get_current_data_bearer_technology_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

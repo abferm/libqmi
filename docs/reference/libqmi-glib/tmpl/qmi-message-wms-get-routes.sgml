@@ -1,0 +1,113 @@
+<!-- ##### SECTION Title ##### -->
+WMS Get Routes
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageWmsGetRoutesOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageWmsGetRoutesOutputRouteListElement ##### -->
+<para>
+
+</para>
+
+@message_type: 
+@message_class: 
+@storage: 
+@receipt_action: 
+
+<!-- ##### FUNCTION qmi_message_wms_get_routes_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_get_routes_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_get_routes_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_get_routes_output_get_route_list ##### -->
+<para>
+
+</para>
+
+@self: 
+@route_list: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_wms_get_routes_output_get_transfer_status_report ##### -->
+<para>
+
+</para>
+
+@self: 
+@transfer_status_report: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_wms_get_routes ##### -->
+<para>
+
+</para>
+
+@self: 
+@unused: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_wms_get_routes_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

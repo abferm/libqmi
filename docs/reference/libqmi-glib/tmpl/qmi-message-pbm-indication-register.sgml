@@ -1,0 +1,146 @@
+<!-- ##### SECTION Title ##### -->
+PBM Indication Register
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessagePbmIndicationRegisterInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessagePbmIndicationRegisterOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_pbm_indication_register_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pbm_indication_register_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pbm_indication_register_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_pbm_indication_register_input_get_event_registration_mask ##### -->
+<para>
+
+</para>
+
+@self: 
+@event_registration_mask: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pbm_indication_register_input_set_event_registration_mask ##### -->
+<para>
+
+</para>
+
+@self: 
+@event_registration_mask: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pbm_indication_register_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pbm_indication_register_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_pbm_indication_register_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_pbm_indication_register_output_get_event_registration_mask ##### -->
+<para>
+
+</para>
+
+@self: 
+@event_registration_mask: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_pbm_indication_register ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_pbm_indication_register_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+

@@ -1,0 +1,205 @@
+<!-- ##### SECTION Title ##### -->
+NAS Initiate Network Register
+
+<!-- ##### SECTION Short_Description ##### -->
+
+
+<!-- ##### SECTION Long_Description ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION See_Also ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### SECTION Stability_Level ##### -->
+
+
+<!-- ##### SECTION Image ##### -->
+
+
+<!-- ##### STRUCT QmiMessageNasInitiateNetworkRegisterInput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### STRUCT QmiMessageNasInitiateNetworkRegisterOutput ##### -->
+<para>
+
+</para>
+
+
+<!-- ##### FUNCTION qmi_message_nas_initiate_network_register_input_new ##### -->
+<para>
+
+</para>
+
+@void: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_initiate_network_register_input_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_initiate_network_register_input_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_initiate_network_register_input_get_mnc_pcs_digit_include_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@mnc_pcs_digit_include_status: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_initiate_network_register_input_set_mnc_pcs_digit_include_status ##### -->
+<para>
+
+</para>
+
+@self: 
+@mnc_pcs_digit_include_status: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_initiate_network_register_input_get_change_duration ##### -->
+<para>
+
+</para>
+
+@self: 
+@change_duration: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_initiate_network_register_input_set_change_duration ##### -->
+<para>
+
+</para>
+
+@self: 
+@change_duration: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_initiate_network_register_input_get_manual_registration_info_3gpp ##### -->
+<para>
+
+</para>
+
+@self: 
+@manual_registration_info_3gpp_mcc: 
+@manual_registration_info_3gpp_mnc: 
+@manual_registration_info_3gpp_radio_interface: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_initiate_network_register_input_set_manual_registration_info_3gpp ##### -->
+<para>
+
+</para>
+
+@self: 
+@manual_registration_info_3gpp_mcc: 
+@manual_registration_info_3gpp_mnc: 
+@manual_registration_info_3gpp_radio_interface: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_initiate_network_register_input_get_action ##### -->
+<para>
+
+</para>
+
+@self: 
+@action: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_initiate_network_register_input_set_action ##### -->
+<para>
+
+</para>
+
+@self: 
+@action: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_initiate_network_register_output_ref ##### -->
+<para>
+
+</para>
+
+@self: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_initiate_network_register_output_unref ##### -->
+<para>
+
+</para>
+
+@self: 
+
+
+<!-- ##### FUNCTION qmi_message_nas_initiate_network_register_output_get_result ##### -->
+<para>
+
+</para>
+
+@self: 
+@error: 
+@Returns: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_initiate_network_register ##### -->
+<para>
+
+</para>
+
+@self: 
+@input: 
+@timeout: 
+@cancellable: 
+@callback: 
+@user_data: 
+
+
+<!-- ##### FUNCTION qmi_client_nas_initiate_network_register_finish ##### -->
+<para>
+
+</para>
+
+@self: 
+@res: 
+@error: 
+@Returns: 
+
+
