@@ -1,3 +1,9 @@
+libqmi (1.10.2-1~bpo70+1) wheezy-backports; urgency=medium
+
+  * Rebuild for wheezy-backports.
+
+ -- Alex Ferm <aferm@petropower.com>  Wed, 03 Sep 2014 15:33:38 -0500
+
 libqmi (1.10.2-1) unstable; urgency=low
 
   [ Marius B. Kotsbak ]
