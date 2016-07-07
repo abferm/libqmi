@@ -6,10 +6,13 @@
 
 override_dh_auto_configure:
 	dh_auto_configure -- \
-		--with-tests \
 		--enable-gtk-doc \
 		--enable-gtk-doc-html \
+		--enable-mbim-qmux \
 		--libexecdir=/usr/lib/libqmi
 
+override_dh_install:
+	dh_install -X.la --list-missing
+
 override_dh_strip:
-	dh_strip --dbg-package=libqmi-glib1-dbg
+	dh_strip --dbgsym-migration='libqmi-glib5-dbg (<< 1.14.0-1~)'

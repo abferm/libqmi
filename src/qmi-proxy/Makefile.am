@@ -14,3 +14,12 @@ qmi_proxy_SOURCES = qmi-proxy.c
 qmi_proxy_LDADD = \
 	$(GLIB_LIBS) \
 	$(top_builddir)/src/libqmi-glib/libqmi-glib.la
+
+#Install udev rules only if configured with --enable-qmi-username
+if QMI_USERNAME_ENABLED
+udevrulesdir = $(UDEV_BASE_DIR)/rules.d
+udevrules_DATA = 76-qmi-proxy-device-ownership.rules
+endif
+
+EXTRA_DIST = \
+	76-qmi-proxy-device-ownership.rules.in

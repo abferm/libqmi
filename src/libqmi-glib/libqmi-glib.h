@@ -17,8 +17,8 @@
  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301 USA.
  *
- * Copyright (C) 2012 Aleksander Morgado <aleksander@lanedo.com>
  * Copyright (C) 2012 Google, Inc.
+ * Copyright (C) 2012-2015 Aleksander Morgado <aleksander@aleksander.es>
  */
 
 #ifndef _LIBQMI_GLIB_H_
@@ -35,6 +35,8 @@
 #include "qmi-message.h"
 #include "qmi-enums.h"
 #include "qmi-utils.h"
+
+#include "qmi-compat.h"
 
 #include "qmi-enums-dms.h"
 #include "qmi-flags64-dms.h"
@@ -64,6 +66,9 @@
 
 #include "qmi-enums-wda.h"
 #include "qmi-wda.h"
+
+#include "qmi-enums-voice.h"
+#include "qmi-voice.h"
 
 /* generated */
 #include "qmi-error-types.h"

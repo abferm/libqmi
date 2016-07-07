@@ -41,7 +41,7 @@ class Field:
         # The specific TLV ID
         self.id = dictionary['id']
         # Whether the field is to be considered mandatory in the message
-        self.mandatory = dictionary['mandatory']
+        self.mandatory = True if dictionary['mandatory'] == 'yes' else False
         # The type, which must always be "TLV"
         self.type = dictionary['type']
         # The container type, which must be either "Input" or "Output"
@@ -96,7 +96,7 @@ class Field:
     container
     """
     def emit_getter(self, hfile, cfile):
-        input_variable_name = utils.build_underscore_name(self.name)
+        input_variable_name = 'value_' + utils.build_underscore_name(self.name)
         variable_getter_dec = self.variable.build_getter_declaration('    ', input_variable_name)
         variable_getter_doc = self.variable.build_getter_documentation(' * ', input_variable_name)
         variable_getter_imp = self.variable.build_getter_implementation('    ', 'self->' + self.variable_name, input_variable_name, True)
@@ -160,7 +160,7 @@ class Field:
     container
     """
     def emit_setter(self, hfile, cfile):
-        input_variable_name = utils.build_underscore_name(self.name)
+        input_variable_name = 'value_' + utils.build_underscore_name(self.name)
         variable_setter_dec = self.variable.build_setter_declaration('    ', input_variable_name)
         variable_setter_doc = self.variable.build_setter_documentation(' * ', input_variable_name)
         variable_setter_imp = self.variable.build_setter_implementation('    ', input_variable_name, 'self->' + self.variable_name)
@@ -222,25 +222,23 @@ class Field:
                          'lp'            : line_prefix }
 
         template = (
-            '${lp}guint8 buffer[1024];\n'
-            '${lp}guint16 buffer_len = 1024;\n'
-            '${lp}guint8 *buffer_aux = buffer;\n'
+            '${lp}gsize tlv_offset;\n'
+            '\n'
+            '${lp}if (!(tlv_offset = qmi_message_tlv_write_init (self, (guint8)${tlv_id}, error))) {\n'
+            '${lp}    g_prefix_error (error, "Cannot initialize TLV \'${name}\': ");\n'
+            '${lp}    goto error_out;\n'
+            '${lp}}\n'
             '\n')
         f.write(string.Template(template).substitute(translations))
 
         # Now, write the contents of the variable into the buffer
-        self.variable.emit_buffer_write(f, line_prefix, 'input->' + self.variable_name, 'buffer_aux', 'buffer_len')
+        self.variable.emit_buffer_write(f, line_prefix, self.name, 'input->' + self.variable_name)
 
         template = (
             '\n'
-            '${lp}if (!qmi_message_add_raw_tlv (self,\n'
-            '${lp}                              (guint8)${tlv_id},\n'
-            '${lp}                              buffer,\n'
-            '${lp}                              (1024 - buffer_len),\n'
-            '${lp}                              error)) {\n'
-            '${lp}    g_prefix_error (error, \"Couldn\'t set the ${name} TLV: \");\n'
-            '${lp}    qmi_message_unref (self);\n'
-            '${lp}    return NULL;\n'
+            '${lp}if (!qmi_message_tlv_write_complete (self, tlv_offset, error)) {\n'
+            '${lp}    g_prefix_error (error, "Cannot complete TLV \'${name}\': ");\n'
+            '${lp}    goto error_out;\n'
             '${lp}}\n')
         f.write(string.Template(template).substitute(translations))
 
@@ -269,49 +267,58 @@ class Field:
     Emit the code responsible for retrieving the TLV from the QMI message
     """
     def emit_output_tlv_get(self, f, line_prefix):
+        tlv_out = utils.build_underscore_name (self.fullname) + '_out'
+        error = 'error' if self.mandatory else 'NULL'
         translations = { 'name'                 : self.name,
                          'container_underscore' : utils.build_underscore_name (self.prefix),
-                         'underscore'           : utils.build_underscore_name (self.fullname),
+                         'tlv_out'              : tlv_out,
                          'tlv_id'               : self.id_enum_name,
                          'variable_name'        : self.variable_name,
                          'lp'                   : line_prefix,
-                         'error'                : 'error' if self.mandatory == 'yes' else 'NULL'}
+                         'error'                : error }
 
         template = (
-            '${lp}const guint8 *buffer;\n'
-            '${lp}guint16 buffer_len;\n'
+            '${lp}gsize offset = 0;\n'
+            '${lp}gsize init_offset;\n'
             '\n'
-            '${lp}buffer = qmi_message_get_raw_tlv (message,\n'
-            '${lp}                                  ${tlv_id},\n'
-            '${lp}                                  &buffer_len);\n'
-            '${lp}if (buffer && ${underscore}_validate (buffer, buffer_len)) {\n'
-            '${lp}    self->${variable_name}_set = TRUE;\n'
-            '\n')
+            '${lp}if ((init_offset = qmi_message_tlv_read_init (message, ${tlv_id}, NULL, ${error})) == 0) {\n')
+
+        if self.mandatory:
+            template += (
+                '${lp}    g_prefix_error (${error}, "Couldn\'t get the mandatory ${name} TLV: ");\n'
+                '${lp}    ${container_underscore}_unref (self);\n'
+                '${lp}    return NULL;\n')
+        else:
+            template += (
+                '${lp}    goto ${tlv_out};\n')
+
+        template += (
+            '${lp}}\n')
+
         f.write(string.Template(template).substitute(translations))
 
         # Now, read the contents of the buffer into the variable
-        self.variable.emit_buffer_read(f, line_prefix + '    ', 'self->' + self.variable_name, 'buffer', 'buffer_len')
+        self.variable.emit_buffer_read(f, line_prefix, tlv_out, error, 'self->' + self.variable_name)
 
         template = (
             '\n'
-            '${lp}    /* The remaining size of the buffer needs to be 0 if we successfully read the TLV */\n'
-            '${lp}    if (buffer_len > 0) {\n'
-            '${lp}        g_warning ("Left \'%u\' bytes unread when getting the \'${name}\' TLV", buffer_len);\n'
-            '${lp}    }\n')
-
-        if self.mandatory == 'yes':
+            '${lp}/* The remaining size of the buffer needs to be 0 if we successfully read the TLV */\n'
+            '${lp}if ((offset = __qmi_message_tlv_read_remaining_size (message, init_offset, offset)) > 0) {\n'
+            '${lp}    g_warning ("Left \'%" G_GSIZE_FORMAT "\' bytes unread when getting the \'${name}\' TLV", offset);\n'
+            '${lp}}\n'
+            '\n'
+            '${lp}self->${variable_name}_set = TRUE;\n'
+            '\n'
+            '${tlv_out}:\n')
+        if self.mandatory:
             template += (
-                '${lp}} else {\n'
-                '${lp}    g_set_error (error,\n'
-                '${lp}                 QMI_CORE_ERROR,\n'
-                '${lp}                 QMI_CORE_ERROR_TLV_NOT_FOUND,\n'
-                '${lp}                 \"Couldn\'t get the ${name} TLV: Not found\");\n'
+                '${lp}if (!self->${variable_name}_set) {\n'
                 '${lp}    ${container_underscore}_unref (self);\n'
                 '${lp}    return NULL;\n'
                 '${lp}}\n')
         else:
             template += (
-                '${lp}}\n')
+                '${lp};\n')
         f.write(string.Template(template).substitute(translations))
 
 
@@ -330,70 +337,34 @@ class Field:
 
         template = (
             '\n'
-            'static gboolean\n'
-            '${underscore}_validate (\n'
-            '    const guint8 *buffer,\n'
-            '    guint16 buffer_len)\n'
-            '{\n'
-            '    guint expected_len = 0;\n'
-            '\n')
-        f.write(string.Template(template).substitute(translations))
-
-        # Now, read the size of the expected TLV
-        self.variable.emit_size_read(f, '    ', 'expected_len', 'buffer', 'buffer_len')
-
-        template = (
-            '\n'
-            '    if (buffer_len < expected_len) {\n'
-            '        g_warning ("Cannot read the \'${name}\' TLV: expected \'%u\' bytes, but only got \'%u\' bytes",\n'
-            '                   expected_len, buffer_len);\n'
-            '        return FALSE;\n'
-            '    }\n'
-            '\n'
-            '    if (buffer_len > expected_len) {\n'
-            '        g_debug ("Reading the \'${name}\' TLV: expected \'%u\' bytes, but got \'%u\' bytes",\n'
-            '                 expected_len, buffer_len);\n'
-            '        return TRUE;\n'
-            '    }\n'
-            '\n'
-            '    return TRUE;\n'
-            '}\n'
-            '\n')
-        f.write(string.Template(template).substitute(translations))
-
-        template = (
-            '\n'
             'static gchar *\n'
             '${underscore}_get_printable (\n'
             '    QmiMessage *message,\n'
             '    const gchar *line_prefix)\n'
             '{\n'
-            '    const guint8 *buffer;\n'
-            '    guint16 buffer_len;\n'
+            '    gsize offset = 0;\n'
+            '    gsize init_offset;\n'
+            '    GString *printable;\n'
+            '    GError *error = NULL;\n'
             '\n'
-            '    buffer = qmi_message_get_raw_tlv (message,\n'
-            '                                      ${tlv_id},\n'
-            '                                      &buffer_len);\n'
-            '    if (buffer && ${underscore}_validate (buffer, buffer_len)) {\n'
-            '        GString *printable;\n'
+            '    if ((init_offset = qmi_message_tlv_read_init (message, ${tlv_id}, NULL, NULL)) == 0)\n'
+            '        return NULL;\n'
             '\n'
-            '        printable = g_string_new ("");\n')
+            '    printable = g_string_new ("");\n')
         f.write(string.Template(template).substitute(translations))
 
         # Now, read the contents of the buffer into the printable representation
-        self.variable.emit_get_printable(f, '        ', 'printable', 'buffer', 'buffer_len')
+        self.variable.emit_get_printable(f, '    ')
 
         template = (
             '\n'
-            '        /* The remaining size of the buffer needs to be 0 if we successfully read the TLV */\n'
-            '        if (buffer_len > 0) {\n'
-            '            g_warning ("Left \'%u\' bytes unread when getting the \'${name}\' TLV as printable", buffer_len);\n'
-            '        }\n'
+            '    if ((offset = __qmi_message_tlv_read_remaining_size (message, init_offset, offset)) > 0)\n'
+            '        g_string_append_printf (printable, "Additional unexpected \'%" G_GSIZE_FORMAT "\' bytes", offset);\n'
             '\n'
-            '        return g_string_free (printable, FALSE);\n'
-            '    }\n'
-            '\n'
-            '    return NULL;\n'
+            'out:\n'
+            '    if (error)\n'
+            '        g_string_append_printf (printable, " ERROR: %s", error->message);\n'
+            '    return g_string_free (printable, FALSE);\n'
             '}\n')
         f.write(string.Template(template).substitute(translations))
 

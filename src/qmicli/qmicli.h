@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (C) 2012 Aleksander Morgado <aleksander@gnu.org>
+ * Copyright (C) 2012-2015 Aleksander Morgado <aleksander@aleksander.es>
  */
 
 #include <glib.h>
@@ -61,11 +61,25 @@ void          qmicli_uim_run              (QmiDevice *device,
                                            QmiClientUim *client,
                                            GCancellable *cancellable);
 
+/* WMS group */
+GOptionGroup *qmicli_wms_get_option_group (void);
+gboolean      qmicli_wms_options_enabled  (void);
+void          qmicli_wms_run              (QmiDevice *device,
+                                           QmiClientWms *client,
+                                           GCancellable *cancellable);
+
 /* WDA group */
 GOptionGroup *qmicli_wda_get_option_group (void);
 gboolean      qmicli_wda_options_enabled  (void);
 void          qmicli_wda_run              (QmiDevice *device,
                                            QmiClientWda *client,
                                            GCancellable *cancellable);
+
+/* Voice group */
+GOptionGroup *qmicli_voice_get_option_group (void);
+gboolean      qmicli_voice_options_enabled  (void);
+void          qmicli_voice_run              (QmiDevice *device,
+                                             QmiClientVoice *client,
+                                             GCancellable *cancellable);
 
 #endif /* __QMICLI_H__ */

@@ -1,8 +1,161 @@
 
-Overview of changes in libqmi 1.10.2
+Overview of changes in libqmi 1.16.0
 ----------------------------------------
 
-* Minor bugfixes.
+* New `--enable-mbim-qmux' option during configure, which enables the support
+  for using an MBIM control device as transport for the QMI messages, only if
+  the MBIM device implements the "QMI service". This setting is automatically
+  enabled if libmbim >= 1.14.0 is found in the system, and can be explicitly
+  disabled with `--disable-mbim-qmux'.
+
+* New request/responses:
+  ** nas: new "Get LTE Cphy CA Info" request/response.
+  ** nas: new "Force Network Search" request/response.
+
+* qmi-network:
+  ** Fixed several bashisms.
+
+The following features which were backported to 1.14.x releases are also present
+in libqmi 1.16.0:
+
+* Added compatibility symbols for some API breaks introduced in 1.14.0:
+  ** qmi_message_dms_set_service_programming_code_input_get_current
+     was renamed to qmi_message_dms_set_service_programming_code_input_get_current_code.
+  ** qmi_message_dms_set_service_programming_code_input_get_new
+     was renamed to qmi_message_dms_set_service_programming_code_input_get_new_code.
+  ** qmi_message_dms_set_service_programming_code_input_set_current
+     was renamed to qmi_message_dms_set_service_programming_code_input_set_current_code.
+  ** qmi_message_dms_set_service_programming_code_input_set_new
+     was renamed to qmi_message_dms_set_service_programming_code_input_set_new_code.
+  ** QMI_NAS_SIM_REJECT_STATE_SIM_VAILABLE was renamed to
+     QMI_NAS_SIM_REJECT_STATE_SIM_AVAILABLE.
+
+* libqmi-glib:
+  ** Fixed QMI_DMS_BAND_CAPABILITY_BC_15 enum value so that it isn't treated as
+     a negative value.
+
+* qmicli:
+  ** Fixed --dms-get-band-capabilities output on 32-bit platforms.
+  ** Fixed license text of the voice service implementation.
+
+
+Overview of changes in libqmi 1.14.0
+----------------------------------------
+
+* This version comes with a couple of small API breaks:
+  ** ECIO value type in "NAS Event Report Indication" is given as unsigned.
+  ** ECIO value in ECIO List array type in "NAS Get Signal Strenght" is given as
+     unsigned.
+  ** QMI_NAS_SIM_REJECT_STATE_SIM_AVAILABLE enum name was fixed.
+
+* The library and tools now support working with modems which only implement raw
+  IP (i.e. no ethernet headers) in the WWAN interface. This relies on the kernel
+  to expose '/sys/class/net/<WWAN>/qmi/raw_ip' sysfs files for each WWAN network
+  interface (available since Linux 4.5-rc1).
+
+* New initial support for the 'Voice' service.
+
+* New request/responses:
+  ** wms: new "Get Supported Messages" request/response.
+  ** wds: new "Get Supported Messages" request/response.
+  ** voice: new "Get Supported Messages" request/response.
+  ** uim: new "Get Supported Messages" request/response.
+  ** nas: new "Get Supported Messages" request/response.
+  ** wda: new "Get Supported Messages" request/response.
+  ** dms: new "Get Supported Messages" request/response.
+  ** wds: new "Set Autoconnect Setting" request/response.
+  ** wds: new "Get Autoconnect Setting" request/response.
+  ** wds: new "Get PDN Throttle Info" request/response.
+  ** uim: new "Change PIN" request/response.
+  ** uim: new "Unblock PIN" request/response.
+  ** uim: new "Verify PIN" request/response.
+  ** uim: new "Set PIN protection" request/response.
+  ** voice: new "Dial Call" request/response.
+  ** voice: new "End Call" request/response.
+  ** voice: new "Answer Call" request/response.
+  ** voice: new "Get Config" request/response.
+  ** voice: new "Get Supported Messages" request/response.
+
+* New indications:
+  ** wms: new "SMSC Address" indication.
+  ** pds: new "GPS Ready" indication.
+  ** wds: new "Packet Service Status" indication.
+
+* New TLVs supported in existing messages:
+  ** wds: support "UMTS Granted QoS" TLV in 'Get Current Settings'.
+  ** nas: support "Home Network 3GPP MNC" in "Get Home Network" to know whether
+     MNC is 2 or 3 digits.
+
+* The qmicli tool has been updated with several new functionalities:
+  ** New '--get-wwan-iface' command line option to allow querying which is the
+     WWAN interface associated with a given /dev/cdc-wdm device.
+  ** New '--wds-get-current-settings' command line option to query the current
+     settings in the WDS service.
+  ** New '--get-expected-data-format' and '--set-expected-data-format' actions
+     to get or set the data format expected by the kernel.
+  ** LTE band descriptions are now printed along with the EARFCN.
+  ** Updated '--wds-start-network' arguments to allow specifying "key=value"
+     pairs. The old legacy "[(APN),(PAP|CHAP|BOTH),(Username),(Password)]"
+     format is kept as valid for backwards compatibility, although it should be
+     assumed deprecated.
+  ** Updated '--wds-start/stop-network' to allow autoconnect settings, and 3GPP
+     or 3GPP2 profile parameters.
+
+* The qmi-network helper script has been updated with several new features:
+  ** Allow running with the qmi-proxy.
+  ** Allow running qmi-network with multiple devices at the same time.
+  ** Automatic link layer protocol update before connecting.
+  ** Allow specifying APN user/password.
+
+* Added command completion support in qmicli.
+
+* Other bugfixes and minor improvements.
+
+The following features which were backported to 1.12.x releases are also present
+in libqmi 1.14.0:
+
+* New request/responses:
+  ** dms: new "Set FCC Authentication" request/response.
+
+
+Overview of changes in libqmi 1.12.0
+----------------------------------------
+
+* New `--enable-qmi-username' option during configure, which allows specifying
+  which will be the user owning the /dev/cdc-wdm character devices of all QMI
+  modems (udev rules are installed to change file ownership). If this option is
+  used, the qmi-proxy will only allow connections from processes running by the
+  specified user or by the root user.
+
+* New TLV builder and reader API, which is much more strict and secure. The
+  autogenerated code will no longer first check if there is enough space
+  available in the output message buffer and then write the parsed contents.
+  Instead, the new reader API will be used, which is able to check for the
+  expected size directly before writing in the buffer.
+
+* New unit tests to check messages built by the libqmi-glib library, using a
+  fake proxy. In order to support these, the QmiDevice has two new properties:
+  ** "device-no-file-check": instructs the QmiDevice to avoid checking if the
+     specified file exists.
+  ** "device-proxy-path": specifies a custom abstract socket path for the
+     QmiProxy, to avoid using the default one.
+
+* New A-GPS support in the PDS service:
+  ** pds: added "Get Default Tracking Session" request/response
+  ** pds: added "Set Default Tracking Session" request/response
+  ** pds: added "Get AGPS Config" request/response
+  ** pds: added "Set AGPS Config" request/response
+
+* Updated minumum available version of several messages:
+  ** dms: "UIM Get IMSI" seems to be available in DMS 1.1 already
+  ** dms: "UIM Get ICCID" seems to be available in DMS 1.1 already
+
+* Other bugfixes and minor improvements:
+  ** Attach timeout and idle events to the thread-default context.
+  ** Fix bashisms in the qmi-network script.
+  ** Fix qmi_message_set_transaction_id() in non-CTL messages.
+  ** Fix segfault due to race condition in the QmiProxy.
+  ** Fixed printing contents of structs with fixed sized strings in qmi-codegen.
 
 
 Overview of changes in libqmi 1.10.0

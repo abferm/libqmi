@@ -21,8 +21,22 @@ qmicli_SOURCES = \
 	qmicli-nas.c \
 	qmicli-pbm.c \
 	qmicli-uim.c \
-	qmicli-wda.c
+	qmicli-wms.c \
+	qmicli-wda.c \
+	qmicli-voice.c
 
 qmicli_LDADD = \
 	$(GLIB_LIBS) \
 	$(top_builddir)/src/libqmi-glib/libqmi-glib.la
+
+
+completiondir = $(datadir)/bash-completion/completions
+
+install-data-hook:
+	$(mkinstalldirs) $(DESTDIR)$(completiondir)
+	$(INSTALL_DATA) $(srcdir)/qmicli-completion $(DESTDIR)$(completiondir)/qmicli
+
+uninstall-hook:
+	rm -f $(DESTDIR)$(completiondir)/qmicli
+
+EXTRA_DIST = qmicli-completion

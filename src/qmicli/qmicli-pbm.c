@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (C) 2013 Aleksander Morgado <aleksander@gnu.org>
+ * Copyright (C) 2013-2015 Aleksander Morgado <aleksander@aleksander.es>
  */
 
 #include "config.h"
@@ -59,16 +59,16 @@ static GOptionEntry entries[] = {
 GOptionGroup *
 qmicli_pbm_get_option_group (void)
 {
-	GOptionGroup *group;
+    GOptionGroup *group;
 
-	group = g_option_group_new ("pbm",
-	                            "PBM options",
-	                            "Show Phonebook Management options",
-	                            NULL,
-	                            NULL);
-	g_option_group_add_entries (group, entries);
+    group = g_option_group_new ("pbm",
+                                "PBM options",
+                                "Show Phonebook Management options",
+                                NULL,
+                                NULL);
+    g_option_group_add_entries (group, entries);
 
-	return group;
+    return group;
 }
 
 gboolean
@@ -106,7 +106,7 @@ context_free (Context *context)
 }
 
 static void
-shutdown (gboolean operation_status)
+operation_shutdown (gboolean operation_status)
 {
     /* Cleanup context and finish async operation */
     context_free (ctx);
@@ -119,7 +119,14 @@ get_all_capabilities_ready (QmiClientPbm *client,
 {
     GError *error = NULL;
     QmiMessagePbmGetAllCapabilitiesOutput *output;
-    GArray *array = NULL;
+    GArray *capability_basic_information = NULL;
+    GArray *group_capability = NULL;
+    GArray *additional_number_capability = NULL;
+    GArray *email_capability = NULL;
+    GArray *second_name_capability = NULL;
+    GArray *hidden_records_capability = NULL;
+    GArray *grouping_information_alpha_string_capability = NULL;
+    GArray *additional_number_alpha_string_capability = NULL;
     guint i, j;
 
     output = qmi_client_pbm_get_all_capabilities_finish (client, res, &error);
@@ -127,7 +134,7 @@ get_all_capabilities_ready (QmiClientPbm *client,
         g_printerr ("error: operation failed: %s\n",
                     error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -135,19 +142,36 @@ get_all_capabilities_ready (QmiClientPbm *client,
         g_printerr ("error: couldn't get capabilities: %s\n", error->message);
         g_error_free (error);
         qmi_message_pbm_get_all_capabilities_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
-    g_print ("[%s] Phonebook capabilities:\n",
-             qmi_device_get_path_display (ctx->device));
+    qmi_message_pbm_get_all_capabilities_output_get_capability_basic_information (output, &capability_basic_information, NULL);
+    qmi_message_pbm_get_all_capabilities_output_get_group_capability (output, &group_capability, NULL);
+    qmi_message_pbm_get_all_capabilities_output_get_additional_number_capability (output, &additional_number_capability, NULL);
+    qmi_message_pbm_get_all_capabilities_output_get_email_capability (output, &email_capability, NULL);
+    qmi_message_pbm_get_all_capabilities_output_get_second_name_capability (output, &second_name_capability, NULL);
+    qmi_message_pbm_get_all_capabilities_output_get_hidden_records_capability (output, &hidden_records_capability, NULL);
+    qmi_message_pbm_get_all_capabilities_output_get_grouping_information_alpha_string_capability (output, &grouping_information_alpha_string_capability, NULL);
+    qmi_message_pbm_get_all_capabilities_output_get_additional_number_alpha_string_capability (output, &additional_number_alpha_string_capability, NULL);
 
-    if (qmi_message_pbm_get_all_capabilities_output_get_capability_basic_information (output, &array, NULL)) {
+    g_print ("[%s] Phonebook capabilities:%s\n",
+             qmi_device_get_path_display (ctx->device),
+             (capability_basic_information ||
+              group_capability ||
+              additional_number_capability ||
+              email_capability ||
+              second_name_capability ||
+              hidden_records_capability ||
+              grouping_information_alpha_string_capability ||
+              additional_number_alpha_string_capability) ? "" : " none");
+
+    if (capability_basic_information) {
         g_print ("Capability basic information:\n");
-        for (i = 0; i < array->len; i++) {
+        for (i = 0; i < capability_basic_information->len; i++) {
             QmiMessagePbmGetAllCapabilitiesOutputCapabilityBasicInformationElement *session;
 
-            session = &g_array_index (array,
+            session = &g_array_index (capability_basic_information,
                                       QmiMessagePbmGetAllCapabilitiesOutputCapabilityBasicInformationElement,
                                       i);
             g_print ("\t[%s]:\n", qmi_pbm_session_type_get_string (session->session_type));
@@ -169,12 +193,12 @@ get_all_capabilities_ready (QmiClientPbm *client,
         }
     }
 
-    if (qmi_message_pbm_get_all_capabilities_output_get_group_capability (output, &array, NULL)) {
+    if (group_capability) {
         g_print ("Group capability:\n");
-        for (i = 0; i < array->len; i++) {
+        for (i = 0; i < group_capability->len; i++) {
             QmiMessagePbmGetAllCapabilitiesOutputGroupCapabilityElement *session;
 
-            session = &g_array_index (array,
+            session = &g_array_index (group_capability,
                                       QmiMessagePbmGetAllCapabilitiesOutputGroupCapabilityElement,
                                       i);
             g_print ("\t[%s]:\n", qmi_pbm_session_type_get_string (session->session_type));
@@ -183,12 +207,12 @@ get_all_capabilities_ready (QmiClientPbm *client,
         }
     }
 
-    if (qmi_message_pbm_get_all_capabilities_output_get_additional_number_capability (output, &array, NULL)) {
+    if (additional_number_capability) {
         g_print ("Additional number capability:\n");
-        for (i = 0; i < array->len; i++) {
+        for (i = 0; i < additional_number_capability->len; i++) {
             QmiMessagePbmGetAllCapabilitiesOutputAdditionalNumberCapabilityElement *session;
 
-            session = &g_array_index (array,
+            session = &g_array_index (additional_number_capability,
                                       QmiMessagePbmGetAllCapabilitiesOutputAdditionalNumberCapabilityElement,
                                       i);
             g_print ("\t[%s]:\n", qmi_pbm_session_type_get_string (session->session_type));
@@ -198,12 +222,12 @@ get_all_capabilities_ready (QmiClientPbm *client,
         }
     }
 
-    if (qmi_message_pbm_get_all_capabilities_output_get_email_capability (output, &array, NULL)) {
+    if (email_capability) {
         g_print ("Email capability:\n");
-        for (i = 0; i < array->len; i++) {
+        for (i = 0; i < email_capability->len; i++) {
             QmiMessagePbmGetAllCapabilitiesOutputEmailCapabilityElement *session;
 
-            session = &g_array_index (array,
+            session = &g_array_index (email_capability,
                                       QmiMessagePbmGetAllCapabilitiesOutputEmailCapabilityElement,
                                       i);
             g_print ("\t[%s]:\n", qmi_pbm_session_type_get_string (session->session_type));
@@ -212,12 +236,12 @@ get_all_capabilities_ready (QmiClientPbm *client,
         }
     }
 
-    if (qmi_message_pbm_get_all_capabilities_output_get_second_name_capability (output, &array, NULL)) {
+    if (second_name_capability) {
         g_print ("Second name capability:\n");
-        for (i = 0; i < array->len; i++) {
+        for (i = 0; i < second_name_capability->len; i++) {
             QmiMessagePbmGetAllCapabilitiesOutputSecondNameCapabilityElement *session;
 
-            session = &g_array_index (array,
+            session = &g_array_index (second_name_capability,
                                       QmiMessagePbmGetAllCapabilitiesOutputSecondNameCapabilityElement,
                                       i);
             g_print ("\t[%s]:\n", qmi_pbm_session_type_get_string (session->session_type));
@@ -225,12 +249,12 @@ get_all_capabilities_ready (QmiClientPbm *client,
         }
     }
 
-    if (qmi_message_pbm_get_all_capabilities_output_get_hidden_records_capability (output, &array, NULL)) {
+    if (hidden_records_capability) {
         g_print ("Hidden records capability:\n");
-        for (i = 0; i < array->len; i++) {
+        for (i = 0; i < hidden_records_capability->len; i++) {
             QmiMessagePbmGetAllCapabilitiesOutputHiddenRecordsCapabilityElement *session;
 
-            session = &g_array_index (array,
+            session = &g_array_index (hidden_records_capability,
                                       QmiMessagePbmGetAllCapabilitiesOutputHiddenRecordsCapabilityElement,
                                       i);
             g_print ("\t[%s]:\n", qmi_pbm_session_type_get_string (session->session_type));
@@ -238,12 +262,12 @@ get_all_capabilities_ready (QmiClientPbm *client,
         }
     }
 
-    if (qmi_message_pbm_get_all_capabilities_output_get_grouping_information_alpha_string_capability (output, &array, NULL)) {
+    if (grouping_information_alpha_string_capability) {
         g_print ("Alpha string capability:\n");
-        for (i = 0; i < array->len; i++) {
+        for (i = 0; i < grouping_information_alpha_string_capability->len; i++) {
             QmiMessagePbmGetAllCapabilitiesOutputGroupingInformationAlphaStringCapabilityElement *session;
 
-            session = &g_array_index (array,
+            session = &g_array_index (grouping_information_alpha_string_capability,
                                       QmiMessagePbmGetAllCapabilitiesOutputGroupingInformationAlphaStringCapabilityElement,
                                       i);
             g_print ("\t[%s]:\n", qmi_pbm_session_type_get_string (session->session_type));
@@ -253,12 +277,12 @@ get_all_capabilities_ready (QmiClientPbm *client,
         }
     }
 
-    if (qmi_message_pbm_get_all_capabilities_output_get_additional_number_alpha_string_capability (output, &array, NULL)) {
+    if (additional_number_alpha_string_capability) {
         g_print ("Additional number alpha string capability:\n");
-        for (i = 0; i < array->len; i++) {
+        for (i = 0; i < additional_number_alpha_string_capability->len; i++) {
             QmiMessagePbmGetAllCapabilitiesOutputAdditionalNumberAlphaStringCapabilityElement *session;
 
-            session = &g_array_index (array,
+            session = &g_array_index (additional_number_alpha_string_capability,
                                       QmiMessagePbmGetAllCapabilitiesOutputAdditionalNumberAlphaStringCapabilityElement,
                                       i);
             g_print ("\t[%s]:\n", qmi_pbm_session_type_get_string (session->session_type));
@@ -269,13 +293,13 @@ get_all_capabilities_ready (QmiClientPbm *client,
     }
 
     qmi_message_pbm_get_all_capabilities_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static gboolean
 noop_cb (gpointer unused)
 {
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
     return FALSE;
 }
 

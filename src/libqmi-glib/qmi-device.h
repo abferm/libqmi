@@ -17,7 +17,7 @@
  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301 USA.
  *
- * Copyright (C) 2012 Aleksander Morgado <aleksander@lanedo.com>
+ * Copyright (C) 2012-2015 Aleksander Morgado <aleksander@aleksander.es>
  */
 
 #ifndef _LIBQMI_GLIB_QMI_DEVICE_H_
@@ -47,7 +47,10 @@ typedef struct _QmiDevice QmiDevice;
 typedef struct _QmiDeviceClass QmiDeviceClass;
 typedef struct _QmiDevicePrivate QmiDevicePrivate;
 
-#define QMI_DEVICE_FILE "device-file"
+#define QMI_DEVICE_FILE          "device-file"
+#define QMI_DEVICE_NO_FILE_CHECK "device-no-file-check"
+#define QMI_DEVICE_PROXY_PATH    "device-proxy-path"
+#define QMI_DEVICE_WWAN_IFACE    "device-wwan-iface"
 
 #define QMI_DEVICE_SIGNAL_INDICATION "indication"
 
@@ -81,6 +84,7 @@ GFile        *qmi_device_get_file         (QmiDevice *self);
 GFile        *qmi_device_peek_file        (QmiDevice *self);
 const gchar  *qmi_device_get_path         (QmiDevice *self);
 const gchar  *qmi_device_get_path_display (QmiDevice *self);
+const gchar  *qmi_device_get_wwan_iface   (QmiDevice *self);
 gboolean      qmi_device_is_open          (QmiDevice *self);
 
 /**
@@ -93,6 +97,7 @@ gboolean      qmi_device_is_open          (QmiDevice *self);
  * @QMI_DEVICE_OPEN_FLAGS_NET_QOS_HEADER: set network port to transmit/receive QoS headers; mutually exclusive with @QMI_DEVICE_OPEN_FLAGS_NET_NO_QOS_HEADER
  * @QMI_DEVICE_OPEN_FLAGS_NET_NO_QOS_HEADER: set network port to not transmit/receive QoS headers; mutually exclusive with @QMI_DEVICE_OPEN_FLAGS_NET_QOS_HEADER
  * @QMI_DEVICE_OPEN_FLAGS_PROXY: Try to open the port through the 'qmi-proxy'.
+ * @QMI_DEVICE_OPEN_FLAGS_MBIM: open an MBIM port with QMUX tunneling service
  *
  * Flags to specify which actions to be performed when the device is open.
  */
@@ -104,7 +109,8 @@ typedef enum {
     QMI_DEVICE_OPEN_FLAGS_NET_RAW_IP        = 1 << 3,
     QMI_DEVICE_OPEN_FLAGS_NET_QOS_HEADER    = 1 << 4,
     QMI_DEVICE_OPEN_FLAGS_NET_NO_QOS_HEADER = 1 << 5,
-    QMI_DEVICE_OPEN_FLAGS_PROXY             = 1 << 6
+    QMI_DEVICE_OPEN_FLAGS_PROXY             = 1 << 6,
+    QMI_DEVICE_OPEN_FLAGS_MBIM              = 1 << 7
 } QmiDeviceOpenFlags;
 
 void         qmi_device_open        (QmiDevice *self,
@@ -197,6 +203,25 @@ void    qmi_device_get_service_version_info        (QmiDevice *self,
 GArray *qmi_device_get_service_version_info_finish (QmiDevice *self,
                                                     GAsyncResult *res,
                                                     GError **error);
+/**
+ * QmiDeviceExpectedDataFormat:
+ * @QMI_DEVICE_EXPECTED_DATA_FORMAT_UNKNOWN: Unknown.
+ * @QMI_DEVICE_EXPECTED_DATA_FORMAT_802_3: 802.3.
+ * @QMI_DEVICE_EXPECTED_DATA_FORMAT_RAW_IP: Raw IP.
+ *
+ * Data format expected by the kernel.
+ */
+typedef enum {
+    QMI_DEVICE_EXPECTED_DATA_FORMAT_UNKNOWN,
+    QMI_DEVICE_EXPECTED_DATA_FORMAT_802_3,
+    QMI_DEVICE_EXPECTED_DATA_FORMAT_RAW_IP,
+} QmiDeviceExpectedDataFormat;
+
+QmiDeviceExpectedDataFormat qmi_device_get_expected_data_format (QmiDevice *self,
+                                                                 GError **error);
+gboolean                    qmi_device_set_expected_data_format (QmiDevice *self,
+                                                                 QmiDeviceExpectedDataFormat format,
+                                                                 GError **error);
 
 G_END_DECLS
 

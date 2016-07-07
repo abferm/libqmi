@@ -2,21 +2,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>libqmi-glib Reference Manual: Common utilities</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<title>Common utilities: libqmi-glib Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.79.1">
 <link rel="home" href="index.html" title="libqmi-glib Reference Manual">
 <link rel="up" href="ch01.html" title="Core">
 <link rel="prev" href="libqmi-glib-Errors.html" title="Errors">
 <link rel="next" href="ch02.html" title="Device Management Service (DMS)">
-<meta name="generator" content="GTK-Doc V1.20 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
 <td width="100%" align="left" class="shortcuts">
-<a href="#" class="shortcut">Top</a><span id="nav_description"> <span class="dim">|</span> 
-                  <a href="#libqmi-glib-Common-utilities.description" class="shortcut">Description</a></span><span id="nav_hierarchy"> <span class="dim">|</span> 
-                  <a href="#libqmi-glib-Common-utilities.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#libqmi-glib-Common-utilities.description" class="shortcut">Description</a></span>
 </td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
 <td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
@@ -34,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="libqmi-glib-Common-utilities.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -42,7 +41,7 @@
 <tbody>
 <tr>
 <td class="function_type">
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 </td>
 <td class="function_name">
 <a class="link" href="libqmi-glib-Common-utilities.html#qmi-utils-get-traces-enabled" title="qmi_utils_get_traces_enabled ()">qmi_utils_get_traces_enabled</a> <span class="c_punctuation">()</span>
@@ -245,7 +244,7 @@
 </div>
 <div class="refsect1">
 <a name="libqmi-glib-Common-utilities.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -257,11 +256,6 @@
 </table></div>
 </div>
 <div class="refsect1">
-<a name="libqmi-glib-Common-utilities.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">
-</pre>
-</div>
-<div class="refsect1">
 <a name="libqmi-glib-Common-utilities.description"></a><h2>Description</h2>
 <p>This section exposes a set of common utilities that may be used to work
 with the QMI library.</p>
@@ -270,24 +264,23 @@ with the QMI library.</p>
 <a name="libqmi-glib-Common-utilities.functions_details"></a><h2>Functions</h2>
 <div class="refsect2">
 <a name="qmi-utils-get-traces-enabled"></a><h3>qmi_utils_get_traces_enabled ()</h3>
-<pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<pre class="programlisting"><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
 qmi_utils_get_traces_enabled (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Checks whether QMI message traces are currently enabled.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.2.5"></a><h4>Returns</h4>
-<p> <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if traces are enabled, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
-<p></p>
+<a name="qmi-utils-get-traces-enabled.returns"></a><h4>Returns</h4>
+<p> <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if traces are enabled, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
 </div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="qmi-utils-set-traces-enabled"></a><h3>qmi_utils_set_traces_enabled ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_set_traces_enabled (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> enabled</code></em>);</pre>
+qmi_utils_set_traces_enabled (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> enabled</code></em>);</pre>
 <p>Sets whether QMI message traces are enabled or disabled.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-set-traces-enabled.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -295,7 +288,7 @@ qmi_utils_set_traces_enabled (<em class="parameter"><code><a href="http://librar
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>enabled</p></td>
-<td class="parameter_description"><p><a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to enable traces, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> to disable them.</p></td>
+<td class="parameter_description"><p><a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to enable traces, <a href="https://developer.gnome.org/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> to disable them.</p></td>
 <td class="parameter_annotations"> </td>
 </tr></tbody>
 </table></div>
@@ -305,9 +298,10 @@ qmi_utils_set_traces_enabled (<em class="parameter"><code><a href="http://librar
 <div class="refsect2">
 <a name="qmi-utils-read-guint8-from-buffer"></a><h3>qmi_utils_read_guint8_from_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_read_guint8_from_buffer (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *out</code></em>);</pre>
+qmi_utils_read_guint8_from_buffer (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *out</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_read_guint8_from_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Reads an unsigned byte from the buffer.</p>
 <p>The user needs to make sure that at least 1 byte is available
 in the buffer.</p>
@@ -316,8 +310,8 @@ in the buffer.</p>
  get updated after the 1 byte
 read.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.4.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-read-guint8-from-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -348,9 +342,10 @@ read.</p>
 <div class="refsect2">
 <a name="qmi-utils-read-gint8-from-buffer"></a><h3>qmi_utils_read_gint8_from_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_read_gint8_from_buffer (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                  <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
-                                  <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint8"><span class="type">gint8</span></a> *out</code></em>);</pre>
+qmi_utils_read_gint8_from_buffer (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+                                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint8"><span class="type">gint8</span></a> *out</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_read_gint8_from_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Reads a signed byte from the buffer.</p>
 <p>The user needs to make sure that at least 1 byte is available
 in the buffer.</p>
@@ -359,8 +354,8 @@ in the buffer.</p>
  get updated after the 1 byte
 read.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.5.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-read-gint8-from-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -391,10 +386,11 @@ read.</p>
 <div class="refsect2">
 <a name="qmi-utils-read-guint16-from-buffer"></a><h3>qmi_utils_read_guint16_from_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_read_guint16_from_buffer (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                    <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+qmi_utils_read_guint16_from_buffer (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                    <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
                                     <em class="parameter"><code><a class="link" href="libqmi-glib-Common-utilities.html#QmiEndian" title="enum QmiEndian"><span class="type">QmiEndian</span></a> endian</code></em>,
-                                    <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *out</code></em>);</pre>
+                                    <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *out</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_read_guint16_from_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Reads an unsigned 16-bit integer from the buffer. The number in the buffer is
 expected to be given in the byte order specificed by <em class="parameter"><code>endian</code></em>
 , and this method
@@ -406,8 +402,8 @@ in the buffer.</p>
  get updated after the 2 bytes
 read.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.6.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-read-guint16-from-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -443,10 +439,11 @@ read.</p>
 <div class="refsect2">
 <a name="qmi-utils-read-gint16-from-buffer"></a><h3>qmi_utils_read_gint16_from_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_read_gint16_from_buffer (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+qmi_utils_read_gint16_from_buffer (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
                                    <em class="parameter"><code><a class="link" href="libqmi-glib-Common-utilities.html#QmiEndian" title="enum QmiEndian"><span class="type">QmiEndian</span></a> endian</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"><span class="type">gint16</span></a> *out</code></em>);</pre>
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint16"><span class="type">gint16</span></a> *out</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_read_gint16_from_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Reads a signed 16-bit integer from the buffer. The number in the buffer is
 expected to be given in the byte order specified by <em class="parameter"><code>endian</code></em>
 , and this method
@@ -458,8 +455,8 @@ in the buffer.</p>
  get updated after the 2 bytes
 read.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.7.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-read-gint16-from-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -495,10 +492,11 @@ read.</p>
 <div class="refsect2">
 <a name="qmi-utils-read-guint32-from-buffer"></a><h3>qmi_utils_read_guint32_from_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_read_guint32_from_buffer (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                    <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+qmi_utils_read_guint32_from_buffer (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                    <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
                                     <em class="parameter"><code><a class="link" href="libqmi-glib-Common-utilities.html#QmiEndian" title="enum QmiEndian"><span class="type">QmiEndian</span></a> endian</code></em>,
-                                    <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> *out</code></em>);</pre>
+                                    <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> *out</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_read_guint32_from_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Reads an unsigned 32-bit integer from the buffer. The number in the buffer is
 expected to be given in the byte order specified by <em class="parameter"><code>endian</code></em>
 , and this method
@@ -510,8 +508,8 @@ in the buffer.</p>
  get updated after the 4 bytes
 read.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.8.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-read-guint32-from-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -547,10 +545,11 @@ read.</p>
 <div class="refsect2">
 <a name="qmi-utils-read-gint32-from-buffer"></a><h3>qmi_utils_read_gint32_from_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_read_gint32_from_buffer (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+qmi_utils_read_gint32_from_buffer (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
                                    <em class="parameter"><code><a class="link" href="libqmi-glib-Common-utilities.html#QmiEndian" title="enum QmiEndian"><span class="type">QmiEndian</span></a> endian</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint32"><span class="type">gint32</span></a> *out</code></em>);</pre>
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint32"><span class="type">gint32</span></a> *out</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_read_gint32_from_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Reads a signed 32-bit integer from the buffer. The number in the buffer is
 expected to be given in the byte order specified by <em class="parameter"><code>endian</code></em>
 , and this method
@@ -562,8 +561,8 @@ in the buffer.</p>
  get updated after the 4 bytes
 read.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.9.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-read-gint32-from-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -599,10 +598,11 @@ read.</p>
 <div class="refsect2">
 <a name="qmi-utils-read-guint64-from-buffer"></a><h3>qmi_utils_read_guint64_from_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_read_guint64_from_buffer (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                    <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+qmi_utils_read_guint64_from_buffer (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                    <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
                                     <em class="parameter"><code><a class="link" href="libqmi-glib-Common-utilities.html#QmiEndian" title="enum QmiEndian"><span class="type">QmiEndian</span></a> endian</code></em>,
-                                    <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> *out</code></em>);</pre>
+                                    <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> *out</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_read_guint64_from_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Reads an unsigned 64-bit integer from the buffer. The number in the buffer is
 expected to be given in the byte order specified by <em class="parameter"><code>endian</code></em>
 , and this method
@@ -614,8 +614,8 @@ in the buffer.</p>
  get updated after the 8 bytes
 read.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.10.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-read-guint64-from-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -651,10 +651,11 @@ read.</p>
 <div class="refsect2">
 <a name="qmi-utils-read-gint64-from-buffer"></a><h3>qmi_utils_read_gint64_from_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_read_gint64_from_buffer (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+qmi_utils_read_gint64_from_buffer (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
                                    <em class="parameter"><code><a class="link" href="libqmi-glib-Common-utilities.html#QmiEndian" title="enum QmiEndian"><span class="type">QmiEndian</span></a> endian</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"><span class="type">gint64</span></a> *out</code></em>);</pre>
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint64"><span class="type">gint64</span></a> *out</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_read_gint64_from_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Reads a signed 64-bit integer from the buffer. The number in the buffer is
 expected to be given in the byte order specified by <em class="parameter"><code>endian</code></em>
 , and this method
@@ -666,8 +667,8 @@ in the buffer.</p>
  get updated after the 8 bytes
 read.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.11.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-read-gint64-from-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -704,11 +705,12 @@ read.</p>
 <a name="qmi-utils-read-sized-guint-from-buffer"></a><h3>qmi_utils_read_sized_guint_from_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 qmi_utils_read_sized_guint_from_buffer
-                               (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
-                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_bytes</code></em>,
+                               (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_bytes</code></em>,
                                 <em class="parameter"><code><a class="link" href="libqmi-glib-Common-utilities.html#QmiEndian" title="enum QmiEndian"><span class="type">QmiEndian</span></a> endian</code></em>,
-                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> *out</code></em>);</pre>
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> *out</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_read_sized_guint_from_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Reads a <em class="parameter"><code>n_bytes</code></em>
 -sized unsigned integer from the buffer. The number in the
 buffer is expected to be given in the byte order specified by <em class="parameter"><code>endian</code></em>
@@ -724,8 +726,8 @@ in the buffer.</p>
 
 bytes read.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.12.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-read-sized-guint-from-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -766,9 +768,10 @@ bytes read.</p>
 <div class="refsect2">
 <a name="qmi-utils-read-gfloat-from-buffer"></a><h3>qmi_utils_read_gfloat_from_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_read_gfloat_from_buffer (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gfloat"><span class="type">gfloat</span></a> *out</code></em>);</pre>
+qmi_utils_read_gfloat_from_buffer (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gfloat"><span class="type">gfloat</span></a> *out</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_read_gfloat_from_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Reads a 32-bit floating-point number from the buffer.</p>
 <p>The user needs to make sure that at least 4 bytes are available
 in the buffer.</p>
@@ -777,8 +780,8 @@ in the buffer.</p>
  get updated after the 4 bytes
 read.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.13.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-read-gfloat-from-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -809,11 +812,12 @@ read.</p>
 <div class="refsect2">
 <a name="qmi-utils-read-string-from-buffer"></a><h3>qmi_utils_read_string_from_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_read_string_from_buffer (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> length_prefix_size</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> max_size</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **out</code></em>);</pre>
+qmi_utils_read_string_from_buffer (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> length_prefix_size</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> max_size</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> **out</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_read_string_from_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Reads a string from the buffer.</p>
 <p>If <em class="parameter"><code>length_prefix_size</code></em>
  is greater than 0, only the amount of bytes given
@@ -823,8 +827,8 @@ there will be read. Otherwise, up to <em class="parameter"><code>buffer_size</co
  and <em class="parameter"><code>buffer_size</code></em>
  get updated after the write.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.14.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-read-string-from-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -854,7 +858,7 @@ there will be read. Otherwise, up to <em class="parameter"><code>buffer_size</co
 </tr>
 <tr>
 <td class="parameter_name"><p>out</p></td>
-<td class="parameter_description"><p>return location for the read string. The returned value should be freed with <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>.</p></td>
+<td class="parameter_description"><p>return location for the read string. The returned value should be freed with <a href="https://developer.gnome.org/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>.</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -866,20 +870,22 @@ there will be read. Otherwise, up to <em class="parameter"><code>buffer_size</co
 <a name="qmi-utils-read-fixed-size-string-from-buffer"></a><h3>qmi_utils_read_fixed_size_string_from_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 qmi_utils_read_fixed_size_string_from_buffer
-                               (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
-                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> fixed_size</code></em>,
-                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *out</code></em>);</pre>
+                               (<em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> fixed_size</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *out</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_read_fixed_size_string_from_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Reads a <em class="parameter"><code>fixed_size</code></em>
--sized string from the buffer.</p>
+-sized string from the buffer into the <em class="parameter"><code>out</code></em>
+ buffer.</p>
 <p>Also note that both <em class="parameter"><code>buffer</code></em>
  and <em class="parameter"><code>buffer_size</code></em>
  get updated after the
 <em class="parameter"><code>fixed_size</code></em>
  bytes read.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.15.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-read-fixed-size-string-from-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -904,7 +910,8 @@ qmi_utils_read_fixed_size_string_from_buffer
 </tr>
 <tr>
 <td class="parameter_name"><p>out</p></td>
-<td class="parameter_description"><p>return location for the read string. The returned value should be freed with <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>.</p></td>
+<td class="parameter_description"><p>buffer preallocated by the client, with at least <em class="parameter"><code>fixed_size</code></em>
+bytes.</p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 </tbody>
@@ -915,9 +922,10 @@ qmi_utils_read_fixed_size_string_from_buffer
 <div class="refsect2">
 <a name="qmi-utils-write-guint8-to-buffer"></a><h3>qmi_utils_write_guint8_to_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_write_guint8_to_buffer (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                  <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
-                                  <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *in</code></em>);</pre>
+qmi_utils_write_guint8_to_buffer (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+                                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> *in</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_write_guint8_to_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Writes an unsigned byte into the buffer.</p>
 <p>The user needs to make sure that the buffer is at least 1 byte long.</p>
 <p>Also note that both <em class="parameter"><code>buffer</code></em>
@@ -925,8 +933,8 @@ qmi_utils_write_guint8_to_buffer (<em class="parameter"><code><a href="http://li
  get updated after the 1 byte
 write.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.16.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-write-guint8-to-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -957,9 +965,10 @@ write.</p>
 <div class="refsect2">
 <a name="qmi-utils-write-gint8-to-buffer"></a><h3>qmi_utils_write_gint8_to_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_write_gint8_to_buffer (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                 <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
-                                 <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint8"><span class="type">gint8</span></a> *in</code></em>);</pre>
+qmi_utils_write_gint8_to_buffer (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                 <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+                                 <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint8"><span class="type">gint8</span></a> *in</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_write_gint8_to_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Writes a signed byte into the buffer.</p>
 <p>The user needs to make sure that the buffer is at least 1 byte long.</p>
 <p>Also note that both <em class="parameter"><code>buffer</code></em>
@@ -967,8 +976,8 @@ qmi_utils_write_gint8_to_buffer (<em class="parameter"><code><a href="http://lib
  get updated after the 1 byte
 write.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.17.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-write-gint8-to-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -999,10 +1008,11 @@ write.</p>
 <div class="refsect2">
 <a name="qmi-utils-write-guint16-to-buffer"></a><h3>qmi_utils_write_guint16_to_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_write_guint16_to_buffer (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+qmi_utils_write_guint16_to_buffer (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
                                    <em class="parameter"><code><a class="link" href="libqmi-glib-Common-utilities.html#QmiEndian" title="enum QmiEndian"><span class="type">QmiEndian</span></a> endian</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *in</code></em>);</pre>
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *in</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_write_guint16_to_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Writes an unsigned 16-bit integer into the buffer. The number to be written
 is expected to be given in host endianness, and this method takes care of
 converting the value written to the byte order specified by <em class="parameter"><code>endian</code></em>
@@ -1013,8 +1023,8 @@ converting the value written to the byte order specified by <em class="parameter
  get updated after the 2 bytes
 write.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.18.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-write-guint16-to-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1050,10 +1060,11 @@ write.</p>
 <div class="refsect2">
 <a name="qmi-utils-write-gint16-to-buffer"></a><h3>qmi_utils_write_gint16_to_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_write_gint16_to_buffer (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                  <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+qmi_utils_write_gint16_to_buffer (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
                                   <em class="parameter"><code><a class="link" href="libqmi-glib-Common-utilities.html#QmiEndian" title="enum QmiEndian"><span class="type">QmiEndian</span></a> endian</code></em>,
-                                  <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint16"><span class="type">gint16</span></a> *in</code></em>);</pre>
+                                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint16"><span class="type">gint16</span></a> *in</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_write_gint16_to_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Writes a signed 16-bit integer into the buffer. The number to be written
 is expected to be given in host endianness, and this method takes care of
 converting the value written to the byte order specified by <em class="parameter"><code>endian</code></em>
@@ -1064,8 +1075,8 @@ converting the value written to the byte order specified by <em class="parameter
  get updated after the 2 bytes
 write.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.19.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-write-gint16-to-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1101,10 +1112,11 @@ write.</p>
 <div class="refsect2">
 <a name="qmi-utils-write-guint32-to-buffer"></a><h3>qmi_utils_write_guint32_to_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_write_guint32_to_buffer (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+qmi_utils_write_guint32_to_buffer (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
                                    <em class="parameter"><code><a class="link" href="libqmi-glib-Common-utilities.html#QmiEndian" title="enum QmiEndian"><span class="type">QmiEndian</span></a> endian</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> *in</code></em>);</pre>
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> *in</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_write_guint32_to_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Writes an unsigned 32-bit integer into the buffer. The number to be written
 is expected to be given in host endianness, and this method takes care of
 converting the value written to the byte order specified by <em class="parameter"><code>endian</code></em>
@@ -1115,8 +1127,8 @@ converting the value written to the byte order specified by <em class="parameter
  get updated after the 4 bytes
 write.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.20.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-write-guint32-to-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1152,10 +1164,11 @@ write.</p>
 <div class="refsect2">
 <a name="qmi-utils-write-gint32-to-buffer"></a><h3>qmi_utils_write_gint32_to_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_write_gint32_to_buffer (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                  <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+qmi_utils_write_gint32_to_buffer (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
                                   <em class="parameter"><code><a class="link" href="libqmi-glib-Common-utilities.html#QmiEndian" title="enum QmiEndian"><span class="type">QmiEndian</span></a> endian</code></em>,
-                                  <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint32"><span class="type">gint32</span></a> *in</code></em>);</pre>
+                                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint32"><span class="type">gint32</span></a> *in</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_write_gint32_to_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Writes a signed 32-bit integer into the buffer. The number to be written
 is expected to be given in host endianness, and this method takes care of
 converting the value written to the byte order specified by <em class="parameter"><code>endian</code></em>
@@ -1166,8 +1179,8 @@ converting the value written to the byte order specified by <em class="parameter
  get updated after the 4 bytes
 write.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.21.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-write-gint32-to-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1203,10 +1216,11 @@ write.</p>
 <div class="refsect2">
 <a name="qmi-utils-write-guint64-to-buffer"></a><h3>qmi_utils_write_guint64_to_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_write_guint64_to_buffer (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+qmi_utils_write_guint64_to_buffer (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
                                    <em class="parameter"><code><a class="link" href="libqmi-glib-Common-utilities.html#QmiEndian" title="enum QmiEndian"><span class="type">QmiEndian</span></a> endian</code></em>,
-                                   <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> *in</code></em>);</pre>
+                                   <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> *in</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_write_guint64_to_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Writes an unsigned 64-bit integer into the buffer. The number to be written
 is expected to be given in host endianness, and this method takes care of
 converting the value written to the byte order specified by <em class="parameter"><code>endian</code></em>
@@ -1217,8 +1231,8 @@ converting the value written to the byte order specified by <em class="parameter
  get updated after the 8 bytes
 write.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.22.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-write-guint64-to-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1254,10 +1268,11 @@ write.</p>
 <div class="refsect2">
 <a name="qmi-utils-write-gint64-to-buffer"></a><h3>qmi_utils_write_gint64_to_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_write_gint64_to_buffer (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                  <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+qmi_utils_write_gint64_to_buffer (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
                                   <em class="parameter"><code><a class="link" href="libqmi-glib-Common-utilities.html#QmiEndian" title="enum QmiEndian"><span class="type">QmiEndian</span></a> endian</code></em>,
-                                  <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint64"><span class="type">gint64</span></a> *in</code></em>);</pre>
+                                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gint64"><span class="type">gint64</span></a> *in</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_write_gint64_to_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Writes a signed 64-bit integer into the buffer. The number to be written
 is expected to be given in host endianness, and this method takes care of
 converting the value written to the byte order specified by <em class="parameter"><code>endian</code></em>
@@ -1268,8 +1283,8 @@ converting the value written to the byte order specified by <em class="parameter
  get updated after the 8 bytes
 write.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.23.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-write-gint64-to-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1305,11 +1320,12 @@ write.</p>
 <div class="refsect2">
 <a name="qmi-utils-write-sized-guint-to-buffer"></a><h3>qmi_utils_write_sized_guint_to_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_write_sized_guint_to_buffer (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                       <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
-                                       <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_bytes</code></em>,
+qmi_utils_write_sized_guint_to_buffer (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                       <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+                                       <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> n_bytes</code></em>,
                                        <em class="parameter"><code><a class="link" href="libqmi-glib-Common-utilities.html#QmiEndian" title="enum QmiEndian"><span class="type">QmiEndian</span></a> endian</code></em>,
-                                       <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> *in</code></em>);</pre>
+                                       <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint64"><span class="type">guint64</span></a> *in</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_write_sized_guint_to_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Writes a <em class="parameter"><code>n_bytes</code></em>
 -sized unsigned integer into the buffer. The number to be
 written is expected to be given in host endianness, and this method takes
@@ -1323,8 +1339,8 @@ care of converting the value written to the byte order specified by <em class="p
 
 bytes write.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.24.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-write-sized-guint-to-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1365,10 +1381,11 @@ bytes write.</p>
 <div class="refsect2">
 <a name="qmi-utils-write-string-to-buffer"></a><h3>qmi_utils_write_string_to_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
-qmi_utils_write_string_to_buffer (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                  <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
-                                  <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> length_prefix_size</code></em>,
-                                  <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *in</code></em>);</pre>
+qmi_utils_write_string_to_buffer (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+                                  <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> length_prefix_size</code></em>,
+                                  <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *in</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_write_string_to_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Writes a string to the buffer.</p>
 <p>If <em class="parameter"><code>length_prefix_size</code></em>
  is greater than 0, a length prefix integer will be
@@ -1379,8 +1396,8 @@ whole string and the length prefix.</p>
  and <em class="parameter"><code>buffer_size</code></em>
  get updated after the write.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.25.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-write-string-to-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1417,10 +1434,11 @@ whole string and the length prefix.</p>
 <a name="qmi-utils-write-fixed-size-string-to-buffer"></a><h3>qmi_utils_write_fixed_size_string_to_buffer ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 qmi_utils_write_fixed_size_string_to_buffer
-                               (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
-                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
-                                <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> fixed_size</code></em>,
-                                <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *in</code></em>);</pre>
+                               (<em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint8"><span class="type">guint8</span></a> **buffer</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> *buffer_size</code></em>,
+                                <em class="parameter"><code><a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#guint16"><span class="type">guint16</span></a> fixed_size</code></em>,
+                                <em class="parameter"><code>const <a href="https://developer.gnome.org/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *in</code></em>);</pre>
+<div class="warning"><p><code class="literal">qmi_utils_write_fixed_size_string_to_buffer</code> is deprecated and should not be used in newly-written code.</p></div>
 <p>Writes a <em class="parameter"><code>fixed_size</code></em>
 -sized string to the buffer, without any length prefix.</p>
 <p>The user needs to make sure that the buffer is at least <em class="parameter"><code>fixed_size</code></em>
@@ -1432,8 +1450,8 @@ long.</p>
 <em class="parameter"><code>fixed_size</code></em>
  bytes write.</p>
 <div class="refsect3">
-<a name="id-1.2.9.7.26.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="qmi-utils-write-fixed-size-string-to-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1472,8 +1490,8 @@ long.</p>
 <a name="QmiEndian"></a><h3>enum QmiEndian</h3>
 <p>Type of endianness</p>
 <div class="refsect3">
-<a name="id-1.2.9.8.2.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="QmiEndian.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -1501,7 +1519,6 @@ long.</p>
 </div>
 </div>
 <div class="footer">
-<hr>
-          Generated by GTK-Doc V1.20</div>
+<hr>Generated by GTK-Doc V1.25</div>
 </body>
 </html>

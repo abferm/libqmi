@@ -15,7 +15,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (C) 2012 Aleksander Morgado <aleksander@gnu.org>
+ * Copyright (C) 2015 Velocloud Inc.
+ * Copyright (C) 2012-2015 Aleksander Morgado <aleksander@aleksander.es>
  */
 
 #include <stdio.h>
@@ -30,11 +31,11 @@ qmicli_get_raw_data_printable (const GArray *data,
                                gsize max_line_length,
                                const gchar *line_prefix)
 {
-	gsize i;
-	gsize j;
+    gsize i;
+    gsize j;
     gsize k;
-	gsize new_str_length;
-	gchar *new_str;
+    gsize new_str_length;
+    gchar *new_str;
     gsize prefix_len;
     guint n_lines;
     gboolean is_new_line;
@@ -44,12 +45,12 @@ qmicli_get_raw_data_printable (const GArray *data,
     if (!data)
         return g_strdup ("");
 
-	/* Get new string length. If input string has N bytes, we need:
-	 * - 1 byte for last NUL char
-	 * - 2N bytes for hexadecimal char representation of each byte...
-	 * - N-1 bytes for the separator ':'
-	 * So... a total of (1+2N+N-1) = 3N bytes are needed... */
-	new_str_length =  3 * data->len;
+    /* Get new string length. If input string has N bytes, we need:
+     * - 1 byte for last NUL char
+     * - 2N bytes for hexadecimal char representation of each byte...
+     * - N-1 bytes for the separator ':'
+     * So... a total of (1+2N+N-1) = 3N bytes are needed... */
+    new_str_length =  3 * data->len;
 
     /* Effective max line length needs to be multiple of 3, we don't want to
      * split in half a given byte representation */
@@ -68,25 +69,25 @@ qmicli_get_raw_data_printable (const GArray *data,
      * line length */
     new_str_length += (n_lines * prefix_len);
 
-	/* Allocate memory for new array and initialize contents to NUL */
-	new_str = g_malloc0 (new_str_length);
+    /* Allocate memory for new array and initialize contents to NUL */
+    new_str = g_malloc0 (new_str_length);
 
-	/* Print hexadecimal representation of each byte... */
+    /* Print hexadecimal representation of each byte... */
     is_new_line = TRUE;
-	for (i = 0, j = 0, k = 0; i < data->len; i++) {
+    for (i = 0, j = 0, k = 0; i < data->len; i++) {
         if (is_new_line) {
             strcpy (&new_str[j], line_prefix);
             j += strlen (line_prefix);
             is_new_line = FALSE;
         }
 
-		/* Print character in output string... */
-		snprintf (&new_str[j], 3, "%02X", g_array_index (data, guint8, i));
+        /* Print character in output string... */
+        snprintf (&new_str[j], 3, "%02X", g_array_index (data, guint8, i));
         j+=2;
         k+=2;
 
-		if (i != (data->len - 1) ) {
-			new_str[j] = ':';
+        if (i != (data->len - 1) ) {
+            new_str[j] = ':';
             j++;
             k++;
         }
@@ -97,15 +98,15 @@ qmicli_get_raw_data_printable (const GArray *data,
             j++;
             is_new_line = TRUE;
         }
-	}
+    }
 
-	/* Set output string */
-	return new_str;
+    /* Set output string */
+    return new_str;
 }
 
 gboolean
-qmicli_read_pin_id_from_string (const gchar *str,
-                                QmiDmsUimPinId *out)
+qmicli_read_dms_uim_pin_id_from_string (const gchar *str,
+                                        QmiDmsUimPinId *out)
 {
     if (!str || str[0] == '\0') {
         g_printerr ("error: expected 'PIN' or 'PIN2', got: none\n");
@@ -123,6 +124,33 @@ qmicli_read_pin_id_from_string (const gchar *str,
     }
 
     g_printerr ("error: expected 'PIN' or 'PIN2', got: '%s'\n", str);
+    return FALSE;
+}
+
+gboolean
+qmicli_read_uim_pin_id_from_string (const gchar *str,
+                                    QmiUimPinId *out)
+{
+    if (!str || str[0] == '\0') {
+        g_printerr ("error: expected 'PIN1', 'PIN2' or 'UPIN', got: none\n");
+        return FALSE;
+    }
+
+    if (g_str_equal (str, "PIN1")) {
+        *out = QMI_UIM_PIN_ID_PIN1;
+        return TRUE;
+    }
+
+    if (g_str_equal (str, "PIN2")) {
+        *out = QMI_UIM_PIN_ID_PIN2;
+        return TRUE;
+    }
+    if (g_str_equal (str, "UPIN")) {
+        *out = QMI_UIM_PIN_ID_UPIN;
+        return TRUE;
+    }
+
+    g_printerr ("error: expected 'PIN1', 'PIN2' or 'UPIN', got: '%s'\n", str);
     return FALSE;
 }
 
@@ -225,6 +253,29 @@ qmicli_read_enable_disable_from_string (const gchar *str,
     }
 
     g_printerr ("error: expected 'disable' or 'enable', got: '%s'\n", str);
+    return FALSE;
+}
+
+gboolean
+qmicli_read_yes_no_from_string (const gchar *str,
+                                gboolean *out)
+{
+    if (!str || str[0] == '\0') {
+        g_printerr ("error: expected 'true', 'false', 'yes' or 'no', got: none\n");
+        return FALSE;
+    }
+
+    if ((g_strcasecmp (str, "yes") == 0) || (g_strcasecmp (str, "true") == 0)) {
+        *out = TRUE;
+        return TRUE;
+    }
+
+    if ((g_strcasecmp (str, "no") == 0) || (g_strcasecmp (str, "false") == 0)) {
+        *out = FALSE;
+        return TRUE;
+    }
+
+    g_printerr ("error: expected 'true', 'false', 'yes' or 'no', got: %s\n", str);
     return FALSE;
 }
 
@@ -347,6 +398,27 @@ qmicli_read_net_open_flags_from_string (const gchar *str,
 }
 
 gboolean
+qmicli_read_expected_data_format_from_string (const gchar *str,
+                                              QmiDeviceExpectedDataFormat *out)
+{
+    GType type;
+    GEnumClass *enum_class;
+    GEnumValue *enum_value;
+
+    type = qmi_device_expected_data_format_get_type ();
+    enum_class = G_ENUM_CLASS (g_type_class_ref (type));
+    enum_value = g_enum_get_value_by_nick (enum_class, str);
+
+    if (enum_value)
+        *out = (QmiDeviceExpectedDataFormat)enum_value->value;
+    else
+        g_printerr ("error: invalid expected data format value given: '%s'\n", str);
+
+    g_type_class_unref (enum_class);
+    return !!enum_value;
+}
+
+gboolean
 qmicli_read_link_layer_protocol_from_string (const gchar *str,
                                              QmiWdaLinkLayerProtocol *out)
 {
@@ -365,6 +437,66 @@ qmicli_read_link_layer_protocol_from_string (const gchar *str,
 
     g_type_class_unref (enum_class);
     return !!enum_value;
+}
+
+gboolean
+qmicli_read_autoconnect_setting_from_string (const gchar *str,
+                                             QmiWdsAutoconnectSetting *out)
+{
+    GType type;
+    GEnumClass *enum_class;
+    GEnumValue *enum_value;
+
+    type = qmi_wds_autoconnect_setting_get_type ();
+    enum_class = G_ENUM_CLASS (g_type_class_ref (type));
+    enum_value = g_enum_get_value_by_nick (enum_class, str);
+
+    if (enum_value)
+        *out = (QmiWdsAutoconnectSetting)enum_value->value;
+    else
+        g_printerr ("error: invalid autoconnect setting value given: '%s'\n", str);
+
+    g_type_class_unref (enum_class);
+    return !!enum_value;
+}
+
+gboolean
+qmicli_read_autoconnect_setting_roaming_from_string (const gchar *str,
+                                                     QmiWdsAutoconnectSettingRoaming *out)
+{
+    GType type;
+    GEnumClass *enum_class;
+    GEnumValue *enum_value;
+
+    type = qmi_wds_autoconnect_setting_roaming_get_type ();
+    enum_class = G_ENUM_CLASS (g_type_class_ref (type));
+    enum_value = g_enum_get_value_by_nick (enum_class, str);
+
+    if (enum_value)
+        *out = (QmiWdsAutoconnectSettingRoaming)enum_value->value;
+    else
+        g_printerr ("error: invalid autoconnect setting roaming value given: '%s'\n", str);
+
+    g_type_class_unref (enum_class);
+    return !!enum_value;
+}
+
+gboolean
+qmicli_read_authentication_from_string (const gchar *str,
+                                        QmiWdsAuthentication *out)
+{
+    if (g_ascii_strcasecmp (str, "PAP") == 0)
+        *out = QMI_WDS_AUTHENTICATION_PAP;
+    else if (g_ascii_strcasecmp (str, "CHAP") == 0)
+        *out = QMI_WDS_AUTHENTICATION_CHAP;
+    else if (g_ascii_strcasecmp (str, "BOTH") == 0)
+        *out = (QMI_WDS_AUTHENTICATION_PAP | QMI_WDS_AUTHENTICATION_CHAP);
+    else if (!str[0] || g_ascii_strcasecmp (str, "NONE") == 0)
+        *out = QMI_WDS_AUTHENTICATION_NONE;
+    else
+        return FALSE;
+
+    return TRUE;
 }
 
 gboolean
@@ -388,4 +520,245 @@ qmicli_read_uint_from_string (const gchar *str,
         return TRUE;
     }
     return FALSE;
+}
+
+gchar *
+qmicli_get_supported_messages_list (const guint8 *data,
+                                    gsize len)
+{
+    GString *str = NULL;
+
+    if (len > 0 && data) {
+        guint bytearray_i;
+
+        for (bytearray_i = 0; bytearray_i < len; bytearray_i++) {
+            guint bit_i;
+
+            for (bit_i = 0; bit_i < 8; bit_i++) {
+                if (data[bytearray_i] & (1 << bit_i)) {
+                    if (!str)
+                        str = g_string_new ("");
+                    g_string_append_printf (str, "\t0x%04X\n", (guint16) (bit_i + (8 * bytearray_i)));
+                }
+            }
+        }
+    }
+
+    return (str ? g_string_free (str, FALSE) : g_strdup ("\tnone\n"));
+}
+
+/******************************************************************************/
+
+typedef struct {
+    guint16      min;
+    guint16      max;
+    const gchar *name;
+} EarfcnRange;
+
+/* http://niviuk.free.fr/lte_band.php */
+static const EarfcnRange earfcn_ranges[] = {
+    {     0,   599, "E-UTRA band 1: 2100"           },
+    {   600,  1199, "E-UTRA band 2: 1900 PCS"       },
+    {  1200,  1949, "E-UTRA band 3: 1800+"          },
+    {  1950,  2399, "E-UTRA band 4: AWS-1"          },
+    {  2400,  2649, "E-UTRA band 5: 850"            },
+    {  2650,  2749, "E-UTRA band 6: UMTS only"      },
+    {  2750,  3449, "E-UTRA band 7: 2600"           },
+    {  3450,  3799, "E-UTRA band 8: 900"            },
+    {  3800,  4149, "E-UTRA band 9: 1800"           },
+    {  4150,  4749, "E-UTRA band 10: AWS-1+"        },
+    {  4750,  4999, "E-UTRA band 11: 1500 Lower"    },
+    {  5000,  5179, "E-UTRA band 12: 700 a"         },
+    {  5180,  5279, "E-UTRA band 13: 700 c"         },
+    {  5280,  5379, "E-UTRA band 14: 700 PS"        },
+    {  5730,  5849, "E-UTRA band 17: 700 b"         },
+    {  5850,  5999, "E-UTRA band 18: 800 Lower"     },
+    {  6000,  6149, "E-UTRA band 19: 800 Upper"     },
+    {  6150,  6449, "E-UTRA band 20: 800 DD"        },
+    {  6450,  6599, "E-UTRA band 21: 1500 Upper"    },
+    {  6600,  7399, "E-UTRA band 22: 3500"          },
+    {  7500,  7699, "E-UTRA band 23: 2000 S-band"   },
+    {  7700,  8039, "E-UTRA band 24: 1600 L-band"   },
+    {  8040,  8689, "E-UTRA band 25: 1900+"         },
+    {  8690,  9039, "E-UTRA band 26: 850+"          },
+    {  9040,  9209, "E-UTRA band 27: 800 SMR"       },
+    {  9210,  9659, "E-UTRA band 28: 700 APT"       },
+    {  9660,  9769, "E-UTRA band 29: 700 d"         },
+    {  9770,  9869, "E-UTRA band 30: 2300 WCS"      },
+    {  9870,  9919, "E-UTRA band 31: 450"           },
+    {  9920, 10359, "E-UTRA band 32: 1500 L-band"   },
+    { 36000, 36199, "E-UTRA band 33: TD 1900"       },
+    { 36200, 36349, "E-UTRA band 34: TD 2000"       },
+    { 36350, 36949, "E-UTRA band 35: TD PCS Lower"  },
+    { 36950, 37549, "E-UTRA band 36: TD PCS Upper"  },
+    { 37550, 37749, "E-UTRA band 37: TD PCS Center" },
+    { 37750, 38249, "E-UTRA band 38: TD 2600"       },
+    { 38250, 38649, "E-UTRA band 39: TD 1900+"      },
+    { 38650, 39649, "E-UTRA band 40: TD 2300"       },
+    { 39650, 41589, "E-UTRA band 41: TD 2500"       },
+    { 41590, 43589, "E-UTRA band 42: TD 3500"       },
+    { 43590, 45589, "E-UTRA band 43: TD 3700"       },
+    { 45590, 46589, "E-UTRA band 44: TD 700"        },
+};
+
+const char *
+qmicli_earfcn_to_eutra_band_string (guint16 earfcn)
+{
+    guint i;
+
+    for (i = 0; i < G_N_ELEMENTS (earfcn_ranges); i++) {
+        if (earfcn <= earfcn_ranges[i].max && earfcn >= earfcn_ranges[i].min)
+            return earfcn_ranges[i].name;
+    }
+    return "unknown";
+}
+
+/* Expecting input as:
+ *   key1=string,key2=true,key3=false...
+ * Strings may also be passed enclosed between double or single quotes, like:
+ *   key1="this is a string", key2='and so is this'
+ *
+ * Based on libmbim's mbimcli_parse_key_value_string().
+ */
+gboolean
+qmicli_parse_key_value_string (const gchar *str,
+                               GError **error,
+                               QmiParseKeyValueForeachFn callback,
+                               gpointer user_data)
+{
+    GError *inner_error = NULL;
+    gchar *dupstr, *p, *key, *key_end, *value, *value_end, quote;
+
+    g_return_val_if_fail (callback != NULL, FALSE);
+    g_return_val_if_fail (str != NULL, FALSE);
+
+    /* Allow empty strings, we'll just return with success */
+    while (g_ascii_isspace (*str))
+        str++;
+    if (!str[0])
+        return TRUE;
+
+    dupstr = g_strdup (str);
+    p = dupstr;
+
+    while (TRUE) {
+        gboolean keep_iteration = FALSE;
+
+        /* Skip leading spaces */
+        while (g_ascii_isspace (*p))
+            p++;
+
+        /* Key start */
+        key = p;
+        if (!g_ascii_isalnum (*key)) {
+            inner_error = g_error_new (QMI_CORE_ERROR,
+                                       QMI_CORE_ERROR_FAILED,
+                                       "Key must start with alpha/num, starts with '%c'",
+                                       *key);
+            break;
+        }
+
+        /* Key end */
+        while (g_ascii_isalnum (*p) || (*p == '-') || (*p == '_'))
+            p++;
+        key_end = p;
+        if (key_end == key) {
+            inner_error = g_error_new (QMI_CORE_ERROR,
+                                       QMI_CORE_ERROR_FAILED,
+                                       "Couldn't find a proper key");
+            break;
+        }
+
+        /* Skip whitespaces, if any */
+        while (g_ascii_isspace (*p))
+            p++;
+
+        /* Equal sign must be here */
+        if (*p != '=') {
+            inner_error = g_error_new (QMI_CORE_ERROR,
+                                       QMI_CORE_ERROR_FAILED,
+                                       "Couldn't find equal sign separator");
+            break;
+        }
+        /* Skip the equal */
+        p++;
+
+        /* Skip whitespaces, if any */
+        while (g_ascii_isspace (*p))
+            p++;
+
+        /* Do we have a quote-enclosed string? */
+        if (*p == '\"' || *p == '\'') {
+            quote = *p;
+            /* Skip the quote */
+            p++;
+            /* Value start */
+            value = p;
+            /* Find the closing quote */
+            p = strchr (p, quote);
+            if (!p) {
+                inner_error = g_error_new (QMI_CORE_ERROR,
+                                           QMI_CORE_ERROR_FAILED,
+                                           "Unmatched quotes in string value");
+                break;
+            }
+
+            /* Value end */
+            value_end = p;
+            /* Skip the quote */
+            p++;
+        } else {
+            /* Value start */
+            value = p;
+
+            /* Value end */
+            while ((*p != ',') && (*p != '\0') && !g_ascii_isspace (*p))
+                p++;
+            value_end = p;
+        }
+
+        /* Note that we allow value == value_end here */
+
+        /* Skip whitespaces, if any */
+        while (g_ascii_isspace (*p))
+            p++;
+
+        /* If a comma is found, we should keep the iteration */
+        if (*p == ',') {
+            /* skip the comma */
+            p++;
+            keep_iteration = TRUE;
+        }
+
+        /* Got key and value, prepare them and run the callback */
+        *value_end = '\0';
+        *key_end = '\0';
+        if (!callback (key, value, &inner_error, user_data)) {
+            /* We were told to abort */
+            break;
+        }
+        g_assert (!inner_error);
+
+        if (keep_iteration)
+            continue;
+
+        /* Check if no more key/value pairs expected */
+        if (*p == '\0')
+            break;
+
+        inner_error = g_error_new (QMI_CORE_ERROR,
+                                   QMI_CORE_ERROR_FAILED,
+                                   "Unexpected content (%s) after value",
+                                   p);
+        break;
+    }
+
+    g_free (dupstr);
+
+    if (inner_error) {
+        g_propagate_error (error, inner_error);
+        return FALSE;
+    }
+
+    return TRUE;
 }

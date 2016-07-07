@@ -42,7 +42,7 @@
  * Evaluates to the minor version number of libqmi-glib which this source
  * is compiled against.
  */
-#define QMI_MINOR_VERSION (10)
+#define QMI_MINOR_VERSION (16)
 
 /**
  * QMI_MICRO_VERSION:
@@ -50,7 +50,7 @@
  * Evaluates to the micro version number of libqmi-glib which this source
  * compiled against.
  */
-#define QMI_MICRO_VERSION (2)
+#define QMI_MICRO_VERSION (0)
 
 /**
  * QMI_CHECK_VERSION:
@@ -65,5 +65,22 @@
     (QMI_MAJOR_VERSION > (major) ||                                  \
      (QMI_MAJOR_VERSION == (major) && QMI_MINOR_VERSION > (minor)) || \
      (QMI_MAJOR_VERSION == (major) && QMI_MINOR_VERSION == (minor) && QMI_MICRO_VERSION >= (micro)))
+
+/**
+ * QMI_MBIM_QMUX_SUPPORTED:
+ *
+ * Symbol to expose wether QMI over MBIM is supported. The symbol is always
+ * defined and set to either or 1 or 0.
+ *
+ * E.g.:
+ * |[
+ *  #if QMI_MBIM_QMUX_SUPPORTED
+ *      // do something
+ *  #endif
+ * ]|
+ *
+ * Since: 1.16
+ */
+#define QMI_MBIM_QMUX_SUPPORTED 1
 
 #endif /* _QMI_VERSION_H_ */

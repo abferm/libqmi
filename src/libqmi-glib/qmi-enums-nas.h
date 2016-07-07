@@ -809,7 +809,7 @@ typedef enum {
 /**
  * QmiNasSimRejectState:
  * @QMI_NAS_SIM_REJECT_STATE_SIM_UNAVAILABLE: SIM not available.
- * @QMI_NAS_SIM_REJECT_STATE_SIM_VAILABLE: SIM available.
+ * @QMI_NAS_SIM_REJECT_STATE_SIM_AVAILABLE: SIM available.
  * @QMI_NAS_SIM_REJECT_STATE_SIM_CS_INVALID: SIM invalid for circuit-switched connections.
  * @QMI_NAS_SIM_REJECT_STATE_SIM_PS_INVALID: SIM invalid for packet-switched connections.
  * @QMI_NAS_SIM_REJECT_STATE_SIM_CS_PS_INVALID: SIM invalid for circuit-switched and packet-switched connections.
@@ -818,7 +818,7 @@ typedef enum {
  */
 typedef enum {
     QMI_NAS_SIM_REJECT_STATE_SIM_UNAVAILABLE   = 0,
-    QMI_NAS_SIM_REJECT_STATE_SIM_VAILABLE      = 1,
+    QMI_NAS_SIM_REJECT_STATE_SIM_AVAILABLE     = 1,
     QMI_NAS_SIM_REJECT_STATE_SIM_CS_INVALID    = 2,
     QMI_NAS_SIM_REJECT_STATE_SIM_PS_INVALID    = 3,
     QMI_NAS_SIM_REJECT_STATE_SIM_CS_PS_INVALID = 4
@@ -892,5 +892,45 @@ typedef enum {
     QMI_NAS_WCDMA_RRC_STATE_CELL_FACH    = 3,
     QMI_NAS_WCDMA_RRC_STATE_CELL_DCH     = 4
 } QmiNasWcdmaRrcState;
+
+/*****************************************************************************/
+/* Helper enums for the 'QMI NAS Get LTE Cphy CA Info' request/response */
+/**
+ * QmiNasDLBandwidth:
+ * @QMI_NAS_DL_BANDWIDTH_1_4: 1.4 MHz
+ * @QMI_NAS_DL_BANDWIDTH_3: 3 MHz
+ * @QMI_NAS_DL_BANDWIDTH_5: 5 MHz
+ * @QMI_NAS_DL_BANDWIDTH_10: 10 MHz
+ * @QMI_NAS_DL_BANDWIDTH_15: 15 MHz
+ * @QMI_NAS_DL_BANDWIDTH_20: 20 MHz
+ * @QMI_NAS_DL_BANDWIDTH_INVALID: Invalid
+ * @QMI_NAS_DL_BANDWIDTH_UNKNOWN: Unknown
+ *
+ * DL Bandwidth.
+ */
+typedef enum {
+    QMI_NAS_DL_BANDWIDTH_1_4  = 0,
+    QMI_NAS_DL_BANDWIDTH_3,
+    QMI_NAS_DL_BANDWIDTH_5,
+    QMI_NAS_DL_BANDWIDTH_10,
+    QMI_NAS_DL_BANDWIDTH_15,
+    QMI_NAS_DL_BANDWIDTH_20,
+    QMI_NAS_DL_BANDWIDTH_INVALID,
+    QMI_NAS_DL_BANDWIDTH_UNKNOWN  = 0xFF
+} QmiNasDLBandwidth;
+
+/**
+ * QmiNasScellState:
+ * @QMI_NAS_SCELL_STATE_DECONFIGURED: Deconfigured
+ * @QMI_NAS_SCELL_STATE_DEACTIVATED: Deactivated
+ * @QMI_NAS_SCELL_STATE_ACTIVATED: Activated
+ *
+ * SCell State.
+ */
+typedef enum {
+    QMI_NAS_SCELL_STATE_DECONFIGURED = 0,
+    QMI_NAS_SCELL_STATE_DEACTIVATED,
+    QMI_NAS_SCELL_STATE_ACTIVATED
+} QmiNasScellState;
 
 #endif /* _LIBQMI_GLIB_QMI_ENUMS_NAS_H_ */

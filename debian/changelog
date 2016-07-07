@@ -1,8 +1,105 @@
-libqmi (1.10.2-1~bpo70+1) wheezy-backports; urgency=medium
+libqmi (1.16.0-1) unstable; urgency=medium
 
-  * Rebuild for wheezy-backports.
+  * New upstream release.
+  * Enable QMi-over-MBIM support, which is required by new Sierra devices to
+    work in MBIM mode.
+  * Update symbols file.
+  * Only install the upstream documentation files once.
 
- -- Alex Ferm <aferm@petropower.com>  Wed, 03 Sep 2014 15:33:38 -0500
+ -- Michael Biebl <biebl@debian.org>  Fri, 08 Jul 2016 00:08:53 +0200
+
+libqmi (1.14.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version to 3.9.8.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 15 Apr 2016 00:55:28 +0200
+
+libqmi (1.14.0-2) unstable; urgency=medium
+
+  * Update debian/copyright.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 22 Mar 2016 18:35:07 +0100
+
+libqmi (1.14.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Use https:// for upstream homepage.
+  * Rename libqmi-glib1 → libqmi-glib5 for the upstream SONAME bump.
+  * Update symbols files accordingly.
+  * Run wrap-and-sort -at.
+  * Bump Standards-Version to 3.9.7.
+  * Drop libqmi-glib5-dbg now that we have automatic dbgsym packages.
+  * Ensure proper upgrade from libqmi-glib5-dbg to new dbgsym packages by
+    using dh_strip --dbgsym-migration. Bump Build-Depends on debhelper
+    accordingly.
+  * Drop debian/qmicli.1 since we use the upstream man page.
+  * Install bash-completion file for qmicli.
+  * Drop obsolete debian/README.source.
+  * Rename libqmi-glib.doc-base → libqmi-glib-doc.doc-base so the doc-base
+    support file is actually installed.
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 19 Mar 2016 00:40:30 +0100
+
+libqmi (1.12.6-1) unstable; urgency=medium
+
+  * Upload to unstable.
+  * New upstream release.
+  * Add myself to Uploaders.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 07 May 2015 00:51:05 +0200
+
+libqmi (1.12.4-2) experimental; urgency=medium
+
+  * Team upload.
+  * Mark binary packages as linux-any.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 13 Feb 2015 21:31:59 +0100
+
+libqmi (1.12.4-1) experimental; urgency=medium
+
+  * Team upload.
+
+  [ Marius B. Kotsbak ]
+  * Add gbp config for experimental branch.
+
+  [ Michael Biebl ]
+  * Imported Upstream version 1.12.4.
+  * Update symbols file.
+  * Update Vcs-Browser URL to use cgit and https.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 13 Feb 2015 09:43:06 +0100
+
+libqmi (1.12.2-1) experimental; urgency=medium
+
+  [ Marius B. Kotsbak ]
+  * Imported Upstream version 1.12.2 (Closes: #772328)
+  * Updated symbols file for libqmi-glib1 package for new upstream 1.12.2.
+  * Update Debian standards version to 3.9.6
+  * Install NEWS file which includes the relevant upstream changes.
+
+ -- Marius B. Kotsbak <marius@kotsbak.com>  Sat, 31 Jan 2015 14:41:43 +0100
+
+libqmi (1.10.2-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Marius B. Kotsbak ]
+  * Use dh_install --list-missing to show uninstalled files.
+  * Drop obsolete --with-tests configure option.
+
+  [ Michael Biebl ]
+  * Install man pages via dh_install.
+  * Use a strictly versioned dependency between libqmi-proxy and libqmi-glib1,
+    so the two packages don't get out of sync.
+  * Make any package linking against libqmi-glib1 get an explicit dependency
+    on libqmi-proxy. The qmi-proxy binary is used internally by libqmi-glib1
+    and the package split is an implementation detail to properly support
+    multi-arch. Convince lintian that this is intentional.
+  * Add Depends on libglib2.0-dev to libqmi-glib-dev as required by
+    qmi-glib.pc.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 16 Sep 2014 23:24:51 +0200
 
 libqmi (1.10.2-1) unstable; urgency=low
 

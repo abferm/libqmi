@@ -24,7 +24,7 @@
  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301 USA.
  *
- * Copyright (C) 2012 Aleksander Morgado <aleksander@lanedo.com>
+ * Copyright (C) 2012-2015 Aleksander Morgado <aleksander@aleksander.es>
  */
 
 #ifndef _LIBQMI_GLIB_QMI_MESSAGE_H_
@@ -36,6 +36,7 @@
 
 #include <glib.h>
 
+#include "qmi-utils.h"
 #include "qmi-enums.h"
 #include "qmi-errors.h"
 
@@ -81,6 +82,145 @@ const guint8 *qmi_message_get_raw               (QmiMessage *self,
 gboolean     qmi_message_get_version_introduced (QmiMessage *self,
                                                  guint *major,
                                                  guint *minor);
+
+
+/*****************************************************************************/
+/* TLV builder & writer */
+
+gsize    qmi_message_tlv_write_init        (QmiMessage   *self,
+                                            guint8        type,
+                                            GError      **error);
+void     qmi_message_tlv_write_reset       (QmiMessage   *self,
+                                            gsize         tlv_offset);
+gboolean qmi_message_tlv_write_complete    (QmiMessage   *self,
+                                            gsize         tlv_offset,
+                                            GError      **error);
+gboolean qmi_message_tlv_write_guint8      (QmiMessage   *self,
+                                            guint8        in,
+                                            GError      **error);
+gboolean qmi_message_tlv_write_gint8       (QmiMessage   *self,
+                                            gint8         in,
+                                            GError      **error);
+gboolean qmi_message_tlv_write_guint16     (QmiMessage   *self,
+                                            QmiEndian     endian,
+                                            guint16       in,
+                                            GError      **error);
+gboolean qmi_message_tlv_write_gint16      (QmiMessage   *self,
+                                            QmiEndian     endian,
+                                            gint16        in,
+                                            GError      **error);
+gboolean qmi_message_tlv_write_guint32     (QmiMessage   *self,
+                                            QmiEndian     endian,
+                                            guint32       in,
+                                            GError      **error);
+gboolean qmi_message_tlv_write_gint32      (QmiMessage   *self,
+                                            QmiEndian     endian,
+                                            gint32        in,
+                                            GError      **error);
+gboolean qmi_message_tlv_write_guint64     (QmiMessage   *self,
+                                            QmiEndian     endian,
+                                            guint64       in,
+                                            GError      **error);
+gboolean qmi_message_tlv_write_gint64      (QmiMessage   *self,
+                                            QmiEndian     endian,
+                                            gint64        in,
+                                            GError      **error);
+gboolean qmi_message_tlv_write_sized_guint (QmiMessage   *self,
+                                            guint         n_bytes,
+                                            QmiEndian     endian,
+                                            guint64       in,
+                                            GError      **error);
+gboolean qmi_message_tlv_write_string      (QmiMessage   *self,
+                                            guint8        n_size_prefix_bytes,
+                                            const gchar  *in,
+                                            gssize        in_length,
+                                            GError      **error);
+
+/*****************************************************************************/
+/* TLV reader */
+
+gsize    qmi_message_tlv_read_init              (QmiMessage  *self,
+                                                 guint8       type,
+                                                 guint16     *out_tlv_length,
+                                                 GError     **error);
+gboolean qmi_message_tlv_read_guint8            (QmiMessage  *self,
+                                                 gsize        tlv_offset,
+                                                 gsize       *offset,
+                                                 guint8      *out,
+                                                 GError     **error);
+gboolean qmi_message_tlv_read_gint8             (QmiMessage  *self,
+                                                 gsize        tlv_offset,
+                                                 gsize       *offset,
+                                                 gint8       *out,
+                                                 GError     **error);
+gboolean qmi_message_tlv_read_guint16           (QmiMessage  *self,
+                                                 gsize        tlv_offset,
+                                                 gsize       *offset,
+                                                 QmiEndian    endian,
+                                                 guint16     *out,
+                                                 GError     **error);
+gboolean qmi_message_tlv_read_gint16            (QmiMessage  *self,
+                                                 gsize        tlv_offset,
+                                                 gsize       *offset,
+                                                 QmiEndian    endian,
+                                                 gint16      *out,
+                                                 GError     **error);
+gboolean qmi_message_tlv_read_guint32           (QmiMessage  *self,
+                                                 gsize        tlv_offset,
+                                                 gsize       *offset,
+                                                 QmiEndian    endian,
+                                                 guint32     *out,
+                                                 GError     **error);
+gboolean qmi_message_tlv_read_gint32            (QmiMessage  *self,
+                                                 gsize        tlv_offset,
+                                                 gsize       *offset,
+                                                 QmiEndian    endian,
+                                                 gint32      *out,
+                                                 GError     **error);
+gboolean qmi_message_tlv_read_guint64           (QmiMessage  *self,
+                                                 gsize        tlv_offset,
+                                                 gsize       *offset,
+                                                 QmiEndian    endian,
+                                                 guint64     *out,
+                                                 GError     **error);
+gboolean qmi_message_tlv_read_gint64            (QmiMessage  *self,
+                                                 gsize        tlv_offset,
+                                                 gsize       *offset,
+                                                 QmiEndian    endian,
+                                                 gint64      *out,
+                                                 GError     **error);
+gboolean qmi_message_tlv_read_sized_guint       (QmiMessage  *self,
+                                                 gsize        tlv_offset,
+                                                 gsize       *offset,
+                                                 guint        n_bytes,
+                                                 QmiEndian    endian,
+                                                 guint64     *out,
+                                                 GError     **error);
+gboolean qmi_message_tlv_read_gfloat            (QmiMessage  *self,
+                                                 gsize        tlv_offset,
+                                                 gsize       *offset,
+                                                 gfloat      *out,
+                                                 GError     **error);
+gboolean qmi_message_tlv_read_string            (QmiMessage  *self,
+                                                 gsize        tlv_offset,
+                                                 gsize       *offset,
+                                                 guint8       n_size_prefix_bytes,
+                                                 guint16      max_size,
+                                                 gchar      **out,
+                                                 GError     **error);
+gboolean qmi_message_tlv_read_fixed_size_string (QmiMessage  *self,
+                                                 gsize        tlv_offset,
+                                                 gsize       *offset,
+                                                 guint16      string_length,
+                                                 gchar       *out,
+                                                 GError     **error);
+
+#if defined (LIBQMI_GLIB_COMPILATION)
+G_GNUC_INTERNAL
+guint16 __qmi_message_tlv_read_remaining_size (QmiMessage  *self,
+                                               gsize        tlv_offset,
+                                               gsize        offset);
+#endif
 
 /*****************************************************************************/
 /* Raw TLV handling */
