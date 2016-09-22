@@ -17,8 +17,9 @@
  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301 USA.
  *
- * Copyright (C) 2012 Lanedo GmbH <aleksander@lanedo.com>
+ * Copyright (C) 2012 Lanedo GmbH.
  * Copyright (C) 2012 Google, Inc.
+
  */
 
 #ifndef _LIBQMI_GLIB_QMI_FLAGS64_DMS_H_
@@ -110,7 +111,7 @@ typedef enum {
     QMI_DMS_BAND_CAPABILITY_BC_12            = 1 << 28,
     QMI_DMS_BAND_CAPABILITY_BC_14            = 1 << 29,
     /* Bit 30 reserved */
-    QMI_DMS_BAND_CAPABILITY_BC_15            = 1 << 31,
+    QMI_DMS_BAND_CAPABILITY_BC_15            = ((guint64) 1) << 31,
     /* Bits 32-47 reserved */
     QMI_DMS_BAND_CAPABILITY_WCDMA_2600       = ((guint64) 1) << 48,
     QMI_DMS_BAND_CAPABILITY_WCDMA_900        = ((guint64) 1) << 49,

@@ -16,6 +16,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright (C) 2012 Lanedo GmbH
+# Copyright (C) 2012-2015 Aleksander Morgado <aleksander@aleksander.es>
 #
 
 import string
@@ -48,6 +49,8 @@ class VariableStruct(Variable):
             member = {}
             member['name'] = utils.build_underscore_name(member_dictionary['name'])
             member['object'] = VariableFactory.create_variable(member_dictionary, struct_type_name + ' ' + member['name'], self.container_type)
+            # Specify that the variable will be defined in the public header
+            member['object'].flag_public()
             self.members.append(member)
 
         # We'll need to dispose if at least one of the members needs it
@@ -81,11 +84,7 @@ class VariableStruct(Variable):
         f.write(string.Template(template).substitute(translations))
 
         for member in self.members:
-            translations['variable_format'] = member['object'].public_format
-            translations['variable_name'] = member['name']
-            template = (
-                '    ${variable_format} ${variable_name};\n')
-            f.write(string.Template(template).substitute(translations))
+            f.write(member['object'].build_variable_declaration(True, '    ', member['name']))
 
         template = ('} ${format};\n')
         f.write(string.Template(template).substitute(translations))
@@ -104,61 +103,52 @@ class VariableStruct(Variable):
     Reading the contents of a struct is just about reading each of the struct
     fields one by one.
     """
-    def emit_buffer_read(self, f, line_prefix, variable_name, buffer_name, buffer_len):
+    def emit_buffer_read(self, f, line_prefix, tlv_out, error, variable_name):
         for member in self.members:
-            member['object'].emit_buffer_read(f, line_prefix, variable_name + '.' +  member['name'], buffer_name, buffer_len)
-
-
-    """
-    Emits the code involved in computing the size of the variable.
-    """
-    def emit_size_read(self, f, line_prefix, variable_name, buffer_name, buffer_len):
-        for member in self.members:
-            member['object'].emit_size_read(f, line_prefix, variable_name, buffer_name, buffer_len)
+            member['object'].emit_buffer_read(f, line_prefix, tlv_out, error, variable_name + '.' +  member['name'])
 
 
     """
     Writing the contents of a struct is just about writing each of the struct
     fields one by one.
     """
-    def emit_buffer_write(self, f, line_prefix, variable_name, buffer_name, buffer_len):
+    def emit_buffer_write(self, f, line_prefix, tlv_name, variable_name):
         for member in self.members:
-            member['object'].emit_buffer_write(f, line_prefix, variable_name + '.' +  member['name'], buffer_name, buffer_len)
+            member['object'].emit_buffer_write(f, line_prefix, tlv_name, variable_name + '.' +  member['name'])
 
 
     """
     The struct will be printed as a list of fields enclosed between square
     brackets
     """
-    def emit_get_printable(self, f, line_prefix, printable, buffer_name, buffer_len):
-        translations = { 'lp'        : line_prefix,
-                         'printable' : printable }
+    def emit_get_printable(self, f, line_prefix):
+        translations = { 'lp' : line_prefix }
 
         template = (
-            '${lp}g_string_append (${printable}, "[");\n')
+            '${lp}g_string_append (printable, "[");\n')
         f.write(string.Template(template).substitute(translations))
 
         for member in self.members:
             translations['variable_name'] = member['name']
             template = (
-                '${lp}g_string_append (${printable}, " ${variable_name} = \'");\n')
+                '${lp}g_string_append (printable, " ${variable_name} = \'");\n')
             f.write(string.Template(template).substitute(translations))
 
-            member['object'].emit_get_printable(f, line_prefix, printable, buffer_name, buffer_len)
+            member['object'].emit_get_printable(f, line_prefix)
 
             template = (
-                '${lp}g_string_append (${printable}, "\'");\n')
+                '${lp}g_string_append (printable, "\'");\n')
             f.write(string.Template(template).substitute(translations))
 
         template = (
-            '${lp}g_string_append (${printable}, " ]");\n')
+            '${lp}g_string_append (printable, " ]");\n')
         f.write(string.Template(template).substitute(translations))
 
 
     """
     Variable declaration
     """
-    def build_variable_declaration(self, line_prefix, variable_name):
+    def build_variable_declaration(self, public, line_prefix, variable_name):
         translations = { 'lp'     : line_prefix,
                          'format' : self.public_format,
                          'name'   : variable_name }

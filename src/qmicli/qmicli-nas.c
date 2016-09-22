@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (C) 2012 Aleksander Morgado <aleksander@gnu.org>
+ * Copyright (C) 2012-2015 Aleksander Morgado <aleksander@aleksander.es>
  */
 
 #include "config.h"
@@ -53,6 +53,9 @@ static gboolean get_system_selection_preference_flag;
 static gchar *set_system_selection_preference_str;
 static gboolean network_scan_flag;
 static gboolean get_cell_location_info_flag;
+static gboolean force_network_search_flag;
+static gboolean get_lte_cphy_ca_info_flag;
+static gboolean get_supported_messages_flag;
 static gboolean reset_flag;
 static gboolean noop_flag;
 
@@ -101,6 +104,18 @@ static GOptionEntry entries[] = {
       "Get Cell Location Info",
       NULL
     },
+    { "nas-force-network-search", 0, 0, G_OPTION_ARG_NONE, &force_network_search_flag,
+      "Force network search",
+      NULL
+    },
+    { "nas-get-lte-cphy-ca-info", 0, 0, G_OPTION_ARG_NONE, &get_lte_cphy_ca_info_flag,
+      "Get LTE Cphy CA Info",
+      NULL
+    },
+    { "nas-get-supported-messages", 0, 0, G_OPTION_ARG_NONE, &get_supported_messages_flag,
+      "Get supported messages",
+      NULL
+    },
     { "nas-reset", 0, 0, G_OPTION_ARG_NONE, &reset_flag,
       "Reset the service state",
       NULL
@@ -115,16 +130,16 @@ static GOptionEntry entries[] = {
 GOptionGroup *
 qmicli_nas_get_option_group (void)
 {
-	GOptionGroup *group;
+    GOptionGroup *group;
 
-	group = g_option_group_new ("nas",
-	                            "NAS options",
-	                            "Show Network Access Service options",
-	                            NULL,
-	                            NULL);
-	g_option_group_add_entries (group, entries);
+    group = g_option_group_new ("nas",
+                                "NAS options",
+                                "Show Network Access Service options",
+                                NULL,
+                                NULL);
+    g_option_group_add_entries (group, entries);
 
-	return group;
+    return group;
 }
 
 gboolean
@@ -147,6 +162,9 @@ qmicli_nas_options_enabled (void)
                  !!set_system_selection_preference_str +
                  network_scan_flag +
                  get_cell_location_info_flag +
+                 force_network_search_flag +
+                 get_lte_cphy_ca_info_flag +
+                 get_supported_messages_flag +
                  reset_flag +
                  noop_flag);
 
@@ -175,7 +193,7 @@ context_free (Context *context)
 }
 
 static void
-shutdown (gboolean operation_status)
+operation_shutdown (gboolean operation_status)
 {
     /* Cleanup context and finish async operation */
     context_free (ctx);
@@ -220,7 +238,7 @@ get_signal_info_ready (QmiClientNas *client,
     if (!output) {
         g_printerr ("error: operation failed: %s\n", error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -228,7 +246,7 @@ get_signal_info_ready (QmiClientNas *client,
         g_printerr ("error: couldn't get signal info: %s\n", error->message);
         g_error_free (error);
         qmi_message_nas_get_signal_info_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -314,7 +332,7 @@ get_signal_info_ready (QmiClientNas *client,
     }
 
     qmi_message_nas_get_signal_info_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static QmiMessageNasGetSignalStrengthInput *
@@ -366,7 +384,7 @@ get_signal_strength_ready (QmiClientNas *client,
     if (!output) {
         g_printerr ("error: operation failed: %s\n", error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -374,7 +392,7 @@ get_signal_strength_ready (QmiClientNas *client,
         g_printerr ("error: couldn't get signal strength: %s\n", error->message);
         g_error_free (error);
         qmi_message_nas_get_signal_strength_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -473,7 +491,7 @@ get_signal_strength_ready (QmiClientNas *client,
     /* Just skip others for now */
 
     qmi_message_nas_get_signal_strength_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static void
@@ -498,7 +516,7 @@ get_tx_rx_info_ready (QmiClientNas *client,
     if (!output) {
         g_printerr ("error: operation failed: %s\n", error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -506,7 +524,7 @@ get_tx_rx_info_ready (QmiClientNas *client,
         g_printerr ("error: couldn't get TX/RX info: %s\n", error->message);
         g_error_free (error);
         qmi_message_nas_get_tx_rx_info_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -601,7 +619,7 @@ get_tx_rx_info_ready (QmiClientNas *client,
     }
 
     qmi_message_nas_get_tx_rx_info_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static QmiMessageNasGetTxRxInfoInput *
@@ -642,7 +660,7 @@ get_home_network_ready (QmiClientNas *client,
     if (!output) {
         g_printerr ("error: operation failed: %s\n", error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -650,7 +668,7 @@ get_home_network_ready (QmiClientNas *client,
         g_printerr ("error: couldn't get home network: %s\n", error->message);
         g_error_free (error);
         qmi_message_nas_get_home_network_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -717,7 +735,7 @@ get_home_network_ready (QmiClientNas *client,
     }
 
     qmi_message_nas_get_home_network_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static void
@@ -731,7 +749,7 @@ get_serving_system_ready (QmiClientNas *client,
     if (!output) {
         g_printerr ("error: operation failed: %s\n", error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -739,7 +757,7 @@ get_serving_system_ready (QmiClientNas *client,
         g_printerr ("error: couldn't get serving system: %s\n", error->message);
         g_error_free (error);
         qmi_message_nas_get_serving_system_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -1147,7 +1165,7 @@ get_serving_system_ready (QmiClientNas *client,
     }
 
     qmi_message_nas_get_serving_system_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static void
@@ -1161,7 +1179,7 @@ get_system_info_ready (QmiClientNas *client,
     if (!output) {
         g_printerr ("error: operation failed: %s\n", error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -1169,7 +1187,7 @@ get_system_info_ready (QmiClientNas *client,
         g_printerr ("error: couldn't get system info: %s\n", error->message);
         g_error_free (error);
         qmi_message_nas_get_system_info_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -1833,7 +1851,7 @@ get_system_info_ready (QmiClientNas *client,
     }
 
     qmi_message_nas_get_system_info_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static void
@@ -1850,7 +1868,7 @@ get_technology_preference_ready (QmiClientNas *client,
     if (!output) {
         g_printerr ("error: operation failed: %s\n", error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -1858,7 +1876,7 @@ get_technology_preference_ready (QmiClientNas *client,
         g_printerr ("error: couldn't get technology preference: %s\n", error->message);
         g_error_free (error);
         qmi_message_nas_get_technology_preference_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -1887,7 +1905,7 @@ get_technology_preference_ready (QmiClientNas *client,
     }
 
     qmi_message_nas_get_technology_preference_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static void
@@ -1914,7 +1932,7 @@ get_system_selection_preference_ready (QmiClientNas *client,
     if (!output) {
         g_printerr ("error: operation failed: %s\n", error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -1922,7 +1940,7 @@ get_system_selection_preference_ready (QmiClientNas *client,
         g_printerr ("error: couldn't get system_selection preference: %s\n", error->message);
         g_error_free (error);
         qmi_message_nas_get_system_selection_preference_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -2038,7 +2056,7 @@ get_system_selection_preference_ready (QmiClientNas *client,
     }
 
     qmi_message_nas_get_system_selection_preference_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static QmiMessageNasSetSystemSelectionPreferenceInput *
@@ -2105,7 +2123,7 @@ set_system_selection_preference_ready (QmiClientNas *client,
     if (!output) {
         g_printerr ("error: operation failed: %s\n", error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -2113,7 +2131,7 @@ set_system_selection_preference_ready (QmiClientNas *client,
         g_printerr ("error: couldn't set operating mode: %s\n", error->message);
         g_error_free (error);
         qmi_message_nas_set_system_selection_preference_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -2121,7 +2139,7 @@ set_system_selection_preference_ready (QmiClientNas *client,
              qmi_device_get_path_display (ctx->device));
 
     qmi_message_nas_set_system_selection_preference_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static void
@@ -2136,7 +2154,7 @@ network_scan_ready (QmiClientNas *client,
     if (!output) {
         g_printerr ("error: operation failed: %s\n", error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -2144,7 +2162,7 @@ network_scan_ready (QmiClientNas *client,
         g_printerr ("error: couldn't scan networks: %s\n", error->message);
         g_error_free (error);
         qmi_message_nas_network_scan_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -2214,7 +2232,7 @@ network_scan_ready (QmiClientNas *client,
     }
 
     qmi_message_nas_network_scan_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static gchar *
@@ -2227,8 +2245,12 @@ str_from_bcd_plmn (const gchar *bcd)
 
     str = g_malloc (7);
     for (i = 0, j = 0 ; i < 3; i++) {
-        str[j++] = bcd_chars[bcd[i] & 0xF];
-        str[j++] = bcd_chars[(bcd[i] >> 4) & 0xF];
+        str[j] = bcd_chars[bcd[i] & 0xF];
+        if (str[j])
+            j++;
+        str[j] = bcd_chars[(bcd[i] >> 4) & 0xF];
+        if (str[j])
+            j++;
     }
     str[j] = '\0';
 
@@ -2280,7 +2302,7 @@ get_cell_location_info_ready (QmiClientNas *client,
     if (!output) {
         g_printerr ("error: operation failed: %s\n", error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -2288,7 +2310,7 @@ get_cell_location_info_ready (QmiClientNas *client,
         g_printerr ("error: couldn't get cell location info: %s\n", error->message);
         g_error_free (error);
         qmi_message_nas_get_cell_location_info_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -2513,13 +2535,13 @@ get_cell_location_info_ready (QmiClientNas *client,
                  "\tPLMN: '%s'\n"
                  "\tTracking Area Code: '%" G_GUINT16_FORMAT"'\n"
                  "\tGlobal Cell ID: '%" G_GUINT32_FORMAT"'\n"
-                 "\tEUTRA Absolute RF Channel Number: '%" G_GUINT16_FORMAT"'\n"
+                 "\tEUTRA Absolute RF Channel Number: '%" G_GUINT16_FORMAT"' (%s)\n"
                  "\tServing Cell ID: '%" G_GUINT16_FORMAT"'\n",
                  ue_in_idle ? "yes" : "no",
                  plmn,
                  tracking_area_code,
                  global_cell_id,
-                 absolute_rf_channel_number,
+                 absolute_rf_channel_number, qmicli_earfcn_to_eutra_band_string (absolute_rf_channel_number),
                  serving_cell_id);
         g_free (plmn);
         if (ue_in_idle)
@@ -2569,11 +2591,11 @@ get_cell_location_info_ready (QmiClientNas *client,
 
             element = &g_array_index (array, QmiMessageNasGetCellLocationInfoOutputInterfrequencyLteInfoFrequencyElement, i);
             g_print ("\tFrequency [%u]:\n"
-                     "\t\tEUTRA Absolute RF Channel Number: '%" G_GUINT16_FORMAT"'\n"
+                     "\t\tEUTRA Absolute RF Channel Number: '%" G_GUINT16_FORMAT"' (%s)\n"
                      "\t\tSelection RX Level Low Threshold: '%u'\n"
                      "\t\tCell Selection RX Level High Threshold: '%u'\n",
                      i,
-                     element->eutra_absolute_rf_channel_number,
+                     element->eutra_absolute_rf_channel_number, qmicli_earfcn_to_eutra_band_string (element->eutra_absolute_rf_channel_number),
                      element->cell_selection_rx_level_low_threshold,
                      element->cell_selection_rx_level_high_threshold);
             if (ue_in_idle)
@@ -2728,12 +2750,12 @@ get_cell_location_info_ready (QmiClientNas *client,
             element = &g_array_index (array, QmiMessageNasGetCellLocationInfoOutputUmtsInfoNeighboringLteFrequencyElement, i);
 
             g_print ("\tFrequency [%u]:\n"
-                     "\t\tEUTRA Absolute RF Channel Number: '%" G_GUINT16_FORMAT"'\n"
+                     "\t\tEUTRA Absolute RF Channel Number: '%" G_GUINT16_FORMAT"' (%s)\n"
                      "\t\tPhysical Cell ID: '%" G_GUINT16_FORMAT "'\n"
                      "\t\tRSRP: '%f' dBm\n"
                      "\t\tRSRQ: '%f' dB\n",
                      i,
-                     element->eutra_absolute_rf_channel_number,
+                     element->eutra_absolute_rf_channel_number, qmicli_earfcn_to_eutra_band_string (element->eutra_absolute_rf_channel_number),
                      element->physical_cell_id,
                      element->rsrp,
                      element->rsrq);
@@ -2747,7 +2769,162 @@ get_cell_location_info_ready (QmiClientNas *client,
     }
 
     qmi_message_nas_get_cell_location_info_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
+}
+
+static void
+force_network_search_ready (QmiClientNas *client,
+                            GAsyncResult *res)
+{
+    QmiMessageNasForceNetworkSearchOutput *output;
+    GError *error = NULL;
+
+    output = qmi_client_nas_force_network_search_finish (client, res, &error);
+    if (!output) {
+        g_printerr ("error: operation failed: %s\n", error->message);
+        g_error_free (error);
+        operation_shutdown (FALSE);
+        return;
+    }
+
+    if (!qmi_message_nas_force_network_search_output_get_result (output, &error)) {
+        g_printerr ("error: couldn't force network search: %s\n", error->message);
+        g_error_free (error);
+        qmi_message_nas_force_network_search_output_unref (output);
+        operation_shutdown (FALSE);
+        return;
+    }
+
+    g_print ("[%s] Successfully forced network search\n",
+             qmi_device_get_path_display (ctx->device));
+    qmi_message_nas_force_network_search_output_unref (output);
+    operation_shutdown (TRUE);
+}
+
+static void
+get_lte_cphy_ca_info_ready (QmiClientNas *client,
+                            GAsyncResult *res)
+{
+    QmiMessageNasGetLteCphyCaInfoOutput *output;
+    GError *error = NULL;
+    guint16 pci;
+    guint16 channel;
+    QmiNasDLBandwidth dl_bandwidth;
+    QmiNasActiveBand band;
+    QmiNasScellState state;
+    guint8 scell_index;
+
+    output = qmi_client_nas_get_lte_cphy_ca_info_finish (client, res, &error);
+    if (!output) {
+        g_printerr ("error: operation failed: %s\n", error->message);
+        g_error_free (error);
+        operation_shutdown (FALSE);
+        return;
+    }
+
+    if (!qmi_message_nas_get_lte_cphy_ca_info_output_get_result (output, &error)) {
+        g_printerr ("error: couldn't get carrier aggregation info: %s\n", error->message);
+        g_error_free (error);
+        qmi_message_nas_get_lte_cphy_ca_info_output_unref (output);
+        operation_shutdown (FALSE);
+        return;
+    }
+
+    g_print ("[%s] Successfully got carrier aggregation info\n",
+             qmi_device_get_path_display (ctx->device));
+
+    if (qmi_message_nas_get_lte_cphy_ca_info_output_get_dl_bandwidth (
+        output,
+        &dl_bandwidth,
+        NULL)) {
+        g_print ("DL Bandwidth: '%s'\n",
+                 qmi_nas_dl_bandwidth_get_string (dl_bandwidth));
+    }
+
+    if (qmi_message_nas_get_lte_cphy_ca_info_output_get_phy_ca_agg_scell_info (
+        output,
+        &pci,
+        &channel,
+        &dl_bandwidth,
+        &band,
+        &state,
+        NULL)) {
+        g_print ("Secondary Cell Info\n");
+        g_print ("\tPhysical Cell ID: '%" G_GUINT16_FORMAT"'\n"
+                 "\tTX Channel: '%" G_GUINT16_FORMAT"'\n"
+                 "\tDL Bandwidth: '%s'\n"
+                 "\tLTE Band: '%s'\n"
+                 "\tState: '%s'\n",
+                 pci, channel,
+                 qmi_nas_dl_bandwidth_get_string (dl_bandwidth),
+                 qmi_nas_active_band_get_string (band),
+                 qmi_nas_scell_state_get_string (state));
+    }
+
+    if (qmi_message_nas_get_lte_cphy_ca_info_output_get_phy_ca_agg_pcell_info (
+        output,
+        &pci,
+        &channel,
+        &dl_bandwidth,
+        &band,
+        NULL)) {
+        g_print ("Primary Cell Info\n");
+        g_print ("\tPhysical Cell ID: '%" G_GUINT16_FORMAT"'\n"
+                 "\tTX Channel: '%" G_GUINT16_FORMAT"'\n"
+                 "\tDL Bandwidth: '%s'\n"
+                 "\tLTE Band: '%s'\n",
+                 pci, channel,
+                 qmi_nas_dl_bandwidth_get_string (dl_bandwidth),
+                 qmi_nas_active_band_get_string (band));
+    }
+
+    if (qmi_message_nas_get_lte_cphy_ca_info_output_get_scell_index (
+        output,
+        &scell_index,
+        NULL)) {
+        g_print ("Secondary Cell index: '%u'\n", scell_index);
+    }
+
+    qmi_message_nas_get_lte_cphy_ca_info_output_unref (output);
+    operation_shutdown (TRUE);
+}
+
+static void
+get_supported_messages_ready (QmiClientNas *client,
+                              GAsyncResult *res)
+{
+    QmiMessageNasGetSupportedMessagesOutput *output;
+    GError *error = NULL;
+    GArray *bytearray = NULL;
+    gchar *str;
+
+    output = qmi_client_nas_get_supported_messages_finish (client, res, &error);
+    if (!output) {
+        g_printerr ("error: operation failed: %s\n", error->message);
+        g_error_free (error);
+        operation_shutdown (FALSE);
+        return;
+    }
+
+    if (!qmi_message_nas_get_supported_messages_output_get_result (output, &error)) {
+        g_printerr ("error: couldn't get supported NAS messages: %s\n", error->message);
+        g_error_free (error);
+        qmi_message_nas_get_supported_messages_output_unref (output);
+        operation_shutdown (FALSE);
+        return;
+    }
+
+    g_print ("[%s] Successfully got supported NAS messages:\n",
+             qmi_device_get_path_display (ctx->device));
+
+    qmi_message_nas_get_supported_messages_output_get_list (output, &bytearray, NULL);
+    str = qmicli_get_supported_messages_list (bytearray ? (const guint8 *)bytearray->data : NULL,
+                                              bytearray ? bytearray->len : 0);
+    g_print ("%s", str);
+    g_free (str);
+
+    qmi_message_nas_get_supported_messages_output_unref (output);
+    operation_shutdown (TRUE);
 }
 
 static void
@@ -2761,7 +2938,7 @@ reset_ready (QmiClientNas *client,
     if (!output) {
         g_printerr ("error: operation failed: %s\n", error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -2769,7 +2946,7 @@ reset_ready (QmiClientNas *client,
         g_printerr ("error: couldn't reset the NAS service: %s\n", error->message);
         g_error_free (error);
         qmi_message_nas_reset_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -2777,13 +2954,13 @@ reset_ready (QmiClientNas *client,
              qmi_device_get_path_display (ctx->device));
 
     qmi_message_nas_reset_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static gboolean
 noop_cb (gpointer unused)
 {
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
     return FALSE;
 }
 
@@ -2836,7 +3013,7 @@ qmicli_nas_run (QmiDevice *device,
         input = get_tx_rx_info_input_create (get_tx_rx_info_str,
                                              &interface);
         if (!input) {
-            shutdown (FALSE);
+            operation_shutdown (FALSE);
             return;
         }
 
@@ -2918,7 +3095,7 @@ qmicli_nas_run (QmiDevice *device,
 
         input = set_system_selection_preference_input_create (set_system_selection_preference_str);
         if (!input) {
-            shutdown (FALSE);
+            operation_shutdown (FALSE);
             return;
         }
 
@@ -2952,6 +3129,42 @@ qmicli_nas_run (QmiDevice *device,
                                                10,
                                                ctx->cancellable,
                                                (GAsyncReadyCallback)get_cell_location_info_ready,
+                                               NULL);
+        return;
+    }
+
+    /* Request to force network search */
+    if (force_network_search_flag) {
+        g_debug ("Forcing network search...");
+        qmi_client_nas_force_network_search (ctx->client,
+                                             NULL,
+                                             10,
+                                             ctx->cancellable,
+                                             (GAsyncReadyCallback)force_network_search_ready,
+                                             NULL);
+        return;
+    }
+
+    /* Request to get carrier aggregation info? */
+    if (get_lte_cphy_ca_info_flag) {
+        g_debug ("Asynchronously getting carrier aggregation info ...");
+        qmi_client_nas_get_lte_cphy_ca_info (ctx->client,
+                                             NULL,
+                                             10,
+                                             ctx->cancellable,
+                                             (GAsyncReadyCallback)get_lte_cphy_ca_info_ready,
+                                             NULL);
+        return;
+    }
+
+    /* Request to list supported messages? */
+    if (get_supported_messages_flag) {
+        g_debug ("Asynchronously getting supported NAS messages...");
+        qmi_client_nas_get_supported_messages (ctx->client,
+                                               NULL,
+                                               10,
+                                               ctx->cancellable,
+                                               (GAsyncReadyCallback)get_supported_messages_ready,
                                                NULL);
         return;
     }

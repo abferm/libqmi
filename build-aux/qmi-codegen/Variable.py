@@ -16,6 +16,7 @@
 # Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Copyright (C) 2012 Lanedo GmbH
+# Copyright (C) 2012-2015 Aleksander Morgado <aleksander@aleksander.es>
 #
 
 import string
@@ -54,6 +55,11 @@ class Variable:
             else:
                 raise ValueError("Invalid endian value %s" % endian)
 
+        """
+        Initially all variables are flagged as not being public
+        """
+        self.public = False
+
     """
     Emits the code to declare specific new types required by the variable.
     """
@@ -73,7 +79,7 @@ class Variable:
     Emits the code involved in reading the variable from the raw byte stream
     into the specific private format.
     """
-    def emit_buffer_read(self, f, line_prefix, variable_name, buffer_name, buffer_len):
+    def emit_buffer_read(self, f, line_prefix, tlv_out, error, variable_name):
         pass
 
 
@@ -81,27 +87,20 @@ class Variable:
     Emits the code involved in writing the variable to the raw byte stream
     from the specific private format.
     """
-    def emit_buffer_write(self, f, line_prefix, variable_name, buffer_name, buffer_len):
-        pass
-
-
-    """
-    Emits the code involved in computing the size of the variable.
-    """
-    def emit_size_read(self, f, line_prefix, variable_name, buffer_name, buffer_len):
+    def emit_buffer_write(self, f, line_prefix, tlv_name, variable_name):
         pass
 
 
     """
     Emits the code to get the contents of the given variable as a printable string.
     """
-    def emit_get_printable(self, f, line_prefix, printable, buffer_name, buffer_len):
+    def emit_get_printable(self, f, line_prefix):
         pass
 
     """
     Builds the code to include the declaration of a variable of this kind.
     """
-    def build_variable_declaration(self, line_prefix, variable_name):
+    def build_variable_declaration(self, public, line_prefix, variable_name):
         return ''
 
     """
@@ -157,3 +156,9 @@ class Variable:
     """
     def add_sections(self, sections):
         pass
+
+    """
+    Flag as being public
+    """
+    def flag_public(self):
+        self.public = True

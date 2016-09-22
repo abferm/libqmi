@@ -4,7 +4,7 @@
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
+ * the Free Software Foundation, either version 2 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (C) 2014 Aleksander Morgado <aleksander@aleksander.es>
+ * Copyright (C) 2014-2015 Aleksander Morgado <aleksander@aleksander.es>
  */
 
 #include "config.h"
@@ -44,6 +44,7 @@ static Context *ctx;
 /* Options */
 static gchar *set_data_format_str;
 static gboolean get_data_format_flag;
+static gboolean get_supported_messages_flag;
 static gboolean noop_flag;
 
 static GOptionEntry entries[] = {
@@ -53,6 +54,10 @@ static GOptionEntry entries[] = {
     },
     { "wda-get-data-format", 0, 0, G_OPTION_ARG_NONE, &get_data_format_flag,
       "Get data format",
+      NULL
+    },
+    { "wda-get-supported-messages", 0, 0, G_OPTION_ARG_NONE, &get_supported_messages_flag,
+      "Get supported messages",
       NULL
     },
     { "wda-noop", 0, 0, G_OPTION_ARG_NONE, &noop_flag,
@@ -65,16 +70,16 @@ static GOptionEntry entries[] = {
 GOptionGroup *
 qmicli_wda_get_option_group (void)
 {
-	GOptionGroup *group;
+    GOptionGroup *group;
 
-	group = g_option_group_new ("wda",
-	                            "WDA options",
-	                            "Show Wireless Data Administrative options",
-	                            NULL,
-	                            NULL);
-	g_option_group_add_entries (group, entries);
+    group = g_option_group_new ("wda",
+                                "WDA options",
+                                "Show Wireless Data Administrative options",
+                                NULL,
+                                NULL);
+    g_option_group_add_entries (group, entries);
 
-	return group;
+    return group;
 }
 
 gboolean
@@ -88,6 +93,7 @@ qmicli_wda_options_enabled (void)
 
     n_actions = (!!set_data_format_str +
                  get_data_format_flag +
+                 get_supported_messages_flag +
                  noop_flag);
 
     if (n_actions > 1) {
@@ -113,7 +119,7 @@ context_free (Context *context)
 }
 
 static void
-shutdown (gboolean operation_status)
+operation_shutdown (gboolean operation_status)
 {
     /* Cleanup context and finish async operation */
     context_free (ctx);
@@ -123,7 +129,7 @@ shutdown (gboolean operation_status)
 static gboolean
 noop_cb (gpointer unused)
 {
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
     return FALSE;
 }
 
@@ -143,7 +149,7 @@ get_data_format_ready (QmiClientWda *client,
     if (!output) {
         g_printerr ("error: operation failed: %s\n", error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -151,7 +157,7 @@ get_data_format_ready (QmiClientWda *client,
         g_printerr ("error: couldn't get data format: %s\n", error->message);
         g_error_free (error);
         qmi_message_wda_get_data_format_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -204,7 +210,7 @@ get_data_format_ready (QmiClientWda *client,
         g_print ("Downlink data aggregation max size: '%u'\n", data_aggregation_max_size);
 
     qmi_message_wda_get_data_format_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static void
@@ -224,7 +230,7 @@ set_data_format_ready (QmiClientWda *client,
     if (!output) {
         g_printerr ("error: operation failed: %s\n", error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -232,7 +238,7 @@ set_data_format_ready (QmiClientWda *client,
         g_printerr ("error: couldn't set data format: %s\n", error->message);
         g_error_free (error);
         qmi_message_wda_set_data_format_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -285,7 +291,7 @@ set_data_format_ready (QmiClientWda *client,
         g_print ("     Downlink data aggregation max size: '%u'\n", data_aggregation_max_size);
 
     qmi_message_wda_set_data_format_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static QmiMessageWdaSetDataFormatInput *
@@ -313,6 +319,44 @@ set_data_format_input_create (const gchar *str)
     return input;
 }
 
+static void
+get_supported_messages_ready (QmiClientWda *client,
+                              GAsyncResult *res)
+{
+    QmiMessageWdaGetSupportedMessagesOutput *output;
+    GError *error = NULL;
+    GArray *bytearray = NULL;
+    gchar *str;
+
+    output = qmi_client_wda_get_supported_messages_finish (client, res, &error);
+    if (!output) {
+        g_printerr ("error: operation failed: %s\n", error->message);
+        g_error_free (error);
+        operation_shutdown (FALSE);
+        return;
+    }
+
+    if (!qmi_message_wda_get_supported_messages_output_get_result (output, &error)) {
+        g_printerr ("error: couldn't get supported WDA messages: %s\n", error->message);
+        g_error_free (error);
+        qmi_message_wda_get_supported_messages_output_unref (output);
+        operation_shutdown (FALSE);
+        return;
+    }
+
+    g_print ("[%s] Successfully got supported WDA messages:\n",
+             qmi_device_get_path_display (ctx->device));
+
+    qmi_message_wda_get_supported_messages_output_get_list (output, &bytearray, NULL);
+    str = qmicli_get_supported_messages_list (bytearray ? (const guint8 *)bytearray->data : NULL,
+                                              bytearray ? bytearray->len : 0);
+    g_print ("%s", str);
+    g_free (str);
+
+    qmi_message_wda_get_supported_messages_output_unref (output);
+    operation_shutdown (TRUE);
+}
+
 void
 qmicli_wda_run (QmiDevice *device,
                 QmiClientWda *client,
@@ -329,6 +373,10 @@ qmicli_wda_run (QmiDevice *device,
         QmiMessageWdaSetDataFormatInput *input;
 
         input = set_data_format_input_create (set_data_format_str);
+        if (!input) {
+            operation_shutdown (FALSE);
+            return;
+        }
 
         g_debug ("Asynchronously setting data format...");
         qmi_client_wda_set_data_format (ctx->client,
@@ -350,6 +398,18 @@ qmicli_wda_run (QmiDevice *device,
                                         ctx->cancellable,
                                         (GAsyncReadyCallback)get_data_format_ready,
                                         NULL);
+        return;
+    }
+
+    /* Request to list supported messages? */
+    if (get_supported_messages_flag) {
+        g_debug ("Asynchronously getting supported WDA messages...");
+        qmi_client_wda_get_supported_messages (ctx->client,
+                                               NULL,
+                                               10,
+                                               ctx->cancellable,
+                                               (GAsyncReadyCallback)get_supported_messages_ready,
+                                               NULL);
         return;
     }
 

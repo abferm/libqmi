@@ -15,7 +15,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- * Copyright (C) 2012 Aleksander Morgado <aleksander@gnu.org>
+ * Copyright (C) 2015 Velocloud Inc.
+ * Copyright (C) 2012-2015 Aleksander Morgado <aleksander@aleksander.es>
  */
 
 #include "config.h"
@@ -24,6 +25,7 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <string.h>
+#include <arpa/inet.h>
 
 #include <glib.h>
 #include <gio/gio.h>
@@ -31,6 +33,7 @@
 #include <libqmi-glib.h>
 
 #include "qmicli.h"
+#include "qmicli-helpers.h"
 
 /* Context */
 typedef struct {
@@ -49,19 +52,23 @@ static Context *ctx;
 static gchar *start_network_str;
 static gboolean follow_network_flag;
 static gchar *stop_network_str;
+static gboolean get_current_settings_flag;
 static gboolean get_packet_service_status_flag;
 static gboolean get_packet_statistics_flag;
 static gboolean get_data_bearer_technology_flag;
 static gboolean get_current_data_bearer_technology_flag;
 static gchar *get_profile_list_str;
 static gchar *get_default_settings_str;
+static gboolean get_autoconnect_settings_flag;
+static gchar *set_autoconnect_settings_str;
+static gboolean get_supported_messages_flag;
 static gboolean reset_flag;
 static gboolean noop_flag;
 
 static GOptionEntry entries[] = {
     { "wds-start-network", 0, 0, G_OPTION_ARG_STRING, &start_network_str,
-      "Start network (Authentication, Username and Password are optional)",
-      "[(APN),(PAP|CHAP|BOTH),(Username),(Password)]"
+      "Start network (allowed keys: apn, 3gpp-profile, 3gpp2-profile, auth (PAP|CHAP|BOTH), username, password, autoconnect=yes)",
+      "[\"key=value,...\"]"
     },
     { "wds-follow-network", 0, 0, G_OPTION_ARG_NONE, &follow_network_flag,
       "Follow the network status until disconnected. Use with `--wds-start-network'",
@@ -69,7 +76,11 @@ static GOptionEntry entries[] = {
     },
     { "wds-stop-network", 0, 0, G_OPTION_ARG_STRING, &stop_network_str,
       "Stop network",
-      "[Packet data handle]"
+      "[Packet data handle] OR [disable-autoconnect]",
+    },
+    { "wds-get-current-settings", 0, 0, G_OPTION_ARG_NONE, &get_current_settings_flag,
+      "Get current settings",
+      NULL
     },
     { "wds-get-packet-service-status", 0, 0, G_OPTION_ARG_NONE, &get_packet_service_status_flag,
       "Get packet service status",
@@ -95,6 +106,18 @@ static GOptionEntry entries[] = {
       "Get default settings",
       "[3gpp|3gpp2]"
     },
+    { "wds-get-autoconnect-settings", 0, 0, G_OPTION_ARG_NONE, &get_autoconnect_settings_flag,
+      "Get autoconnect settings",
+      NULL
+    },
+    { "wds-set-autoconnect-settings", 0, 0, G_OPTION_ARG_STRING, &set_autoconnect_settings_str,
+      "Set autoconnect settings (roaming settings optional)",
+      "[(enabled|disabled|paused)[,(roaming-allowed|home-only)]]"
+    },
+    { "wds-get-supported-messages", 0, 0, G_OPTION_ARG_NONE, &get_supported_messages_flag,
+      "Get supported messages",
+      NULL
+    },
     { "wds-reset", 0, 0, G_OPTION_ARG_NONE, &reset_flag,
       "Reset the service state",
       NULL
@@ -109,16 +132,16 @@ static GOptionEntry entries[] = {
 GOptionGroup *
 qmicli_wds_get_option_group (void)
 {
-	GOptionGroup *group;
+    GOptionGroup *group;
 
-	group = g_option_group_new ("wds",
-	                            "WDS options",
-	                            "Show Wireless Data Service options",
-	                            NULL,
-	                            NULL);
-	g_option_group_add_entries (group, entries);
+    group = g_option_group_new ("wds",
+                                "WDS options",
+                                "Show Wireless Data Service options",
+                                NULL,
+                                NULL);
+    g_option_group_add_entries (group, entries);
 
-	return group;
+    return group;
 }
 
 gboolean
@@ -132,12 +155,16 @@ qmicli_wds_options_enabled (void)
 
     n_actions = (!!start_network_str +
                  !!stop_network_str +
+                 get_current_settings_flag +
                  get_packet_service_status_flag +
                  get_packet_statistics_flag +
                  get_data_bearer_technology_flag +
                  get_current_data_bearer_technology_flag +
                  !!get_profile_list_str +
                  !!get_default_settings_str +
+                 get_autoconnect_settings_flag +
+                 !!set_autoconnect_settings_str +
+                 get_supported_messages_flag +
                  reset_flag +
                  noop_flag);
 
@@ -172,7 +199,7 @@ context_free (Context *context)
 }
 
 static void
-shutdown (gboolean operation_status)
+operation_shutdown (gboolean operation_status)
 {
     /* Cleanup context and finish async operation */
     context_free (ctx);
@@ -191,7 +218,7 @@ stop_network_ready (QmiClientWds *client,
         g_printerr ("error: operation failed: %s\n",
                     error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -199,7 +226,7 @@ stop_network_ready (QmiClientWds *client,
         g_printerr ("error: couldn't stop network: %s\n", error->message);
         g_error_free (error);
         qmi_message_wds_stop_network_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -209,17 +236,20 @@ stop_network_ready (QmiClientWds *client,
     g_print ("[%s] Network stopped\n",
              qmi_device_get_path_display (ctx->device));
     qmi_message_wds_stop_network_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static void
 internal_stop_network (GCancellable *cancellable,
-                       guint32 packet_data_handle)
+                       guint32 packet_data_handle,
+                       gboolean disable_autoconnect)
 {
     QmiMessageWdsStopNetworkInput *input;
 
     input = qmi_message_wds_stop_network_input_new ();
     qmi_message_wds_stop_network_input_set_packet_data_handle (input, packet_data_handle, NULL);
+    if (disable_autoconnect)
+        qmi_message_wds_stop_network_input_set_disable_autoconnect (input, TRUE, NULL);
 
     g_print ("Network cancelled... releasing resources\n");
     qmi_client_wds_stop_network (ctx->client,
@@ -243,7 +273,7 @@ network_cancelled (GCancellable *cancellable)
     }
 
     g_print ("Network cancelled... releasing resources\n");
-    internal_stop_network (cancellable, ctx->packet_data_handle);
+    internal_stop_network (cancellable, ctx->packet_data_handle, FALSE);
 }
 
 static void
@@ -283,7 +313,7 @@ timeout_get_packet_service_status_ready (QmiClientWds *client,
     if (status != QMI_WDS_CONNECTION_STATUS_CONNECTED) {
         g_print ("[%s] Stopping after detecting disconnection\n",
                  qmi_device_get_path_display (ctx->device));
-        internal_stop_network (NULL, ctx->packet_data_handle);
+        internal_stop_network (NULL, ctx->packet_data_handle, FALSE);
     }
 }
 
@@ -300,6 +330,200 @@ packet_status_timeout (void)
     return TRUE;
 }
 
+typedef struct {
+    gchar                *apn;
+    guint8                profile_index_3gpp;
+    guint8                profile_index_3gpp2;
+    QmiWdsAuthentication  auth;
+    gboolean              auth_set;
+    gchar                *username;
+    gchar                *password;
+    gboolean              autoconnect;
+    gboolean              autoconnect_set;
+} StartNetworkProperties;
+
+static gboolean
+start_network_properties_handle (const gchar  *key,
+                                 const gchar  *value,
+                                 GError      **error,
+                                 gpointer      user_data)
+{
+    StartNetworkProperties *props = user_data;
+
+    if (!value || !value[0]) {
+        g_set_error (error,
+                     QMI_CORE_ERROR,
+                     QMI_CORE_ERROR_FAILED,
+                     "key '%s' required a value",
+                     key);
+        return FALSE;
+    }
+
+    if (g_ascii_strcasecmp (key, "apn") == 0 && !props->apn) {
+        props->apn = g_strdup (value);
+        return TRUE;
+    }
+
+    if (g_ascii_strcasecmp (key, "3gpp-profile") == 0 && !props->profile_index_3gpp) {
+        props->profile_index_3gpp = atoi (value);
+        return TRUE;
+    }
+
+    if (g_ascii_strcasecmp (key, "3gpp2-profile") == 0 && !props->profile_index_3gpp2) {
+        props->profile_index_3gpp2 = atoi (value);
+        return TRUE;
+    }
+
+    if (g_ascii_strcasecmp (key, "auth") == 0 && !props->auth_set) {
+        if (!qmicli_read_authentication_from_string (value, &(props->auth))) {
+            g_set_error (error,
+                         QMI_CORE_ERROR,
+                         QMI_CORE_ERROR_FAILED,
+                         "unknown auth protocol '%s'",
+                         value);
+            return FALSE;
+        }
+        props->auth_set = TRUE;
+        return TRUE;
+    }
+
+    if (g_ascii_strcasecmp (key, "username") == 0 && !props->username) {
+        props->username = g_strdup (value);
+        return TRUE;
+    }
+
+    if (g_ascii_strcasecmp (key, "password") == 0 && !props->password) {
+        props->password = g_strdup (value);
+        return TRUE;
+    }
+
+    if (g_ascii_strcasecmp (key, "autoconnect") == 0 && !props->autoconnect_set) {
+        if (!qmicli_read_yes_no_from_string (value, &(props->autoconnect))) {
+            g_set_error (error,
+                         QMI_CORE_ERROR,
+                         QMI_CORE_ERROR_FAILED,
+                         "unknown autoconnect setup '%s'",
+                         value);
+            return FALSE;
+        }
+        props->autoconnect_set = TRUE;
+        return TRUE;
+    }
+
+    g_set_error (error,
+                 QMI_CORE_ERROR,
+                 QMI_CORE_ERROR_FAILED,
+                 "unrecognized or duplicate option '%s'",
+                 key);
+    return FALSE;
+}
+
+static QmiMessageWdsStartNetworkInput *
+start_network_input_create (const gchar *str)
+{
+    gchar *aux_auth_str = NULL;
+    gchar **split = NULL;
+    QmiMessageWdsStartNetworkInput *input = NULL;
+    StartNetworkProperties props = {
+        .apn                 = NULL,
+        .profile_index_3gpp  = 0,
+        .profile_index_3gpp2 = 0,
+        .auth                = QMI_WDS_AUTHENTICATION_NONE,
+        .auth_set            = FALSE,
+        .username            = NULL,
+        .password            = NULL,
+    };
+
+    /* An empty string is totally valid (i.e. no TLVs) */
+    if (!str[0])
+        return NULL;
+
+    /* New key=value format */
+    if (strchr (str, '=')) {
+        GError *error = NULL;
+
+        if (!qmicli_parse_key_value_string (str,
+                                            &error,
+                                            start_network_properties_handle,
+                                            &props)) {
+            g_printerr ("error: couldn't parse input string: %s\n", error->message);
+            g_error_free (error);
+            goto out;
+        }
+    }
+    /* Old non key=value format, like this:
+     *    "[(APN),(PAP|CHAP|BOTH),(Username),(Password)]"
+     */
+    else {
+        /* Parse input string into the expected fields */
+        split = g_strsplit (str, ",", 0);
+
+        props.apn = g_strdup (split[0]);
+
+        if (props.apn && split[1]) {
+            if (!qmicli_read_authentication_from_string (split[1], &(props.auth))) {
+                g_printerr ("error: unknown auth protocol '%s'\n", split[1]);
+                goto out;
+            }
+            props.auth_set = TRUE;
+        }
+
+        props.username = (props.auth_set ? g_strdup (split[2]) : NULL);
+        props.password = (props.username ? g_strdup (split[3]) : NULL);
+    }
+
+    /* Create input bundle */
+    input = qmi_message_wds_start_network_input_new ();
+
+    /* Set APN */
+    if (props.apn)
+        qmi_message_wds_start_network_input_set_apn (input, props.apn, NULL);
+
+    /* Set 3GPP profile */
+    if (props.profile_index_3gpp > 0)
+        qmi_message_wds_start_network_input_set_profile_index_3gpp (input, props.profile_index_3gpp, NULL);
+
+    /* Set 3GPP2 profile */
+    if (props.profile_index_3gpp2 > 0)
+        qmi_message_wds_start_network_input_set_profile_index_3gpp2 (input, props.profile_index_3gpp2, NULL);
+
+    /* Set authentication method */
+    if (props.auth_set) {
+        aux_auth_str = qmi_wds_authentication_build_string_from_mask (props.auth);
+        qmi_message_wds_start_network_input_set_authentication_preference (input, props.auth, NULL);
+    }
+
+    /* Set username, avoid empty strings */
+    if (props.username && props.username[0])
+        qmi_message_wds_start_network_input_set_username (input, props.username, NULL);
+
+    /* Set password, avoid empty strings */
+    if (props.password && props.password[0])
+        qmi_message_wds_start_network_input_set_password (input, props.password, NULL);
+
+    /* Set autoconnect */
+    if (props.autoconnect_set)
+        qmi_message_wds_start_network_input_set_enable_autoconnect (input, props.autoconnect, NULL);
+
+    g_debug ("Network start parameters set (apn: '%s', 3gpp_profile: '%u', 3gpp2_profile: '%u', auth: '%s', username: '%s', password: '%s', autoconnect: '%s')",
+             props.apn                             ? props.apn                          : "unspecified",
+             props.profile_index_3gpp,
+             props.profile_index_3gpp2,
+             aux_auth_str                          ? aux_auth_str                       : "unspecified",
+             (props.username && props.username[0]) ? props.username                     : "unspecified",
+             (props.password && props.password[0]) ? props.password                     : "unspecified",
+             props.autoconnect_set                 ? (props.autoconnect ? "yes" : "no") : "unspecified");
+
+out:
+    g_strfreev (split);
+    g_free     (props.apn);
+    g_free     (props.username);
+    g_free     (props.password);
+    g_free     (aux_auth_str);
+
+    return input;
+}
+
 static void
 start_network_ready (QmiClientWds *client,
                      GAsyncResult *res)
@@ -312,7 +536,7 @@ start_network_ready (QmiClientWds *client,
         g_printerr ("error: operation failed: %s\n",
                     error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -347,7 +571,7 @@ start_network_ready (QmiClientWds *client,
 
         g_error_free (error);
         qmi_message_wds_start_network_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -376,7 +600,148 @@ start_network_ready (QmiClientWds *client,
     }
 
     /* Nothing else to do */
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
+}
+
+static void
+get_current_settings_ready (QmiClientWds *client,
+                            GAsyncResult *res)
+{
+    GError *error = NULL;
+    QmiMessageWdsGetCurrentSettingsOutput *output;
+    QmiWdsIpFamily ip_family = QMI_WDS_IP_FAMILY_UNSPECIFIED;
+    guint32 mtu = 0;
+    GArray *array;
+    guint32 addr = 0;
+    struct in_addr in_addr_val;
+    struct in6_addr in6_addr_val;
+    gchar buf4[INET_ADDRSTRLEN];
+    gchar buf6[INET6_ADDRSTRLEN];
+    guint8 prefix = 0;
+    guint i;
+
+    output = qmi_client_wds_get_current_settings_finish (client, res, &error);
+    if (!output) {
+        g_printerr ("error: operation failed: %s\n", error->message);
+        g_error_free (error);
+        operation_shutdown (FALSE);
+        return;
+    }
+
+    if (!qmi_message_wds_get_current_settings_output_get_result (output, &error)) {
+        g_printerr ("error: couldn't get current settings: %s\n", error->message);
+        g_error_free (error);
+        qmi_message_wds_get_current_settings_output_unref (output);
+        operation_shutdown (FALSE);
+        return;
+    }
+
+    g_print ("[%s] Current settings retrieved:\n",
+             qmi_device_get_path_display (ctx->device));
+
+    if (qmi_message_wds_get_current_settings_output_get_ip_family (output, &ip_family, NULL))
+        g_print ("           IP Family: %s\n",
+                 ((ip_family == QMI_WDS_IP_FAMILY_IPV4) ? "IPv4" :
+                  ((ip_family == QMI_WDS_IP_FAMILY_IPV6) ? "IPv6" :
+                   "unknown")));
+
+    /* IPv4... */
+
+    if (qmi_message_wds_get_current_settings_output_get_ipv4_address (output, &addr, NULL)) {
+        in_addr_val.s_addr = GUINT32_TO_BE (addr);
+        memset (buf4, 0, sizeof (buf4));
+        inet_ntop (AF_INET, &in_addr_val, buf4, sizeof (buf4));
+        g_print ("        IPv4 address: %s\n", buf4);
+    }
+
+    if (qmi_message_wds_get_current_settings_output_get_ipv4_gateway_subnet_mask (output, &addr, NULL)) {
+        in_addr_val.s_addr = GUINT32_TO_BE (addr);
+        memset (buf4, 0, sizeof (buf4));
+        inet_ntop (AF_INET, &in_addr_val, buf4, sizeof (buf4));
+        g_print ("    IPv4 subnet mask: %s\n", buf4);
+    }
+
+    if (qmi_message_wds_get_current_settings_output_get_ipv4_gateway_address (output, &addr, NULL)) {
+        in_addr_val.s_addr = GUINT32_TO_BE (addr);
+        memset (buf4, 0, sizeof (buf4));
+        inet_ntop (AF_INET, &in_addr_val, buf4, sizeof (buf4));
+        g_print ("IPv4 gateway address: %s\n", buf4);
+    }
+
+    if (qmi_message_wds_get_current_settings_output_get_primary_ipv4_dns_address (output, &addr, NULL)) {
+        in_addr_val.s_addr = GUINT32_TO_BE (addr);
+        memset (buf4, 0, sizeof (buf4));
+        inet_ntop (AF_INET, &in_addr_val, buf4, sizeof (buf4));
+        g_print ("    IPv4 primary DNS: %s\n", buf4);
+    }
+
+    if (qmi_message_wds_get_current_settings_output_get_secondary_ipv4_dns_address (output, &addr, NULL)) {
+        in_addr_val.s_addr = GUINT32_TO_BE (addr);
+        memset (buf4, 0, sizeof (buf4));
+        inet_ntop (AF_INET, &in_addr_val, buf4, sizeof (buf4));
+        g_print ("  IPv4 secondary DNS: %s\n", buf4);
+    }
+
+    /* IPv6... */
+
+    if (qmi_message_wds_get_current_settings_output_get_ipv6_address (output, &array, &prefix, NULL)) {
+        for (i = 0; i < array->len; i++)
+            in6_addr_val.s6_addr16[i] = GUINT16_TO_BE (g_array_index (array, guint16, i));
+        memset (buf6, 0, sizeof (buf6));
+        inet_ntop (AF_INET6, &in6_addr_val, buf6, sizeof (buf6));
+        g_print ("        IPv6 address: %s/%d\n", buf6, prefix);
+    }
+
+    if (qmi_message_wds_get_current_settings_output_get_ipv6_gateway_address (output, &array, &prefix, NULL)) {
+        for (i = 0; i < array->len; i++)
+            in6_addr_val.s6_addr16[i] = GUINT16_TO_BE (g_array_index (array, guint16, i));
+        memset (buf6, 0, sizeof (buf6));
+        inet_ntop (AF_INET6, &in6_addr_val, buf6, sizeof (buf6));
+        g_print ("IPv6 gateway address: %s/%d\n", buf6, prefix);
+    }
+
+    if (qmi_message_wds_get_current_settings_output_get_ipv6_primary_dns_address (output, &array, NULL)) {
+        for (i = 0; i < array->len; i++)
+            in6_addr_val.s6_addr16[i] = GUINT16_TO_BE (g_array_index (array, guint16, i));
+        memset (buf6, 0, sizeof (buf6));
+        inet_ntop (AF_INET6, &in6_addr_val, buf6, sizeof (buf6));
+        g_print ("    IPv6 primary DNS: %s\n", buf6);
+    }
+
+    if (qmi_message_wds_get_current_settings_output_get_ipv6_secondary_dns_address (output, &array, NULL)) {
+        for (i = 0; i < array->len; i++)
+            in6_addr_val.s6_addr16[i] = GUINT16_TO_BE (g_array_index (array, guint16, i));
+        memset (buf6, 0, sizeof (buf6));
+        inet_ntop (AF_INET6, &in6_addr_val, buf6, sizeof (buf6));
+        g_print ("  IPv6 secondary DNS: %s\n", buf6);
+    }
+
+    /* Other... */
+
+    if (qmi_message_wds_get_current_settings_output_get_mtu (output, &mtu, NULL))
+        g_print ("                 MTU: %u\n", mtu);
+
+    if (qmi_message_wds_get_current_settings_output_get_domain_name_list (output, &array, &error)) {
+        GString *s = NULL;
+
+        if (array) {
+            for (i = 0; i < array->len; i++) {
+                if (!s)
+                    s = g_string_new ("");
+                else
+                    g_string_append (s, ", ");
+                g_string_append (s, g_array_index (array, const gchar *, i));
+            }
+        }
+        if (s) {
+            g_print ("             Domains: %s\n", s->str);
+            g_string_free (s, TRUE);
+        } else
+            g_print ("             Domains: none\n");
+    }
+
+    qmi_message_wds_get_current_settings_output_unref (output);
+    operation_shutdown (TRUE);
 }
 
 static void
@@ -392,7 +757,7 @@ get_packet_service_status_ready (QmiClientWds *client,
         g_printerr ("error: operation failed: %s\n",
                     error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -400,7 +765,7 @@ get_packet_service_status_ready (QmiClientWds *client,
         g_printerr ("error: couldn't get packet service status: %s\n", error->message);
         g_error_free (error);
         qmi_message_wds_get_packet_service_status_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -414,7 +779,7 @@ get_packet_service_status_ready (QmiClientWds *client,
              qmi_wds_connection_status_get_string (status));
 
     qmi_message_wds_get_packet_service_status_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static void
@@ -431,7 +796,7 @@ get_packet_statistics_ready (QmiClientWds *client,
         g_printerr ("error: operation failed: %s\n",
                     error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -439,7 +804,7 @@ get_packet_statistics_ready (QmiClientWds *client,
         g_printerr ("error: couldn't get packet statistics: %s\n", error->message);
         g_error_free (error);
         qmi_message_wds_get_packet_statistics_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -481,7 +846,7 @@ get_packet_statistics_ready (QmiClientWds *client,
         g_print ("\tRX bytes OK (last): %" G_GUINT64_FORMAT "\n", val64);
 
     qmi_message_wds_get_packet_statistics_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static void
@@ -497,7 +862,7 @@ get_data_bearer_technology_ready (QmiClientWds *client,
         g_printerr ("error: operation failed: %s\n",
                     error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -520,7 +885,7 @@ get_data_bearer_technology_ready (QmiClientWds *client,
 
         g_error_free (error);
         qmi_message_wds_get_data_bearer_technology_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -532,7 +897,7 @@ get_data_bearer_technology_ready (QmiClientWds *client,
              qmi_device_get_path_display (ctx->device),
              qmi_wds_data_bearer_technology_get_string (current));
     qmi_message_wds_get_data_bearer_technology_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static void
@@ -582,7 +947,7 @@ get_current_data_bearer_technology_ready (QmiClientWds *client,
         g_printerr ("error: operation failed: %s\n",
                     error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -607,7 +972,7 @@ get_current_data_bearer_technology_ready (QmiClientWds *client,
 
         g_error_free (error);
         qmi_message_wds_get_current_data_bearer_technology_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -626,7 +991,7 @@ get_current_data_bearer_technology_ready (QmiClientWds *client,
     }
 
     qmi_message_wds_get_current_data_bearer_technology_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 typedef struct {
@@ -704,7 +1069,7 @@ get_next_profile_settings (GetProfileListContext *inner_ctx)
         /* All done */
         g_array_unref (inner_ctx->profile_list);
         g_slice_free (GetProfileListContext, inner_ctx);
-        shutdown (TRUE);
+        operation_shutdown (TRUE);
         return;
     }
 
@@ -743,7 +1108,7 @@ get_profile_list_ready (QmiClientWds *client,
         g_printerr ("error: operation failed: %s\n",
                     error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -766,7 +1131,7 @@ get_profile_list_ready (QmiClientWds *client,
 
         g_error_free (error);
         qmi_message_wds_get_profile_list_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -775,7 +1140,7 @@ get_profile_list_ready (QmiClientWds *client,
     if (!profile_list || !profile_list->len) {
         g_print ("Profile list empty\n");
         qmi_message_wds_get_profile_list_output_unref (output);
-        shutdown (TRUE);
+        operation_shutdown (TRUE);
         return;
     }
 
@@ -801,7 +1166,7 @@ get_default_settings_ready (QmiClientWds *client,
     if (!output) {
         g_printerr ("error: operation failed: %s\n", error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -823,7 +1188,7 @@ get_default_settings_ready (QmiClientWds *client,
         }
         g_error_free (error);
         qmi_message_wds_get_default_settings_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -846,7 +1211,164 @@ get_default_settings_ready (QmiClientWds *client,
     }
 
     qmi_message_wds_get_default_settings_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
+}
+
+static void
+get_autoconnect_settings_ready (QmiClientWds *client,
+                                GAsyncResult *res)
+{
+    QmiMessageWdsGetAutoconnectSettingsOutput *output;
+    GError *error = NULL;
+    QmiWdsAutoconnectSetting status;
+    QmiWdsAutoconnectSettingRoaming roaming;
+
+    output = qmi_client_wds_get_autoconnect_settings_finish (client, res, &error);
+    if (!output) {
+        g_printerr ("error: operation failed: %s\n", error->message);
+        g_error_free (error);
+        operation_shutdown (FALSE);
+        return;
+    }
+
+    if (!qmi_message_wds_get_autoconnect_settings_output_get_result (output, &error)) {
+        g_printerr ("error: couldn't get autoconnect settings: %s\n",
+                    error->message);
+        g_error_free (error);
+        qmi_message_wds_get_autoconnect_settings_output_unref (output);
+        operation_shutdown (FALSE);
+        return;
+    }
+
+    g_print ("Autoconnect settings retrieved:\n");
+
+    qmi_message_wds_get_autoconnect_settings_output_get_status (output, &status, NULL);
+    g_print ("\tStatus: '%s'\n", qmi_wds_autoconnect_setting_get_string (status));
+
+    if (qmi_message_wds_get_autoconnect_settings_output_get_roaming (output, &roaming, NULL))
+        g_print ("\tRoaming: '%s'\n", qmi_wds_autoconnect_setting_roaming_get_string (roaming));
+
+    qmi_message_wds_get_autoconnect_settings_output_unref (output);
+    operation_shutdown (TRUE);
+}
+
+static QmiMessageWdsSetAutoconnectSettingsInput *
+set_autoconnect_settings_input_create (const gchar *str)
+{
+    QmiMessageWdsSetAutoconnectSettingsInput *input = NULL;
+    gchar **split;
+    QmiWdsAutoconnectSetting status;
+    QmiWdsAutoconnectSettingRoaming roaming;
+    GError *error = NULL;
+
+    split = g_strsplit (str, ",", -1);
+    input = qmi_message_wds_set_autoconnect_settings_input_new ();
+
+    if (g_strv_length (split) != 2 && g_strv_length (split) != 1) {
+        g_printerr ("error: expected 1 or 2 options in autoconnect settings\n");
+        goto error_out;
+    }
+
+    g_strstrip (split[0]);
+    if (!qmicli_read_autoconnect_setting_from_string (split[0], &status)) {
+        g_printerr ("error: failed to parse autoconnect setting\n");
+        goto error_out;
+    }
+    if (!qmi_message_wds_set_autoconnect_settings_input_set_status (input, status, &error)) {
+        g_printerr ("error: couldn't create input data bundle: '%s'\n",
+                    error->message);
+        goto error_out;
+    }
+
+    if (g_strv_length (split) == 2) {
+        g_strstrip (split[1]);
+        if (!qmicli_read_autoconnect_setting_roaming_from_string (g_str_equal (split[1], "roaming-allowed") ? "allowed" : split[1], &roaming)) {
+            g_printerr ("error: failed to parse autoconnect roaming setting\n");
+            goto error_out;
+        }
+        if (!qmi_message_wds_set_autoconnect_settings_input_set_roaming (input, roaming, &error)) {
+            g_printerr ("error: couldn't create input data bundle: '%s'\n",
+                        error->message);
+            goto error_out;
+        }
+    }
+
+    g_strfreev (split);
+    return input;
+
+error_out:
+    if (error)
+        g_error_free (error);
+    g_strfreev (split);
+    qmi_message_wds_set_autoconnect_settings_input_unref (input);
+    return NULL;
+}
+
+static void
+set_autoconnect_settings_ready (QmiClientWds *client,
+                                GAsyncResult *res)
+{
+    QmiMessageWdsSetAutoconnectSettingsOutput *output;
+    GError *error = NULL;
+
+    output = qmi_client_wds_set_autoconnect_settings_finish (client, res, &error);
+    if (!output) {
+        g_printerr ("error: operation failed: %s\n", error->message);
+        g_error_free (error);
+        operation_shutdown (FALSE);
+        return;
+    }
+
+    if (!qmi_message_wds_set_autoconnect_settings_output_get_result (output, &error)) {
+        g_printerr ("error: couldn't set autoconnect settings: %s\n",
+                    error->message);
+        g_error_free (error);
+        qmi_message_wds_set_autoconnect_settings_output_unref (output);
+        operation_shutdown (FALSE);
+        return;
+    }
+
+    g_print ("Autoconnect settings updated\n");
+    qmi_message_wds_set_autoconnect_settings_output_unref (output);
+    operation_shutdown (TRUE);
+}
+
+static void
+get_supported_messages_ready (QmiClientWds *client,
+                              GAsyncResult *res)
+{
+    QmiMessageWdsGetSupportedMessagesOutput *output;
+    GError *error = NULL;
+    GArray *bytearray = NULL;
+    gchar *str;
+
+    output = qmi_client_wds_get_supported_messages_finish (client, res, &error);
+    if (!output) {
+        g_printerr ("error: operation failed: %s\n", error->message);
+        g_error_free (error);
+        operation_shutdown (FALSE);
+        return;
+    }
+
+    if (!qmi_message_wds_get_supported_messages_output_get_result (output, &error)) {
+        g_printerr ("error: couldn't get supported WDS messages: %s\n", error->message);
+        g_error_free (error);
+        qmi_message_wds_get_supported_messages_output_unref (output);
+        operation_shutdown (FALSE);
+        return;
+    }
+
+    g_print ("[%s] Successfully got supported WDS messages:\n",
+             qmi_device_get_path_display (ctx->device));
+
+    qmi_message_wds_get_supported_messages_output_get_list (output, &bytearray, NULL);
+    str = qmicli_get_supported_messages_list (bytearray ? (const guint8 *)bytearray->data : NULL,
+                                              bytearray ? bytearray->len : 0);
+    g_print ("%s", str);
+    g_free (str);
+
+    qmi_message_wds_get_supported_messages_output_unref (output);
+    operation_shutdown (TRUE);
 }
 
 static void
@@ -860,7 +1382,7 @@ reset_ready (QmiClientWds *client,
     if (!output) {
         g_printerr ("error: operation failed: %s\n", error->message);
         g_error_free (error);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -868,7 +1390,7 @@ reset_ready (QmiClientWds *client,
         g_printerr ("error: couldn't reset the WDS service: %s\n", error->message);
         g_error_free (error);
         qmi_message_wds_reset_output_unref (output);
-        shutdown (FALSE);
+        operation_shutdown (FALSE);
         return;
     }
 
@@ -876,13 +1398,13 @@ reset_ready (QmiClientWds *client,
              qmi_device_get_path_display (ctx->device));
 
     qmi_message_wds_reset_output_unref (output);
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
 }
 
 static gboolean
 noop_cb (gpointer unused)
 {
-    shutdown (TRUE);
+    operation_shutdown (TRUE);
     return FALSE;
 }
 
@@ -901,45 +1423,9 @@ qmicli_wds_run (QmiDevice *device,
 
     /* Request to start network? */
     if (start_network_str) {
-        QmiMessageWdsStartNetworkInput *input = NULL;
+        QmiMessageWdsStartNetworkInput *input;
 
-        /* Use the input string as APN */
-        if (start_network_str[0]) {
-            gchar **split;
-
-            split = g_strsplit (start_network_str, ",", 0);
-
-            input = qmi_message_wds_start_network_input_new ();
-            qmi_message_wds_start_network_input_set_apn (input, split[0], NULL);
-
-            if (split[1]) {
-                QmiWdsAuthentication qmiwdsauth;
-
-                /* Use authentication method */
-                if (g_ascii_strcasecmp (split[1], "PAP") == 0) {
-                    qmiwdsauth = QMI_WDS_AUTHENTICATION_PAP;
-                } else if (g_ascii_strcasecmp (split[1], "CHAP") == 0) {
-                    qmiwdsauth = QMI_WDS_AUTHENTICATION_CHAP;
-                } else if (g_ascii_strcasecmp (split[1], "BOTH") == 0) {
-                    qmiwdsauth = (QMI_WDS_AUTHENTICATION_PAP | QMI_WDS_AUTHENTICATION_CHAP);
-                } else {
-                    qmiwdsauth = QMI_WDS_AUTHENTICATION_NONE;
-                }
-
-                qmi_message_wds_start_network_input_set_authentication_preference (input, qmiwdsauth, NULL);
-
-                /* Username */
-                if (split[2] && strlen (split[2])) {
-                    qmi_message_wds_start_network_input_set_username (input, split[2], NULL);
-
-                    /* Password */
-                    if (split[3] && strlen (split[3])) {
-                        qmi_message_wds_start_network_input_set_password (input, split[3], NULL);
-                    }
-                }
-            }
-            g_strfreev (split);
-        }
+        input = start_network_input_create (start_network_str);
 
         g_debug ("Asynchronously starting network...");
         qmi_client_wds_start_network (ctx->client,
@@ -956,18 +1442,54 @@ qmicli_wds_run (QmiDevice *device,
     /* Request to stop network? */
     if (stop_network_str) {
         gulong packet_data_handle;
+        gboolean disable_autoconnect;
 
-        packet_data_handle = strtoul (stop_network_str, NULL, 10);
-        if (!packet_data_handle ||
-            packet_data_handle > G_MAXUINT32) {
-            g_printerr ("error: invalid packet data handle given '%s'\n",
-                        stop_network_str);
-            shutdown (FALSE);
-            return;
+        if (g_str_equal (stop_network_str, "disable-autoconnect")) {
+            packet_data_handle  = 0xFFFFFFFF;
+            disable_autoconnect = TRUE;
+        } else {
+            disable_autoconnect = FALSE;
+            if (g_str_has_prefix (stop_network_str, "0x"))
+                packet_data_handle = strtoul (stop_network_str, NULL, 16);
+            else
+                packet_data_handle = strtoul (stop_network_str, NULL, 10);
+            if (!packet_data_handle || packet_data_handle > G_MAXUINT32) {
+                g_printerr ("error: invalid packet data handle given '%s'\n",
+                            stop_network_str);
+                operation_shutdown (FALSE);
+                return;
+            }
         }
 
-        g_debug ("Asynchronously stopping network...");
-        internal_stop_network (ctx->cancellable, (guint32)packet_data_handle);
+        g_debug ("Asynchronously stopping network (%lu)...", packet_data_handle);
+        internal_stop_network (ctx->cancellable, (guint32)packet_data_handle, disable_autoconnect);
+        return;
+    }
+
+    /* Request to get current settings? */
+    if (get_current_settings_flag) {
+        QmiMessageWdsGetCurrentSettingsInput *input;
+
+        input = qmi_message_wds_get_current_settings_input_new ();
+        qmi_message_wds_get_current_settings_input_set_requested_settings (
+            input,
+            (QMI_WDS_GET_CURRENT_SETTINGS_REQUESTED_SETTINGS_DNS_ADDRESS      |
+             QMI_WDS_GET_CURRENT_SETTINGS_REQUESTED_SETTINGS_GRANTED_QOS      |
+             QMI_WDS_GET_CURRENT_SETTINGS_REQUESTED_SETTINGS_IP_ADDRESS       |
+             QMI_WDS_GET_CURRENT_SETTINGS_REQUESTED_SETTINGS_GATEWAY_INFO     |
+             QMI_WDS_GET_CURRENT_SETTINGS_REQUESTED_SETTINGS_MTU              |
+             QMI_WDS_GET_CURRENT_SETTINGS_REQUESTED_SETTINGS_DOMAIN_NAME_LIST |
+             QMI_WDS_GET_CURRENT_SETTINGS_REQUESTED_SETTINGS_IP_FAMILY),
+            NULL);
+
+        g_debug ("Asynchronously getting current settings...");
+        qmi_client_wds_get_current_settings (client,
+                                             input,
+                                             10,
+                                             ctx->cancellable,
+                                             (GAsyncReadyCallback)get_current_settings_ready,
+                                             NULL);
+        qmi_message_wds_get_current_settings_input_unref (input);
         return;
     }
 
@@ -1049,7 +1571,7 @@ qmicli_wds_run (QmiDevice *device,
         else {
             g_printerr ("error: invalid profile type '%s'. Expected '3gpp' or '3gpp2'.'\n",
                         get_profile_list_str);
-            shutdown (FALSE);
+            operation_shutdown (FALSE);
             return;
         }
 
@@ -1076,7 +1598,7 @@ qmicli_wds_run (QmiDevice *device,
         else {
             g_printerr ("error: invalid default type '%s'. Expected '3gpp' or '3gpp2'.'\n",
                         get_default_settings_str);
-            shutdown (FALSE);
+            operation_shutdown (FALSE);
             return;
         }
 
@@ -1088,6 +1610,51 @@ qmicli_wds_run (QmiDevice *device,
                                              (GAsyncReadyCallback)get_default_settings_ready,
                                              NULL);
         qmi_message_wds_get_default_settings_input_unref (input);
+        return;
+    }
+
+    /* Request to print autoconnect settings? */
+    if (get_autoconnect_settings_flag) {
+        g_debug ("Asynchronously getting autoconnect settings...");
+        qmi_client_wds_get_autoconnect_settings (ctx->client,
+                                                 NULL,
+                                                 10,
+                                                 ctx->cancellable,
+                                                 (GAsyncReadyCallback)get_autoconnect_settings_ready,
+                                                 NULL);
+        return;
+    }
+
+    /* Request to print autoconnect settings? */
+    if (set_autoconnect_settings_str) {
+        QmiMessageWdsSetAutoconnectSettingsInput *input;
+
+        input = set_autoconnect_settings_input_create (set_autoconnect_settings_str);
+        if (!input) {
+            operation_shutdown (FALSE);
+            return;
+        }
+
+        g_debug ("Asynchronously set autoconnect settings...");
+        qmi_client_wds_set_autoconnect_settings (ctx->client,
+                                                 input,
+                                                 10,
+                                                 ctx->cancellable,
+                                                 (GAsyncReadyCallback)set_autoconnect_settings_ready,
+                                                 NULL);
+        qmi_message_wds_set_autoconnect_settings_input_unref (input);
+        return;
+    }
+
+    /* Request to list supported messages? */
+    if (get_supported_messages_flag) {
+        g_debug ("Asynchronously getting supported WDS messages...");
+        qmi_client_wds_get_supported_messages (ctx->client,
+                                               NULL,
+                                               10,
+                                               ctx->cancellable,
+                                               (GAsyncReadyCallback)get_supported_messages_ready,
+                                               NULL);
         return;
     }
 

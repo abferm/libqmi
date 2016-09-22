@@ -16,7 +16,8 @@ ALL_SECTIONS = \
 	$(top_builddir)/src/libqmi-glib/generated/qmi-pbm.sections \
 	$(top_builddir)/src/libqmi-glib/generated/qmi-uim.sections \
 	$(top_builddir)/src/libqmi-glib/generated/qmi-oma.sections \
-	$(top_builddir)/src/libqmi-glib/generated/qmi-wda.sections
+	$(top_builddir)/src/libqmi-glib/generated/qmi-wda.sections \
+	$(top_builddir)/src/libqmi-glib/generated/qmi-voice.sections
 
 $(DOC_MODULE)-sections.mstamp: $(ALL_SECTIONS)
 	$(AM_V_GEN) \
@@ -47,7 +48,9 @@ CFILE_GLOB = \
 IGNORE_HFILES = \
 	qmi-enums-private.h \
 	qmi-enum-types-private.h \
-	qmi-ctl.h
+	qmi-ctl.h \
+	test-port-context.h \
+	test-fixture.h
 
 # CFLAGS and LDFLAGS for compiling scan program. Only needed
 # if $(DOC_MODULE).types is non-empty.

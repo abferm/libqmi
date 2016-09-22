@@ -18,24 +18,41 @@
  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301 USA.
  *
- * Copyright (C) 2013 Aleksander Morgado <aleksander@lanedo.com>
+ * Copyright (C) 2013-2015 <Aleksander Morgado <aleksander@aleksander.es>
  */
 
 #include <string.h>
 #include <ctype.h>
 #include <sys/file.h>
+#include <sys/types.h>
 #include <errno.h>
 
 #include <glib.h>
 #include <glib/gstdio.h>
 #include <gio/gunixsocketaddress.h>
 
+#include "config.h"
 #include "qmi-enum-types.h"
 #include "qmi-error-types.h"
 #include "qmi-device.h"
 #include "qmi-ctl.h"
 #include "qmi-utils.h"
 #include "qmi-proxy.h"
+
+/**
+ * SECTION:qmi-proxy
+ * @title: QmiProxy
+ * @short_description: QMI proxy handling routines
+ *
+ * The #QmiProxy will setup an abstract socket listening on a predefined
+ * address, and will take care of synchronizing the access to a set of shared
+ * QMI ports.
+ *
+ * Multiple #QmiDevices may be connected to the #QmiProxy at any given time. The
+ * #QmiProxy acts as a stateless proxy for non-CTL services (messages are
+ * transferred unmodified), and as a stateful proxy for the CTL service (all
+ * remote #QmiDevices will need to share the same CTL message sequence ID).
+ */
 
 #define BUFFER_SIZE 512
 
@@ -142,8 +159,8 @@ get_n_clients_with_device (QmiProxy *self,
     for (l = self->priv->clients; l; l = g_list_next (l)) {
         Client *client = l->data;
 
-        if (device == client->device ||
-            g_str_equal (qmi_device_get_path (device), qmi_device_get_path (client->device)))
+        if (client->device && (device == client->device ||
+            g_str_equal (qmi_device_get_path (device), qmi_device_get_path (client->device))))
             n++;
     }
 
@@ -171,8 +188,8 @@ connection_close (Client *client)
         for (l = self->priv->devices; l; l = g_list_next (l)) {
             QmiDevice *device_in_list = QMI_DEVICE (l->data);
 
-            if (device == device_in_list ||
-                g_str_equal (qmi_device_get_path (device), qmi_device_get_path (device_in_list))) {
+            if (device_in_list && (device == device_in_list ||
+                g_str_equal (qmi_device_get_path (device), qmi_device_get_path (device_in_list)))) {
                 g_debug ("closing device '%s': no longer used", qmi_device_get_path_display (device));
                 qmi_device_close (device_in_list, NULL);
                 g_object_unref (device_in_list);
@@ -628,9 +645,9 @@ incoming_cb (GSocketService *service,
         g_error_free (error);
         return;
     }
-
-    if (uid != 0) {
-        g_warning ("Client not allowed: Not enough privileges");
+    if (!__qmi_user_allowed (uid, &error)) {
+        g_warning ("Client not allowed: %s", error->message);
+        g_error_free (error);
         return;
     }
 
@@ -645,7 +662,7 @@ incoming_cb (GSocketService *service,
                            (GSourceFunc)connection_readable_cb,
                            client,
                            NULL);
-    g_source_attach (client->connection_readable_source, NULL);
+    g_source_attach (client->connection_readable_source, g_main_context_get_thread_default ());
     client->qmi_client_info_array = g_array_sized_new (FALSE, FALSE, sizeof (QmiClientInfo), 8);
 
     /* Keep the client info around */
@@ -704,19 +721,21 @@ setup_socket_service (QmiProxy *self,
 
 /*****************************************************************************/
 
+/**
+ * qmi_proxy_new:
+ * @error: Return location for error or %NULL.
+ *
+ * Creates a #QmiProxy listening in the default proxy addess.
+ *
+ * Returns: A newly created #QmiProxy, or #NULL if @error is set.
+ */
 QmiProxy *
 qmi_proxy_new (GError **error)
 {
     QmiProxy *self;
 
-    /* Only root can run the qmi-proxy */
-    if (getuid () != 0) {
-        g_set_error (error,
-                     QMI_CORE_ERROR,
-                     QMI_CORE_ERROR_FAILED,
-                     "Not enough privileges");
+    if (!__qmi_user_allowed (getuid (), error))
         return NULL;
-    }
 
     self = g_object_new (QMI_TYPE_PROXY, NULL);
     if (!setup_socket_service (self, error))
