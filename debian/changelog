@@ -1,3 +1,9 @@
+libqmi (1.16.0-1~bpo80+1) jessie-backports; urgency=medium
+
+  * Rebuild for jessie-backports.
+
+ -- Alex Ferm (PetroPower) <aferm@petropower.com>  Thu, 22 Sep 2016 10:02:39 -0500
+
 libqmi (1.16.0-1) unstable; urgency=medium
 
   * New upstream release.
